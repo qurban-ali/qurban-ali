@@ -8,24 +8,48 @@ const Skills = () => {
     {
       title: "Frontend Development",
       icon: <Globe className="h-6 w-6" />,
-      skills: ["React.js", "Vue.js", "JavaScript", "TypeScript", "HTML5", "CSS3", "Flutter"]
+      skills: ["React.js", "Vue.js", "JavaScript", "TypeScript", "HTML5", "CSS3", "Laravel Livewire", "Bootstrap", "Tailwind CSS"]
     },
     {
       title: "Backend Development",
       icon: <Code className="h-6 w-6" />,
-      skills: ["PHP", "Laravel Framework", "Node.js", "Python", "RESTful APIs", "CorePHP"]
+      skills: [
+      "PHP",
+      "Laravel",
+      "CodeIgniter",
+      "CakePHP",
+      "CorePHP",
+      "RESTful APIs",
+      "Node.js",
+      "Express.js",
+      "Python",
+      "Flask",
+      "FastAPI",
+      "Streamlit"
+      ]
     },
     {
       title: "Database & Storage",
       icon: <Database className="h-6 w-6" />,
-      skills: ["MySQL", "Laravel Livewire", "Laravel Passport", "Database Design"]
+      skills: [
+      "MySQL",
+      "MariaDB",
+      "SQLite",
+      "MongoDB"
+      ]
     },
     {
       title: "Tools & Technologies",
       icon: <Wrench className="h-6 w-6" />,
-      skills: ["Git", "CodeIgniter", "jQuery", "LINUX", "HTTPS Conflict", "FFMPEG"]
+      skills: [
+      "Git",
+      "Jenkins",
+      "Nginx",
+      "Apache",
+      "Linux"
+      ]
     }
-  ];
+    ];
 
   const languages = [
     { name: "Urdu", level: "Expert" },

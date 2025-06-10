@@ -9,19 +9,43 @@ const Projects = () => {
       title: "GerDentUSA",
       url: "https://www.gerdentusa.com/",
       description: "GerDentUSA manufactures and sells the finest dental surgical instruments. We have a wide range of oral surgery instruments for your dental practice.",
-      technologies: ["PHP", "Laravel", "Web Development", "E-commerce"]
+      technologies: ["PHP", "Laravel", "Livewire"]
     },
     {
       title: "GerVetUSA",
       url: "https://www.gervetusa.com/",
       description: "GerVetUSA Inc. Manufactures and sells high quality German Forged surgical instruments which have been utilized with great success by the surgeons around the world for decades.",
-      technologies: ["PHP", "Laravel", "Medical Industry", "Web Application"]
+      technologies: ["PHP", "Laravel", "Next Js"]
+    },
+    {
+      title: "iShopEco",
+      url: "https://www.ishopeco.com/",
+      description: "An e-commerce platform focused on eco-friendly products, built with Quasar Framework (Vue.js) for a responsive frontend and Laravel backend. The platform provides a seamless shopping experience for environmentally conscious consumers.",
+      technologies: ["Vue.js", "Quasar Framework", "Laravel"]
+    },
+    {
+      title: "ZenBench",
+      url: "https://www.zenbench.io/",
+      description: "An enterprise platform enhancing Zendesk functionality with advanced tools for automation, data management, and customization. Built with Vue.js frontend and Laravel backend, featuring data deduplication, custom object modeling, and a marketplace for data models.",
+      technologies: ["Vue.js", "Laravel", "Inertia"]
+    },
+    {
+      title: "ToolsZip",
+      url: "https://toolszip.com/",
+      description: "A comprehensive platform offering a suite of online tools including PDF management, image converters, development aids, SEO tools, and more. Built with a JavaScript frontend and Laravel backend for optimal performance and user experience.",
+      technologies: ["Vue.js", "Laravel", "Inertia"]
     },
     {
       title: "helloFriday",
       url: "https://www.hellofriday.io/",
       description: "hellofriday is a flexible HR platform that helps your organization build people-centric work culture, give voice to employees, and get business results.",
-      technologies: ["HR Platform", "Web Development", "Business Application"]
+      technologies: ["React.js", "Laravel", "Inertia", "Flask", "CorePHP", "Express Js"]
+    },
+    {
+      title: "TalentVista",
+      url: "https://talentvista.ai/",
+      description: "An AI-powered aviation recruitment platform that revolutionizes hiring through intelligent CV parsing, skills-based screening, and role-specific recommendations. Trained on extensive aviation data for precise candidate matching.",
+      technologies: ["React.js", "Laravel", "Inertia", "Fast API", "AI/ML"]
     }
   ];
 

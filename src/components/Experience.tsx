@@ -6,7 +6,7 @@ import { Building, Calendar } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
-      title: "Team Lead & Full Stack Developer",
+      title: "Team Lead & Full Stack Developer | PHP (Laravel), React.js, Vue.js, Node & Express.js, Python",
       company: "Friday Media Group Pakistan",
       location: "Lahore, Pakistan",
       period: "Jun 2022 - Present",

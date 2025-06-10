@@ -38,23 +38,26 @@ const About = () => {
           <Card className="mb-12 animate-fade-in">
             <CardContent className="p-8">
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                As a seasoned Team Lead and Senior Full Stack Developer with over 6 years of experience, 
-                I specialize in guiding development teams to deliver comprehensive web solutions. My leadership 
-                approach centers on fostering collaboration, promoting open communication, and empowering team 
-                members to excel, resulting in the successful and timely completion of complex projects.
+                As a seasoned Team Lead and Senior Full Stack Developer with over 6 years of experience,
+                I specialize in guiding development teams to deliver comprehensive web solutions.
+                My leadership approach centers on fostering collaboration, promoting open communication,
+                and empowering team members to excel, resulting in the successful and timely completion of complex projects.
+                Led a team of 10 developers to increase application performance by 30% through architectural optimizations.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Technically, I possess a robust skill set in both front-end and back-end development. I have 
-                led end-to-end development initiatives using technologies such as PHP with Laravel, React.js, 
-                Vue.js, Node.js with Express.js, and Python. This diverse expertise enables me to architect 
+                Technically, I possess a robust skill set in both front-end and back-end development.
+                I have led end-to-end development initiatives using technologies such as PHP with Laravel,
+                React.js, Vue.js, Node.js with Express.js, and Python. This diverse expertise enables me to architect
                 scalable, high-performance applications that deliver exceptional user experiences.
+                Passionate about mentoring junior developers and fostering collaborative problem-solving environments.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                I am committed to continuous learning and staying abreast of emerging technologies, ensuring 
-                that my teams and I are equipped to tackle evolving challenges. By blending strategic leadership 
-                with technical proficiency, I strive to drive innovation and contribute to the success of every 
-                project I undertake.
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                I am committed to continuous learning and staying abreast of emerging technologies, ensuring
+                that my teams and I are equipped to tackle evolving challenges. By blending strategic leadership
+                with technical proficiency, I strive to drive innovation and contribute to the success of every
+                project I undertake. Currently seeking leadership opportunities in innovative SaaS product development.
               </p>
+              
             </CardContent>
           </Card>
 

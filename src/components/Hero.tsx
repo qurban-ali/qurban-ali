@@ -32,7 +32,7 @@ const Hero = () => {
             Team Lead & Full Stack Developer
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Specializing in PHP (Laravel), React.js, and modern web technologies. 
+            Specializing in PHP (Laravel), React.js, Vue.js, Node.js, Express.js, Python and modern web technologies. 
             Building scalable applications with over 6 years of experience.
           </p>
           
