@@ -1,6 +1,7 @@
 
 import { ArrowDown, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -14,6 +15,16 @@ const Hero = () => {
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted/30 pt-20">
       <div className="container mx-auto px-4 text-center">
         <div className="animate-fade-in">
+          <div className="mb-8">
+            <Avatar className="w-32 h-32 mx-auto mb-6 ring-4 ring-primary/20">
+              <AvatarImage 
+                src="https://media.licdn.com/dms/image/v2/C4D03AQE-G9AK7mEMdA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1642986861985?e=1755129600&v=beta&t=0oKvqE4wr5ulU2e4sMRrFu4AIfKIr4CzinDlw5LXdFE"
+                alt="Qurban Ali"
+              />
+              <AvatarFallback className="text-2xl font-bold">QA</AvatarFallback>
+            </Avatar>
+          </div>
+          
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
             <span className="gradient-text">Qurban Ali</span>
           </h1>
