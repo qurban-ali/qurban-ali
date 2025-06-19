@@ -1,6 +1,6 @@
 # Qurban Ali - Full Stack Developer & Team Lead
 
-![Qurban Ali](image_url)
+![Qurban Ali]([image_url](https://avatars.githubusercontent.com/u/82603994?v=4))
 
 ## Contact Information
 
