@@ -1,73 +1,61 @@
-# Welcome to your Lovable project
+# Qurban Ali - Full Stack Developer & Team Lead
 
-## Project info
+![Qurban Ali](image_url)
 
-**URL**: https://lovable.dev/projects/772eab67-5949-4e55-a26e-43523a1773a6
+## Contact Information
 
-## How can I edit this code?
+- **Phone:** +92.322.1436408
+- **Email:** aliq30292@gmail.com
+- **Location:** Sabzazar, Lahore, Pakistan
 
-There are several ways of editing your application.
+## Education
 
-**Use Lovable**
+| Institution | Degree | Field | Year Completed |
+|-------------|--------|-------|----------------|
+| University of the Punjab | Bachelor of Arts | Arts | 2019 |
+| Government College of Sciences, Lahore | Intermediate/A-Level | Computer Science, Mathematical Statistics, Mathematics | 2016 |
+| Government High School | Matriculation/O-Level | Biology, Chemistry, Physical Chemistry | 2014 |
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/772eab67-5949-4e55-a26e-43523a1773a6) and start prompting.
+## Skills
 
-Changes made via Lovable will be committed automatically to this repo.
+- PHP & Frameworks: Laravel, CodeIgniter
+- JavaScript & Frameworks: React.js, Vue.js
+- Backend Technologies: Node.js, Express.js
+- Python: FastAPI, Flask
+- Version Control: GitHub
+- Operating Systems: Linux
+- Web Servers: Nginx, Apache
+- CI/CD: Jenkins
 
-**Use your preferred IDE**
+## Languages
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Urdu: Expert
+- English: Intermediate
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Professional Summary
 
-Follow these steps:
+As a seasoned Team Lead and Senior Full Stack Developer with over 6 years of experience, I specialize in guiding development teams to deliver comprehensive web solutions. My leadership approach centers on fostering collaboration, promoting open communication, and empowering team members to excel, resulting in the successful and timely completion of complex projects.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Technically, I possess a robust skill set in both front-end and back-end development. I have led end-to-end development initiatives using technologies such as PHP with Laravel, React.js, Vue.js, Node.js with Express.js, and Python. This diverse expertise enables me to architect scalable, high-performance applications that deliver exceptional user experiences.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+I am committed to continuous learning and staying abreast of emerging technologies, ensuring that my teams and I are equipped to tackle evolving challenges. By blending strategic leadership with technical proficiency, I strive to drive innovation and contribute to the success of every project I undertake.
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Work Experience
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+| Position | Company | Location | Duration |
+|----------|---------|----------|----------|
+| Team Lead & Full Stack Developer | Friday Media Group Pakistan | Lahore, Pakistan | Jun 2022 - Present |
+| Team Lead & Full Stack Developer | Catalyic Tech | Lahore, Pakistan | Aug 2020 - May 2022 |
+| Jr Laravel Developer | GerMedUSAIT | Lahore, Pakistan | Jan 2019 - Jul 2020 |
 
-**Edit a file directly in GitHub**
+## Projects
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/772eab67-5949-4e55-a26e-43523a1773a6) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+| Project | Description | URL |
+|---------|-------------|-----|
+| GerDentUSA | Manufactures and sells dental surgical instruments. | [GerDentUSA](https://www.gerdentusa.com/) |
+| GerVetUSA | Manufactures and sells high-quality German forged surgical instruments. | [GerVetUSA](https://www.gervetusa.com) |
+| helloFriday | A flexible HR platform for building people-centric work culture. | [helloFriday](https://www.hellofriday.io) |
+| TalentVista | An AI-powered aviation recruitment platform. | [TalentVista](https://talentvista.ai) |
+| ToolsZip | A comprehensive platform offering a suite of online tools. | [ToolsZip](https://toolszip.com/) |
+| IShopEco | An e-commerce platform focused on eco-friendly products. | [IShopEco](https://www.ishopeco.com/) |
+| ZenBench | An enterprise platform enhancing Zendesk functionality. | [ZenBench](https://www.zenbench.io/) |
