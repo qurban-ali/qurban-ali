@@ -1,0 +1,105 @@
+{
+  "identity": {
+    "positioning": "Engineering Team Lead and Senior Full-Stack Developer",
+    "experience": "6+ years",
+    "current_company": "Friday Media Group Pakistan",
+    "current_role_start": "May 2022",
+    "location": "Lahore, Punjab, Pakistan",
+    "employment_type": "Full-time",
+    "location_type": "On-site"
+  },
+  "headline": "Engineering Team Lead | Full-Stack Developer (MERN, MEVN & LEMP) | AI, RAG & LLM Solutions | FinTech & SaaS Products | Scalable Architecture | Technology Leadership",
+  "top_skills": [
+    "Technical Leadership",
+    "Full-Stack Development",
+    "Generative AI",
+    "Software Architecture",
+    "Large Language Models (LLM)"
+  ],
+  "services": [
+    "Custom Software Development",
+    "SaaS Development",
+    "Application Development",
+    "Web Development",
+    "AI Consulting / Generative AI Consulting (closest available LinkedIn label)",
+    "Cloud Application Development",
+    "Database Development",
+    "IT Consulting",
+    "Project Management"
+  ],
+  "core_stack": {
+    "frontend": [
+      "React.js",
+      "Vue.js",
+      "JavaScript",
+      "TypeScript"
+    ],
+    "backend": [
+      "Node.js",
+      "Express.js",
+      "PHP",
+      "Laravel",
+      "Python",
+      "FastAPI"
+    ],
+    "data_search": [
+      "MySQL",
+      "Apache Solr",
+      "Vector Search",
+      "Semantic Search"
+    ],
+    "architecture": [
+      "MERN",
+      "MEVN",
+      "LEMP",
+      "REST APIs",
+      "SaaS",
+      "Scalable Architecture"
+    ],
+    "ai": [
+      "Generative AI",
+      "LLM Integration",
+      "RAG",
+      "OpenAI",
+      "Google Gemini",
+      "Prompt Engineering",
+      "Vector Embeddings"
+    ]
+  },
+  "domains": [
+    "Recruitment Technology",
+    "HR Technology",
+    "FinTech",
+    "SaaS",
+    "Talent Intelligence",
+    "Employee Experience",
+    "AI Content Creation"
+  ],
+  "writing_rules": [
+    "Create professional, confident, recruiter-friendly LinkedIn copy.",
+    "Preserve the user's real meaning while correcting grammar and structure.",
+    "Return copy-paste-ready text, not generic advice, unless advice is requested.",
+    "Never invent achievements, metrics, technologies, clients, or responsibilities.",
+    "Ask for confirmation before adding unverified numbers or confidential details.",
+    "Respect LinkedIn character limits and provide the approximate or exact count when useful.",
+    "Mention specific LLM providers only when genuinely used and not confidential.",
+    "Use 'OpenAI embedding models' rather than 'GPT embeddings'.",
+    "Use 'RAG' only when retrieved context is provided to an LLM for generation; otherwise use semantic search or vector retrieval.",
+    "Prefer senior-level positioning: technical leadership, architecture, full-stack delivery, AI integration, product thinking, and mentoring."
+  ],
+  "approved_content": {
+    "about": "I am an Engineering Team Lead and Senior Full-Stack Developer with over six years of experience building scalable web applications, SaaS products, AI-powered platforms, and business-critical digital solutions.\n\nMy work combines hands-on development with technical leadership. I lead engineering teams, define application architecture, review code, improve development processes, mentor developers, and collaborate with product managers, designers, QA engineers, and stakeholders. My leadership style is built on collaboration, clear communication, accountability, and helping team members grow while delivering reliable projects on time.\n\nMy technical experience covers modern frontend, backend, database, and cloud-ready development. I have delivered end-to-end solutions using React.js, Vue.js, Node.js, Express.js, PHP, Laravel, Python, MySQL, REST APIs, and MERN, MEVN, and LEMP architectures. I focus on secure, maintainable, high-performance applications with responsive interfaces, reusable components, efficient APIs, third-party integrations, and scalable system design.\n\nI also specialize in Generative AI, LLM, RAG, and intelligent search applications. My experience includes integrating OpenAI, Google Gemini, and other language models for CV and job-description parsing, structured data extraction, content generation, candidate matching, scoring, recommendations, interview-question generation, and workflow automation. I have worked with vector embeddings, semantic search, Apache Solr, prompt engineering, multi-model AI workflows, and retrieval-based systems that transform large datasets into actionable results.\n\nI have contributed to products across recruitment technology, HR technology, FinTech, SaaS, talent intelligence, employee experience, and AI-powered content creation. These include intelligent recruitment platforms, reusable candidate talent pools, AI-assisted screening systems, HR management solutions, and personalized multi-platform content tools.\n\nI enjoy turning complex business requirements into practical technical solutions, improving existing systems, solving performance and scalability challenges, and supporting teams throughout the software-development lifecycle.\n\nI am committed to continuous learning and actively explore developments in AI, software architecture, automation, and product engineering. My goal is to combine strong technical execution, product thinking, and people leadership to build solutions that create measurable value for users and organizations.",
+    "role_highlights": "Led the design and delivery of scalable web, SaaS, and AI-powered products while managing developers, reviewing code, defining technical architecture, and coordinating with product, design, and QA teams.\n\n• Directed end-to-end development across frontend, backend, databases, APIs, integrations, deployment, and production support.\n• Built applications using React.js, Vue.js, TypeScript, Node.js, Express.js, PHP, Laravel, Python, FastAPI, MySQL, and REST APIs.\n• Designed AI and LLM-based solutions using OpenAI, Google Gemini, prompt engineering, vector embeddings, semantic search, RAG workflows, and Apache Solr.\n• Contributed to intelligent recruitment platforms featuring CV and job-description parsing, candidate matching, AI scoring, reusable talent pools, automated shortlisting, and interview-question generation.\n• Delivered HR technology, FinTech, SaaS, employee-experience, and AI content-generation platforms with role-based access, dashboards, workflow automation, reporting, and third-party integrations.\n• Improved application maintainability and scalability through reusable architecture, coding standards, code reviews, database optimization, and reliable API design.\n• Mentored developers, assigned tasks according to team strengths, resolved technical blockers, and promoted collaboration, accountability, and continuous learning.\n• Worked closely with stakeholders to convert complex business requirements into secure, practical, and user-focused technical solutions.\n• Supported project planning, technical estimation, sprint execution, release management, troubleshooting, and continuous product improvement.",
+    "projects": {
+      "SmartMatch": "SmartMatch is an AI-powered recruitment and talent intelligence platform developed specifically for the aviation industry. The platform enables recruiters to manage a centralized talent pool, process candidate CVs, and identify the most relevant candidates based on job descriptions, skills, experience, qualifications, and recruiter-provided keywords.\n\nI worked on the full-stack development of the application using React.js for the frontend and Node.js for the backend. The platform uses MySQL for structured candidate, recruiter, and application data, while Apache Solr supports high-performance search, indexing, filtering, and vector-based candidate retrieval.\n\nThe system parses uploaded CVs and transforms candidate information into structured data, including professional experience, technical skills, certifications, education, aviation roles, and other relevant details. AI-generated embeddings are indexed in Solr, allowing semantic searches rather than relying only on exact keyword matching.\n\nWhen a recruiter enters a job description or search criteria, SmartMatch compares the requirements with candidate profiles, retrieves suitable candidates, and generates an AI-based matching score. The platform also supports talent-pool management, advanced filtering, application tracking, and recruiter collaboration.\n\nAI integrations may include Google Gemini for CV parsing and structured information extraction, together with OpenAI embedding and language models for semantic retrieval, ranking, scoring, and explanations. Specific provider names should be included only when they were genuinely used and are not confidential.",
+      "TalentVista": "TalentVista is an AI-powered talent acquisition platform designed to help recruiters process large volumes of applications, build reusable talent pools, and identify the most relevant candidates for each job opportunity.\n\nRecruiters can upload candidate CVs from job boards, professional networks, ATS platforms, or internal databases together with a job description. The system parses both CVs and JDs, extracting structured details such as skills, experience, education, certifications, seniority, job roles, and industry expertise.\n\nCandidate and job data are converted into vector embeddings and indexed in Apache Solr, enabling semantic search, keyword matching, advanced filtering, and AI-assisted retrieval. Each candidate is evaluated against the job requirements, assigned a relevance score, and ranked for recruiter review, with matching strengths and potential gaps highlighted.\n\nThe platform allows recruiters to maintain categorized talent pools by role, department, industry, and skills. For future vacancies, they can upload a new JD and search their existing pool instead of restarting the sourcing process.\n\nTalentVista supports shortlisting, multi-stage interviews, interviewer feedback, scorecards, and candidate comparisons. It can generate screening and interview questions based on the JD, candidate profile, required skills, and interview stage. Scores and feedback from HR, technical, and management rounds are consolidated to support consistent, data-informed hiring decisions.\n\nI contributed to the full-stack development and AI architecture using React.js, Node.js, MySQL, Apache Solr, REST APIs, vector embeddings, semantic search, and multiple LLM integrations for CV/JD parsing, structured extraction, candidate matching, ranking, scoring explanations, interview-question generation, and recruitment reporting.",
+      "helloFriday": "helloFriday is an AI-first, all-in-one HR and employee experience platform designed to simplify people operations, automate administrative workflows, and help organisations build engaged, productive, and aligned teams.\n\nThe platform brings the employee lifecycle into one system, covering applicant tracking, recruitment, onboarding and offboarding, employee records, documents, leave requests, attendance, time tracking, shift rotas, payroll integrations, performance management, engagement, surveys, analytics, and asset management.\n\nIts recruitment module helps HR teams manage vacancies, candidates, applications, interview stages, and hiring workflows. Automated onboarding and offboarding allow teams to assign tasks, collect documents, coordinate approvals, and deliver a consistent employee experience.\n\nThe performance module supports configurable one-to-ones, review cycles, multiple reviewers, 360-degree feedback, objectives, progress tracking, reminders, and performance summaries. Engagement features include announcements, social feeds, communities, events, recognition, employee feedback, pulse surveys, birthdays, and work anniversaries.\n\nThe web and mobile applications allow employees, managers, and HR teams to complete self-service tasks, communicate, approve requests, and access workforce information from anywhere. AI assistants, automation, reporting, and analytics reduce repetitive administration and support faster, data-informed decisions.\n\nI contributed to the full-stack delivery of scalable HR workflows, dashboards, APIs, role-based experiences, integrations, reporting, and responsive employee and management interfaces.",
+      "HumanJot": "HumanJot is an AI-powered content creation and writing-assistance platform designed for marketers, creators, agencies, entrepreneurs, and professionals who need high-quality content for multiple digital channels.\n\nUsers can select a content type or social platform, provide a topic, brief, campaign idea, or draft, and generate tailored content for LinkedIn, X/Twitter, blogs, marketing pages, and other social channels. The platform adapts the structure, tone, length, formatting, call to action, and hashtags to suit the selected platform instead of producing the same generic copy everywhere.\n\nA key capability is personalized content generation. HumanJot can learn from a user’s previous writing preferences, brand voice, tone, and content patterns to create more consistent and human-like outputs over time. Users can brainstorm ideas, generate complete drafts, refine existing text, rewrite sections, and request improvements until the content matches their needs.\n\nThe multi-platform workflow allows users to prepare one core message and generate optimized variations for several channels at once. Each version is adapted to the conventions and audience of its platform, helping users maintain a consistent campaign while reducing the time required to rewrite content manually.\n\nThe solution supports content ideation, social posts, long-form articles, blogs, scripts, promotional copy, captions, campaign messaging, editing, and research-assisted writing. I contributed to the product’s full-stack development, AI integration, prompt workflows, personalized content logic, multi-platform generation, editing experience, user management, and scalable content-generation processes."
+    },
+    "recommendations": {
+      "Hashim": "I have had the pleasure of managing Hashim in our current organization. He is a dedicated, dependable, and hardworking professional who consistently approaches his responsibilities with focus and commitment. Hashim takes ownership of his work, meets expectations, and is always willing to support the team when needed. His positive attitude, professionalism, and eagerness to improve make him a valuable member of the organization. I highly recommend Hashim and am confident that he will be an asset to any team he works with.",
+      "Munawar": "I had the pleasure of managing Munawar as a Full Stack Engineer at Friday Media Group Pakistan. He is a quick learner, highly dedicated, dependable, and consistently hardworking. Munawar takes ownership of his responsibilities, adapts quickly to new challenges, and delivers his work with commitment and professionalism. He has been a valuable member of my team, and I appreciate his positive attitude and willingness to support others. I confidently recommend Munawar as a reliable professional who would be an asset to any organization."
+    },
+    "connection_note": "Hi [Name], I came across your profile and would be glad to connect. I look forward to learning from your experience and exchanging professional insights."
+  }
+}
