@@ -33,14 +33,16 @@ Expert in PHP (Laravel), MERN, MEVN, and Python (FastAPI/Flask), with hands-on e
 ## 🏢 Work Experience
 
 ### 1. Team Lead & Full Stack Developer — AI/RAG Applications
-**Friday Media Group Pakistan** | *June 2022 — Present*
-*   Lead a team of 6+ developers across multiple concurrent SaaS projects, conducting daily standups, sprint planning, and code reviews.
-*   Architected and led development of TalentVista — a RAG-based AI recruitment platform integrating LLM APIs (OpenAI, Gemini, DeepSeek) for intelligent CV parsing, semantic candidate search, and role-specific recommendations.
-*   Designed and implemented scalable RESTful APIs and backend services using Laravel and Node.js.
-*   Mentored junior developers through pair programming, design pattern workshops, and structured code reviews.
-*   Built and integrated LLM API workflows for document parsing, semantic search, vector embeddings generation, and AI-powered candidate matching.
-*   Managed production deployments on Linux servers using Nginx, GitHub CI/CD, and Jenkins.
-*   Delivered multiple SaaS platforms in production: helloFriday (HR engagement), ToolsZip (productivity suite), and ZenBench (Zendesk automation).
+**Friday Media Group Pakistan** | *May 2022 — Present*
+*   Directed end-to-end development across frontend, backend, databases, APIs, integrations, deployment, and production support.
+*   Built applications using React.js, Vue.js, TypeScript, Node.js, Express.js, PHP, Laravel, Python, FastAPI, MySQL, and REST APIs.
+*   Designed AI and LLM-based solutions using OpenAI, Google Gemini, prompt engineering, vector embeddings, semantic search, RAG workflows, and Apache Solr.
+*   Contributed to intelligent recruitment platforms featuring CV and job-description parsing, candidate matching, AI scoring, reusable talent pools, automated shortlisting, and interview-question generation.
+*   Delivered HR technology, FinTech, SaaS, employee-experience, and AI content-generation platforms with role-based access, dashboards, workflow automation, reporting, and third-party integrations.
+*   Improved application maintainability and scalability through reusable architecture, coding standards, code reviews, database optimization, and reliable API design.
+*   Mentored developers, assigned tasks according to team strengths, resolved technical blockers, and promoted collaboration, accountability, and continuous learning.
+*   Worked closely with stakeholders to convert complex business requirements into secure, practical, and user-focused technical solutions.
+*   Supported project planning, technical estimation, sprint execution, release management, troubleshooting, and continuous product improvement.
 
 ### 2. Team Lead & Full Stack Developer | PHP (Laravel), MERN, MEVN
 **Catalyic Tech** | *August 2020 — May 2022*
@@ -62,45 +64,50 @@ Expert in PHP (Laravel), MERN, MEVN, and Python (FastAPI/Flask), with hands-on e
 
 ## 🚀 Projects Portfolio
 
-### 1. TalentVista (AI Recruitment Platform)
+### 1. SmartMatch (Aviation Talent Search Engine)
+*   **Role**: Full Stack Developer & AI Integration
+*   **Stack**: React.js, Node.js, Express.js, MySQL, Apache Solr, OpenAI, Google Gemini, Vector Embeddings, Semantic Search
+*   **Overview**: An AI-powered recruitment and talent intelligence platform developed specifically for the aviation industry. The platform enables recruiters to manage a centralized talent pool, process candidate CVs, and identify the most relevant candidates based on job descriptions, skills, experience, qualifications, and recruiter-provided keywords.
+
+### 2. TalentVista (AI Recruitment Platform)
 *   **Role**: Lead Full Stack Developer & AI/RAG Architect
-*   **Stack**: Laravel, React.js, Python, FastAPI, OpenAI, Gemini, DeepSeek, MySQL, Apache Solr
-*   **Overview**: An AI-powered aviation recruitment platform built entirely on Retrieval-Augmented Generation (RAG) architecture. Uses LLMs for intelligent CV parsing, job description understanding, semantic search matching, and role-specific recommendations (Pilot, Engineer, Cabin Crew, ATC).
+*   **Stack**: React.js, Node.js, MySQL, Apache Solr, REST APIs, Vector Embeddings, Semantic Search, LLM Integrations
+*   **Overview**: An AI-powered talent acquisition platform designed to help recruiters process large volumes of applications, build reusable talent pools, and identify the most relevant candidates for each job opportunity.
 
-### 2. helloFriday (HR & Employee Engagement Platform)
+### 3. helloFriday (HR & Employee Engagement Platform)
 *   **Role**: Team Lead & Full Stack Developer
-*   **Stack**: Laravel, React.js, MySQL, REST APIs, Linux/Nginx
-*   **Overview**: A people-centric SaaS HR platform featuring multi-tenant architecture, role-based access control (RBAC), surveys, feedback feeds, and performance review cycles.
+*   **Stack**: React.js, Vue.js, Node.js, Express.js, PHP, Laravel, MySQL, REST APIs
+*   **Overview**: An AI-first, all-in-one HR and employee experience platform designed to simplify people operations, automate administrative workflows, and help organisations build engaged, productive, and aligned teams.
 
-### 3. ZenBench (Zendesk Automation Platform)
+### 4. HumanJot (AI Content Assistant)
 *   **Role**: Full Stack Developer
-*   **Stack**: Vue.js, Laravel, MySQL, Zendesk API
-*   **Overview**: Enterprise platform extending Zendesk's functionality with custom object modeling, macro workflows, bulk updates, automated triage routing, and a macro/data-model sharing marketplace.
+*   **Stack**: Node.js, Python, FastAPI, OpenAI APIs, Prompt Workflows, Personalized Logic
+*   **Overview**: An AI-powered content creation and writing-assistance platform designed for marketers, creators, agencies, entrepreneurs, and professionals who need high-quality content for multiple digital channels.
 
-### 4. ToolsZip (Productivity Suite)
+### 5. ZenBench (Zendesk Automation Platform)
 *   **Role**: Full Stack Developer
-*   **Stack**: Laravel, JavaScript, MySQL, PDF/Image Processing Libraries
-*   **Overview**: Web productivity suite offering concurrent client-side operations for PDF merging/splitting, image conversion, developer utility helpers, and SEO checkers.
+*   **Stack**: Vue.js, Laravel, MySQL, Zendesk API, REST APIs, Background Workers
+*   **Overview**: A Zendesk reporting, automation, and data-management platform designed to extend Zendesk's native capabilities and help organisations manage support data more efficiently.
 
-### 5. IShopEco (Eco-Friendly E-Commerce)
+### 6. iShopEco (Eco-Friendly E-Commerce)
 *   **Role**: Full Stack Developer
-*   **Stack**: Vue.js (Quasar Framework), Laravel, MySQL, Stripe API
-*   **Overview**: Responsive eco-friendly shopping SPA with product catalogs, guest checkouts, Stripe payment, and order management tools.
+*   **Stack**: Vue.js (Quasar Framework), Laravel, MySQL, Stripe API, E-commerce Workflows
+*   **Overview**: A sustainable-living search, review, and e-commerce platform designed to help people discover vetted businesses, products, and services that meet published environmental sustainability criteria.
 
-### 6. GerDentUSA & GerVetUSA (B2B E-Commerce Platforms)
+### 7. GerDentUSA & GerVetUSA (B2B E-Commerce Platforms)
 *   **Role**: Developer
-*   **Stack**: PHP, Laravel, MySQL, Blade, JavaScript
-*   **Overview**: Dual e-commerce catalogs serving thousands of surgical tools with B2B purchase orders, credit hierarchies, and tier pricing.
+*   **Stack**: PHP, Laravel, MySQL, B2B Catalogs, E-commerce Workflows
+*   **Overview**: Dual e-commerce platforms designed to help customers and professionals across the United States purchase dental, veterinary, and surgical instruments through a convenient online shopping experience.
 
-### 7. SmartMatch (Aviation Talent Search Engine)
+### 8. ToolsZip (Productivity Suite)
 *   **Role**: Full Stack Developer
-*   **Stack**: React.js, Node.js, Express.js, MySQL, Apache Solr, OpenAI Embeddings
-*   **Overview**: Match scoring talent intelligence platform parsing aviation credentials and running semantic scoring indexes in Solr.
+*   **Stack**: Laravel, JavaScript, MySQL, File Processing, Stripe API, SEO Tools
+*   **Overview**: An all-in-one online productivity platform designed for SEO professionals, developers, content creators, website owners, and general users who need fast and accessible browser-based utilities.
 
-### 8. HumanJot (AI Content Assistant)
+### 9. Pharmacy Audit Pro (Pharmacy Audit & Revenue Platform)
 *   **Role**: Full Stack Developer
-*   **Stack**: Node.js, Python, FastAPI, OpenAI, Prompt Workflows
-*   **Overview**: Content assistant writing multi-channel posts matching individual brand styles and previous article tones.
+*   **Stack**: React.js, TypeScript, Node.js, Express.js, Python, MySQL, AI Integration, Ledger Architecture
+*   **Overview**: A pharmacy audit, reconciliation, and revenue-integrity platform designed for pharmacy owners, compliance teams, and operations professionals in the United States. It helps pharmacies reduce manual audit work, identify billing issues, and maintain clear, traceable financial records.
 
 ---
 

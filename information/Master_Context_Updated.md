@@ -54,7 +54,7 @@ I am committed to continuous learning and actively explore developments in AI, s
 - Data/search: MySQL, Apache Solr, vector search, semantic search
 - Architecture: MERN, MEVN, LEMP, REST APIs, SaaS, scalable architecture
 - AI: OpenAI, Google Gemini, Generative AI, LLM integration, RAG, prompt engineering, vector embeddings
-- Domains: recruitment technology, HR technology, FinTech, SaaS, talent intelligence, employee experience, AI content creation
+- Domains: recruitment technology, HR technology, FinTech, SaaS, talent intelligence, employee experience, AI content creation, pharmacy technology
 
 ## Current role highlights
 Led the design and delivery of scalable web, SaaS, and AI-powered products while managing developers, reviewing code, defining technical architecture, and coordinating with product, design, and QA teams.
@@ -116,6 +116,57 @@ A key capability is personalized content generation. HumanJot can learn from a u
 The multi-platform workflow allows users to prepare one core message and generate optimized variations for several channels at once. Each version is adapted to the conventions and audience of its platform, helping users maintain a consistent campaign while reducing the time required to rewrite content manually.
 
 The solution supports content ideation, social posts, long-form articles, blogs, scripts, promotional copy, captions, campaign messaging, editing, and research-assisted writing. I contributed to the product’s full-stack development, AI integration, prompt workflows, personalized content logic, multi-platform generation, editing experience, user management, and scalable content-generation processes.
+
+## Project: ZenBench
+ZenBench is a Zendesk reporting, automation, and data-management platform designed to extend Zendesk's native capabilities and help organisations manage support data more efficiently.
+
+Users can connect their Zendesk account by configuring their credentials and integration settings. Once connected, they can access reporting tools that transform Zendesk data into clear, user-friendly reports for monitoring support operations, analysing performance, and understanding important service trends.
+
+The platform also provides advanced tools for managing and improving Zendesk data. These include custom object modelling, automated data deduplication and normalisation, advanced filtering, bulk operations, and workflow automation. A reusable data-model marketplace allows organisations to apply preconfigured structures and workflows instead of building every setup from the beginning.
+
+I contributed to the full-stack development of ZenBench using Vue.js for the frontend and Laravel for the backend, with MySQL for application data and the Zendesk API for integration. My work included developing responsive user interfaces, backend functionality, API integrations, reporting workflows, data-management features, and reliable user experiences for configuring and using Zendesk-connected services.
+
+## Project: iShopEco
+iShopEco is a sustainable-living search, review, and e-commerce platform designed to help people discover vetted businesses, products, and services that meet published environmental sustainability criteria.
+
+The platform covers more than 300 categories, making it easier for users to compare options and make better-informed choices for eco-friendly and healthier living. By bringing qualified businesses and sustainable products into one accessible platform, iShopEco helps users find alternatives that align with their environmental values and everyday needs.
+
+Users can explore product and service categories, review available options, and complete shopping activities through a responsive and user-friendly experience. The platform includes product catalogue management, customer accounts, cart and checkout workflows, secure payment integration, and order management.
+
+I contributed to the full-stack development of iShopEco using Vue.js with the Quasar Framework for the frontend, Laravel for the backend, and MySQL for data management. My work included developing responsive interfaces, backend functionality, product and customer workflows, and the technical features required to support a reliable e-commerce experience.
+
+## Project: GerDentUSA & GerVetUSA
+GerDentUSA and GerVetUSA are e-commerce platforms designed to help customers and professionals across the United States purchase dental, veterinary, and surgical instruments through a convenient online shopping experience.
+
+The platforms provide multi-category product catalogues where users can browse specialised instruments, review product information, choose from available product variants, add items to their cart, and complete the purchasing process. Customers can also manage their accounts and track their orders.
+
+GerDentUSA focuses primarily on dental instruments, while GerVetUSA provides veterinary and surgical tools. Both platforms support structured product categories, product variations, customer management, order-processing workflows, and administrative tools for managing the online stores.
+
+I contributed to the development and maintenance of these platforms using PHP, Laravel, and MySQL. My work included product-catalogue functionality, user-management features, cart and order-processing workflows, backend modules, database structures, responsive interfaces, application maintenance, issue resolution, and database-query optimisation.
+
+## Project: ToolsZip
+ToolsZip is an all-in-one online productivity platform designed for SEO professionals, developers, content creators, website owners, and general users who need fast and accessible browser-based utilities.
+
+The platform provides PDF tools for Word-to-PDF and text-to-PDF conversion, PDF merging and compression, locking and unlocking documents, and converting files between PDF and image formats. Its image tools support common operations such as PNG-to-JPG, JPG-to-PNG, resizing, compression, and other format conversions.
+
+ToolsZip also includes developer utilities such as UUID and Lorem Ipsum generators, JSON viewers and formatters, and JSON-to-XML and XML-to-JSON conversion. Website and SEO tools support SEO checks, website screenshots, HTML viewing, WordPress theme detection, redirects, keyword and SERP analysis, domain checks, IP lookup, SSL and GZIP testing, and other website-monitoring tasks.
+
+Additional utilities cover text analysis and case conversion, password management, calculators, unit and binary conversion, tag tools, and other everyday technical tasks.
+
+I contributed to the full-stack development of ToolsZip using Laravel, JavaScript, and MySQL. My work included developing and integrating multiple online tools, implementing backend workflows, supporting user and payment functionality, optimising performance for simultaneous tool usage, and integrating Stripe for secure payments.
+
+## Project: Pharmacy Audit Pro
+Pharmacy Audit Pro is a pharmacy audit, reconciliation, and revenue-integrity platform designed for pharmacy owners, compliance teams, and operations professionals in the United States. It helps pharmacies reduce manual audit work, identify billing issues, and maintain clear, traceable financial records.
+
+Users can upload vendor invoice files and pharmacy billing files, which the system compares to detect discrepancies, unmatched transactions, possible overbilling, and other exceptions requiring review. The platform replaces complex spreadsheet-based checks with a structured workflow for investigating and resolving audit findings.
+
+A complete ledger system records transactions, adjustments, and audit activity. Dashboards, header reports, detailed reports, alerts, and analytical views help users review billing patterns, monitor unusual activity, and understand the financial impact of identified discrepancies.
+
+Pharmacy Audit Pro centralises vendor data, billing records, reconciliation results, ledger activity, and reporting in one platform. Users can review matched and unmatched records, investigate individual discrepancies, track adjustments, and generate actionable reports for operational and management decisions.
+
+AI is used as an analytical assistant rather than as the platform's database or core reconciliation engine. It summarises audit findings, highlights important trends, and provides clear overviews of pharmacy activity so users can understand complex audit data and prioritise issues requiring attention.
+
+I contribute to the platform's development, including file-processing workflows, vendor and billing reconciliation, discrepancy management, ledger functionality, dashboards, audit reports, and AI-assisted analytical summaries.
 
 ## Recommendations
 ### Hashim
