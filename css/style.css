@@ -581,6 +581,17 @@ section {
     animation: scroll-wheel 1.6s infinite;
 }
 
+/* Performance Section Render Containment */
+.about-section,
+.skills-section,
+.projects-section,
+.experience-section,
+.recommendations-section,
+.contact-section {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 800px;
+}
+
 /* ==========================================================================
    ABOUT SECTION
    ========================================================================== */
