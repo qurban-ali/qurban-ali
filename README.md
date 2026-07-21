@@ -1,6 +1,6 @@
 # Qurban Ali | Engineering Team Lead & Senior Full-Stack Developer
 
-Engineering Team Lead and Senior Full-Stack Developer (MERN, MEVN & LEMP) with over 6 years of experience building scalable SaaS products, web applications, and intelligent Generative AI/RAG solutions. 
+Engineering Team Lead and Senior Full-Stack Developer (MERN, MEVN & LEMP) with over 7+ years of experience building scalable SaaS products, web applications, and intelligent Generative AI/RAG solutions. 
 
 ---
 
@@ -16,7 +16,7 @@ Engineering Team Lead and Senior Full-Stack Developer (MERN, MEVN & LEMP) with o
 ---
 
 ## 💼 Professional Summary
-Results-driven Team Lead and Senior Full-Stack Developer with 6+ years of experience architecting and delivering production-grade web applications and AI/RAG-powered platforms. Proven track record leading cross-functional development teams through complete software delivery lifecycles — from sprint planning and system architecture through code reviews, production deployments, and client stakeholder communication. 
+Results-driven Team Lead and Senior Full-Stack Developer with 7+ years of experience architecting and delivering production-grade web applications and AI/RAG-powered platforms. Proven track record leading cross-functional development teams through complete software delivery lifecycles — from sprint planning and system architecture through code reviews, production deployments, and client stakeholder communication. 
 
 Expert in PHP (Laravel), MERN, MEVN, and Python (FastAPI/Flask), with hands-on experience building RAG-based AI applications using LLM API integrations (OpenAI, Gemini, DeepSeek), embeddings, vector-based semantic search, and intelligent retrieval workflows.
 

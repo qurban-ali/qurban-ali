@@ -5,7 +5,7 @@ Use this file as the primary source of truth for my LinkedIn profile, project de
 
 ## Professional identity
 - Engineering Team Lead and Senior Full-Stack Developer
-- Over 6 years of experience
+- Over 7+ years of experience
 - Current organization: Friday Media Group Pakistan
 - Current role period: May 2022 to present
 - Location: Lahore, Punjab, Pakistan
@@ -20,7 +20,7 @@ Use this file as the primary source of truth for my LinkedIn profile, project de
 Engineering Team Lead | Full-Stack Developer (MERN, MEVN & LEMP) | AI, RAG & LLM Solutions | FinTech & SaaS Products | Scalable Architecture | Technology Leadership
 
 ## Approved About section
-I am an Engineering Team Lead and Senior Full-Stack Developer with over six years of experience building scalable web applications, SaaS products, AI-powered platforms, and business-critical digital solutions.
+I am an Engineering Team Lead and Senior Full-Stack Developer with over 7+ years of experience building scalable web applications, SaaS products, AI-powered platforms, and business-critical digital solutions.
 
 My work combines hands-on development with technical leadership. I lead engineering teams, define application architecture, review code, improve development processes, mentor developers, and collaborate with product managers, designers, QA engineers, and stakeholders. My leadership style is built on collaboration, clear communication, accountability, and helping team members grow while delivering reliable projects on time.
 
@@ -173,6 +173,12 @@ AI is used as an analytical assistant rather than as the platform's database or 
 I contribute to the platform's development, including file-processing workflows, vendor and billing reconciliation, discrepancy management, ledger functionality, dashboards, audit reports, and AI-assisted analytical summaries.
 
 ## Recommendations
+### Awais Raza (Web Developer | PHP | Laravel | Java | JSP | API)
+I had the privilege of working with Qurban at Friday Media Group, where he served as a Team Lead and consistently demonstrated exceptional leadership, expertise, and a commitment to excellence. During our time together, Qurban displayed a deep understanding of both the technical and strategic aspects of our projects. He was a reliable source of guidance, offering insightful solutions to complex challenges while encouraging collaboration within the team. What truly sets Qurban apart is his ability to inspire and mentor others. As a senior team member, he took the time to help guide me through difficult tasks, sharing his knowledge and offering advice when needed. His patience, constructive feedback, and leadership helped me grow both personally and professionally. I highly recommend Qurban for any future endeavors and am confident that he will continue to excel in any role he takes on.
+
+### Sher Adnan Khan (Senior Software Engineer @ ibex)
+I had the pleasure of working with Qurban Ali at Friday Media Group, where we collaborated on Hello Friday, an advanced HRM solution. During our time together, I was consistently impressed by Qurban’s technical expertise, problem-solving abilities, and dedication to delivering high-quality solutions. Qurban has a strong grasp of software development, particularly in PHP, Laravel, and front-end technologies. His ability to break down complex challenges and implement efficient, scalable solutions was invaluable to our projects. Beyond his technical skills, Qurban is a great team player. His willingness to share knowledge, provide constructive feedback, and collaborate effectively made a significant impact on our team's productivity and morale. I highly recommend Qurban Ali for any role that requires a skilled and dedicated software engineer.
+
 ### Hashim
 I have had the pleasure of managing Hashim in our current organization. He is a dedicated, dependable, and hardworking professional who consistently approaches his responsibilities with focus and commitment. Hashim takes ownership of his work, meets expectations, and is always willing to support the team when needed. His positive attitude, professionalism, and eagerness to improve make him a valuable member of the organization. I highly recommend Hashim and am confident that he will be an asset to any team he works with.
 

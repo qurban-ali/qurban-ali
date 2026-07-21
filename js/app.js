@@ -485,4 +485,139 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 100);
         });
     }
+
+    // ==========================================================================
+    // RECOMMENDATIONS CAROUSEL CONTROLLER
+    // ==========================================================================
+    const track = document.getElementById('carousel-track');
+    const prevBtn = document.getElementById('carousel-prev');
+    const nextBtn = document.getElementById('carousel-next');
+    const dotsContainer = document.getElementById('carousel-dots');
+
+    if (track) {
+        const slides = Array.from(track.children);
+        let currentIndex = 0;
+        let autoPlayTimer = null;
+
+        function getSlidesPerView() {
+            return window.innerWidth >= 992 ? 2 : 1;
+        }
+
+        function getMaxIndex() {
+            const perView = getSlidesPerView();
+            return Math.max(0, slides.length - perView);
+        }
+
+        function updateCarousel(index) {
+            const maxIdx = getMaxIndex();
+            currentIndex = Math.max(0, Math.min(index, maxIdx));
+            
+            const perView = getSlidesPerView();
+            const slideWidthPercent = 100 / perView;
+            const amountToMove = -(currentIndex * slideWidthPercent);
+            
+            track.style.transform = `translateX(${amountToMove}%)`;
+
+            // Update dots
+            if (dotsContainer) {
+                const dots = Array.from(dotsContainer.children);
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentIndex);
+                });
+            }
+        }
+
+        function setupDots() {
+            if (!dotsContainer) return;
+            dotsContainer.innerHTML = '';
+            const maxIdx = getMaxIndex();
+            for (let i = 0; i <= maxIdx; i++) {
+                const dot = document.createElement('button');
+                dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+                dot.setAttribute('data-slide', i);
+                dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                dot.addEventListener('click', () => {
+                    updateCarousel(i);
+                    resetAutoPlay();
+                });
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                const maxIdx = getMaxIndex();
+                const newIndex = currentIndex === 0 ? maxIdx : currentIndex - 1;
+                updateCarousel(newIndex);
+                resetAutoPlay();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                const maxIdx = getMaxIndex();
+                const newIndex = currentIndex >= maxIdx ? 0 : currentIndex + 1;
+                updateCarousel(newIndex);
+                resetAutoPlay();
+            });
+        }
+
+        function startAutoPlay() {
+            clearInterval(autoPlayTimer);
+            autoPlayTimer = setInterval(() => {
+                const maxIdx = getMaxIndex();
+                const nextIndex = currentIndex >= maxIdx ? 0 : currentIndex + 1;
+                updateCarousel(nextIndex);
+            }, 5000);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayTimer);
+            startAutoPlay();
+        }
+
+        const wrapper = document.querySelector('.carousel-wrapper');
+        if (wrapper) {
+            wrapper.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+            wrapper.addEventListener('mouseleave', startAutoPlay);
+        }
+
+        // Touch Swipe Support
+        let startX = 0;
+        let isSwiping = false;
+
+        track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            isSwiping = true;
+        }, { passive: true });
+
+        track.addEventListener('touchend', (e) => {
+            if (!isSwiping) return;
+            const endX = e.changedTouches[0].clientX;
+            const diffX = startX - endX;
+            const maxIdx = getMaxIndex();
+
+            if (Math.abs(diffX) > 40) {
+                if (diffX > 0) {
+                    const nextIndex = currentIndex >= maxIdx ? 0 : currentIndex + 1;
+                    updateCarousel(nextIndex);
+                } else {
+                    const prevIndex = currentIndex === 0 ? maxIdx : currentIndex - 1;
+                    updateCarousel(prevIndex);
+                }
+                resetAutoPlay();
+            }
+            isSwiping = false;
+        }, { passive: true });
+
+        window.addEventListener('resize', () => {
+            setupDots();
+            updateCarousel(currentIndex);
+        });
+
+        // Initialize
+        setupDots();
+        updateCarousel(0);
+        startAutoPlay();
+    }
 });

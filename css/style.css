@@ -949,10 +949,102 @@ section {
 /* ==========================================================================
    RECOMMENDATIONS SECTION
    ========================================================================== */
-.recommendations-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+/* Carousel Container */
+.carousel-wrapper {
+    position: relative;
+    padding: 0 55px;
+    margin-top: 30px;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+    border-radius: var(--border-radius-md);
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform var(--transition-smooth);
+    will-change: transform;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+@media (min-width: 992px) {
+    .carousel-slide {
+        min-width: 50%;
+    }
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(13, 19, 31, 0.85);
+    border: 1px solid var(--border-glow);
+    color: var(--accent-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.carousel-btn:hover {
+    background: var(--accent-teal);
+    color: #0b0f19;
+    border-color: var(--accent-teal);
+    box-shadow: 0 0 20px rgba(20, 184, 166, 0.4);
+}
+
+.carousel-btn.prev-btn {
+    left: 0;
+}
+
+.carousel-btn.next-btn {
+    right: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.carousel-dot.active {
+    background: var(--accent-teal);
+    width: 28px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(20, 184, 166, 0.5);
 }
 
 .recommendation-card {
@@ -1501,9 +1593,13 @@ section {
         gap: 4px;
     }
     
-    .recommendations-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
+    .carousel-wrapper {
+        padding: 0 10px;
+    }
+    
+    .carousel-btn {
+        width: 36px;
+        height: 36px;
     }
     
     .contact-grid {
