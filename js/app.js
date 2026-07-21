@@ -434,26 +434,31 @@ document.addEventListener('DOMContentLoaded', () => {
             btnSubmit.style.opacity = "0.7";
             
             try {
-                const formData = new FormData(contactForm);
-                const response = await fetch(contactForm.action || 'https://formspree.io/f/mzdnvdro', {
+                const payload = {
+                    name: nameInput.value.trim(),
+                    email: emailInput.value.trim(),
+                    subject: subjectInput.value.trim(),
+                    message: messageInput.value.trim()
+                };
+
+                const response = await fetch(contactForm.action || '/api/send-email', {
                     method: 'POST',
-                    body: formData,
                     headers: {
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
-                    }
+                    },
+                    body: JSON.stringify(payload)
                 });
 
-                if (response.ok) {
+                const data = await response.json().catch(() => null);
+
+                if (response.ok && data && (data.success || data.id)) {
                     // Success state layout transition
                     contactForm.style.display = "none";
                     formSuccess.classList.add('active');
                     contactForm.reset();
                 } else {
-                    const data = await response.json().catch(() => null);
-                    let errorMsg = "Oops! There was a problem submitting your message. Please try again.";
-                    if (data && data.errors && data.errors.length > 0) {
-                        errorMsg = data.errors.map(err => err.message).join(", ");
-                    }
+                    let errorMsg = (data && data.error) ? data.error : "Oops! There was a problem submitting your message. Please try again.";
                     if (formError) {
                         formError.textContent = errorMsg;
                         formError.classList.add('active');
