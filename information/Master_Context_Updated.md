@@ -11,6 +11,9 @@ Use this file as the primary source of truth for my LinkedIn profile, project de
 - Location: Lahore, Punjab, Pakistan
 - Full-time, on-site
 - Positioning: technical leadership + hands-on full-stack engineering + AI/LLM/RAG solutions
+- Email: qurbanali.pro@gmail.com
+- LinkedIn: https://www.linkedin.com/in/qurbanali-pro/
+- Website/Portfolio: https://qurbanali-pro.vercel.app/
 
 ## Approved headline
 Engineering Team Lead | Full-Stack Developer (MERN, MEVN & LEMP) | AI, RAG & LLM Solutions | FinTech & SaaS Products | Scalable Architecture | Technology Leadership
