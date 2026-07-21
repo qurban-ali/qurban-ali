@@ -740,27 +740,28 @@
                     </div>
 
                     <div class="contact-form-wrapper">
-                        <form id="contact-form" class="contact-form">
+                        <form id="contact-form" class="contact-form" action="https://formspree.io/f/mzdnvdro" method="POST">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="form-name">Name</label>
-                                    <input type="text" id="form-name" required placeholder="Your Name">
+                                    <input type="text" id="form-name" name="name" required placeholder="Your Name">
                                 </div>
                                 <div class="form-group">
                                     <label for="form-email">Email</label>
-                                    <input type="email" id="form-email" required placeholder="email@example.com">
+                                    <input type="email" id="form-email" name="email" required placeholder="email@example.com">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="form-subject">Subject</label>
-                                <input type="text" id="form-subject" required
+                                <input type="text" id="form-subject" name="subject" required
                                     placeholder="AI Consulting, Full-Stack Project, etc.">
                             </div>
                             <div class="form-group">
                                 <label for="form-message">Message</label>
-                                <textarea id="form-message" rows="5" required
+                                <textarea id="form-message" name="message" rows="5" required
                                     placeholder="Write your message here..."></textarea>
                             </div>
+                            <div class="form-error" id="form-error"></div>
                             <button type="submit" class="btn btn-primary btn-block" id="btn-submit-form">Send
                                 Message</button>
                         </form>

@@ -400,15 +400,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
-    // CONTACT FORM INTERACTION & SUCCESS SIMULATION
+    // CONTACT FORM INTERACTION & FORMSPREE EMAIL SUBMISSION
     // ==========================================================================
     const contactForm = document.getElementById('contact-form');
     const formSuccess = document.getElementById('form-success');
+    const formError = document.getElementById('form-error');
     const btnSubmit = document.getElementById('btn-submit-form');
     const btnReset = document.getElementById('btn-reset-form');
 
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
             // Basic Client validation check
@@ -421,27 +422,63 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Simulate form submission status
+            // Clear previous errors
+            if (formError) {
+                formError.classList.remove('active');
+                formError.textContent = '';
+            }
+
+            // Submission loading state
             btnSubmit.disabled = true;
             btnSubmit.textContent = "Sending Message...";
             btnSubmit.style.opacity = "0.7";
             
-            setTimeout(() => {
-                // Success state layout transition
-                contactForm.style.display = "none";
-                formSuccess.classList.add('active');
-                
-                // Reset form fields
-                contactForm.reset();
+            try {
+                const formData = new FormData(contactForm);
+                const response = await fetch(contactForm.action || 'https://formspree.io/f/mzdnvdro', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Success state layout transition
+                    contactForm.style.display = "none";
+                    formSuccess.classList.add('active');
+                    contactForm.reset();
+                } else {
+                    const data = await response.json().catch(() => null);
+                    let errorMsg = "Oops! There was a problem submitting your message. Please try again.";
+                    if (data && data.errors && data.errors.length > 0) {
+                        errorMsg = data.errors.map(err => err.message).join(", ");
+                    }
+                    if (formError) {
+                        formError.textContent = errorMsg;
+                        formError.classList.add('active');
+                    }
+                }
+            } catch (err) {
+                console.error("Form submission error:", err);
+                if (formError) {
+                    formError.textContent = "Network error while sending message. Please check your internet connection.";
+                    formError.classList.add('active');
+                }
+            } finally {
                 btnSubmit.disabled = false;
                 btnSubmit.textContent = "Send Message";
                 btnSubmit.style.opacity = "1";
-            }, 1500);
+            }
         });
     }
 
     if (btnReset) {
         btnReset.addEventListener('click', () => {
+            if (formError) {
+                formError.classList.remove('active');
+                formError.textContent = '';
+            }
             formSuccess.classList.remove('active');
             setTimeout(() => {
                 contactForm.style.display = "flex";
