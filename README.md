@@ -5,11 +5,12 @@ Engineering Team Lead and Senior Full-Stack Developer (MERN, MEVN & LEMP) with o
 ---
 
 ## 📞 Contact Details
-*   **Email**: [aliq30292@gmail.com](mailto:aliq30292@gmail.com)
+*   **Email**: [qurbanali.pro@gmail.com](mailto:qurbanali.pro@gmail.com)
 *   **Phone**: [+92.322.1436408](tel:+923221436408)
 *   **Location**: Lahore, Pakistan
 *   **LinkedIn**: [qurban-ali-fullstack-developer](https://www.linkedin.com/in/qurban-ali-fullstack-developer/)
 *   **GitHub**: [qurban-ali/qurban-ali](https://github.com/qurban-ali/qurban-ali)
+*   **Website**: [qurban-ali](https://qurbanali-pro.vercel.app/)
 
 ---
 
