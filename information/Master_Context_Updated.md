@@ -14,6 +14,7 @@ Use this file as the primary source of truth for my LinkedIn profile, project de
 - Email: qurbanali.pro@gmail.com
 - LinkedIn: https://www.linkedin.com/in/qurbanali-pro/
 - Website/Portfolio: https://qurbanali-pro.vercel.app/
+- Google Calendar Booking: https://calendar.app.google/znTqcTXv8akh1YGy7
 
 ## Approved headline
 Engineering Team Lead | Full-Stack Developer (MERN, MEVN & LEMP) | AI, RAG & LLM Solutions | FinTech & SaaS Products | Scalable Architecture | Technology Leadership
