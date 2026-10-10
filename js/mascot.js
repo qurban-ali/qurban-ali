@@ -1,7 +1,10 @@
 /**
  * Qbot: the site's animated assistant (bottom-right corner).
  * - waves hello, follows the pointer with its eyes, naps when the visitor is idle
- * - explains each section the first time it scrolls into view (and when it's clicked)
+ * - flies beside the title of the section being read and points at it (desktop),
+ *   explains each section the first time it's reached, a menu link is used, or it's clicked
+ * - steps in front of popups and explains what's inside
+ * - on phones it stays in the corner and stays quiet until the visitor scrolls
  * - reacts to contact-form mistakes with a specific hint, and celebrates a sent message
  * Drawn as inline SVG in the site's own colours; styles live in css/style.css (QBOT section).
  * Public API: window.Qbot.say(text, mood, ms) with mood = idle | happy | worried | thinking | celebrate.
@@ -227,6 +230,7 @@
         root.querySelector('.qbot-hide').addEventListener('click', () => setHidden(true));
         restore.addEventListener('click', () => {
             setHidden(false);
+            update();
             say('I’m back! Click me any time for a tip.', 'happy', 4000);
         });
         if (storage.get(HIDE_KEY)) setHidden(true);
@@ -251,24 +255,157 @@
             setTimeout(() => setMood('worried', 5000), 900);
         }
         if (!reducedMotion) root.classList.add('qbot-wave');
-        setTimeout(() => say(greeting, 'happy', 6500), 1200);
 
         // ------------------------------------------------------------------
-        // Section tips: when a home section first comes into view, or on click
+        // Movement: Qbot rests in the corner, flies beside the title of the
+        // section being read, and steps in front of any open popup.
         // ------------------------------------------------------------------
-        const seen = new Set();
-        let lastClickTip = 0;
+        const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
+        const canTravel = () => window.innerWidth >= 1024;
+        const modal = document.getElementById('site-modal');
         const sections = Object.keys(SECTION_TIPS).map(id => document.getElementById(id)).filter(Boolean);
-        if (sections.length && 'IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting || seen.has(entry.target.id)) return;
-                    seen.add(entry.target.id);
-                    say(SECTION_TIPS[entry.target.id], 'happy', 5500);
-                });
-            }, { threshold: 0.35 });
-            setTimeout(() => sections.forEach(s => observer.observe(s)), 2500);
+        const seen = new Set();
+        let currentSection = null;
+        let forcedSection = null;      // set when the visitor clicks a menu link to a section
+        let forcedTimer;
+        let lastClickTip = 0;
 
+        function place(x, y, side, point) {
+            const vw = document.documentElement.clientWidth;
+            const vh = window.innerHeight;
+            const w = root.offsetWidth;
+            const h = root.offsetHeight;
+            root.style.setProperty('--qx', `${Math.round(Math.min(Math.max(x, 8), vw - w - 8))}px`);
+            root.style.setProperty('--qy', `${Math.round(Math.min(Math.max(y, 70), vh - h - 8))}px`);
+            root.dataset.side = side;
+            if (point) root.dataset.point = point; else delete root.dataset.point;
+        }
+
+        function placeInCorner() {
+            const gap = isMobile() ? 12 : 24;
+            place(document.documentElement.clientWidth - root.offsetWidth - gap,
+                window.innerHeight - root.offsetHeight - (isMobile() ? 12 : 20), 'above');
+        }
+
+        // The section whose title sits in the upper half of the screen, if any
+        function sectionInView() {
+            const band = window.innerHeight * 0.55;
+            return sections.find(sec => {
+                const title = sec.querySelector('.section-title');
+                if (!title) return false;
+                const top = title.getBoundingClientRect().top;
+                return top > 60 && top < band;
+            }) || null;
+        }
+
+        function placeBesideTitle(section) {
+            const title = section.querySelector('.section-title');
+            const textBox = (el) => {
+                const range = document.createRange();
+                range.selectNodeContents(el);
+                return range.getBoundingClientRect();
+            };
+            const text = textBox(title);
+            // Stand clear of the subtitle under the title too, so no text is covered
+            const subtitle = title.nextElementSibling?.classList.contains('section-subtitle') ? title.nextElementSibling : null;
+            const right = Math.max(text.right, subtitle ? textBox(subtitle).right : 0);
+            const vw = document.documentElement.clientWidth;
+            const x = right + 28;
+            const roomOnRight = vw - (x + root.offsetWidth) > 300;
+            place(x, text.top + text.height / 2 - root.offsetHeight / 2, roomOnRight ? 'right' : 'below', 'left');
+        }
+
+        function placeBesidePopup() {
+            const card = modal.querySelector('.modal-card');
+            const r = card.getBoundingClientRect();
+            const vw = document.documentElement.clientWidth;
+            if (!canTravel() || vw - r.right < root.offsetWidth + 24) return placeInCorner();
+            const x = r.right + 14;
+            place(x, r.top + 24, x + 290 < vw ? 'below-start' : 'below', 'left');
+        }
+
+        function update() {
+            if (root.hidden) return;
+            if (modal?.classList.contains('active')) return placeBesidePopup();
+            const section = sections.length ? sectionInView() : null;
+            // While gliding to a section picked from the menu, stay quiet about the ones passed on the way
+            const travelling = forcedSection && (!section || section.id !== forcedSection);
+            if (section !== currentSection && !travelling) {
+                currentSection = section;
+                if (section && (!seen.has(section.id) || forcedSection === section.id)) {
+                    const requested = forcedSection === section.id;
+                    seen.add(section.id);
+                    forcedSection = null;
+                    say(SECTION_TIPS[section.id], 'happy', 5500, { priority: requested });
+                }
+            }
+            if (section && canTravel()) placeBesideTitle(section); else placeInCorner();
+        }
+
+        // First placement without animation
+        root.classList.add('qbot-instant');
+        placeInCorner();
+        requestAnimationFrame(() => requestAnimationFrame(() => root.classList.remove('qbot-instant')));
+
+        // Follow the page while it scrolls, and lean into the scroll direction
+        let lastY = window.scrollY;
+        let scrollFrame;
+        let scrollStop;
+        window.addEventListener('scroll', () => {
+            const y = window.scrollY;
+            if (Math.abs(y - lastY) > 2 && !reducedMotion) {
+                root.dataset.dir = y > lastY ? 'down' : 'up';
+                root.classList.add('qbot-scrolling');
+                clearTimeout(scrollStop);
+                scrollStop = setTimeout(() => root.classList.remove('qbot-scrolling'), 180);
+            }
+            lastY = y;
+            if (!scrollFrame) scrollFrame = requestAnimationFrame(() => { scrollFrame = null; update(); });
+        }, { passive: true });
+        window.addEventListener('resize', update);
+
+        // Clicking a menu link (e.g. #projects): Qbot follows and explains that section again
+        document.addEventListener('click', (e) => {
+            const link = e.target.closest('a[href*="#"]');
+            if (!link) return;
+            const id = link.getAttribute('href').split('#')[1];
+            if (SECTION_TIPS[id] && document.getElementById(id)) {
+                forcedSection = id;
+                currentSection = null;
+                clearTimeout(forcedTimer);
+                forcedTimer = setTimeout(() => { forcedSection = null; update(); }, 2500);
+                requestAnimationFrame(update);   // also covers instant (non-smooth) jumps
+            }
+        });
+
+        // Step in front of popups and explain what's in them
+        if (modal) {
+            new MutationObserver(() => {
+                if (modal.classList.contains('active')) {
+                    setTimeout(() => {
+                        const title = modal.querySelector('.modal-project-title')?.textContent.trim();
+                        placeBesidePopup();
+                        say(title === 'About Me'
+                            ? 'This is Qurban’s full story: how he leads teams, his tech stack and the AI work he’s proud of. Scroll inside to read it all.'
+                            : `Here’s the full breakdown of ${title || 'this project'}: overview, key features, Qurban’s role and the tech stack. Scroll inside the popup to read more.`,
+                        'happy', 8000, { priority: true });
+                    }, 380);    // after the popup's open animation
+                } else {
+                    dismiss();
+                    update();
+                }
+            }).observe(modal, { attributes: true, attributeFilter: ['class'] });
+        }
+
+        // Greeting: after a moment on desktop; on phones only once the visitor starts scrolling
+        if (isMobile()) {
+            window.addEventListener('scroll', () => say(greeting, 'happy', 6000), { once: true, passive: true });
+        } else {
+            setTimeout(() => say(greeting, 'happy', 6500), 1200);
+        }
+
+        // Clicking the empty part of a section repeats its tip
+        if (sections.length) {
             document.addEventListener('click', (e) => {
                 if (e.target.closest('a, button, input, textarea, select, summary, label, .project-card, .blog-card, .qbot, .modal-overlay')) return;
                 const section = e.target.closest('section[id]');

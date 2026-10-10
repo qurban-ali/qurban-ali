@@ -2371,14 +2371,33 @@ a.project-tag {
 /* ==========================================================================
    QBOT: ANIMATED ASSISTANT (js/mascot.js)
    ========================================================================== */
+/* Qbot is positioned by JS (--qx/--qy): resting in the corner, beside the current
+   section title, or next to an open popup. It sits above the popup overlay. */
 .qbot {
+    --qbot-w: 92px;
+    --qbot-h: 101px;
     position: fixed;
-    right: 24px;
-    bottom: 20px;
-    z-index: 900;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    left: 0;
+    top: 0;
+    width: var(--qbot-w);
+    height: var(--qbot-h);
+    z-index: 1100;
+    transform: translate3d(var(--qx, calc(100vw - 120px)), var(--qy, calc(100vh - 125px)), 0);
+    transition: transform 0.6s cubic-bezier(0.22, 0.9, 0.3, 1), opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.qbot.qbot-instant {
+    transition: none;
+}
+
+/* The mobile menu slides in from the right; keep Qbot out of its way */
+.mobile-nav.active ~ .qbot {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mobile-nav.active ~ .qbot * {
     pointer-events: none;
 }
 
@@ -2392,8 +2411,8 @@ a.project-tag {
 
 .qbot-avatar {
     position: relative;
-    width: 92px;
-    height: 101px;
+    width: 100%;
+    height: 100%;
     padding: 0;
     border: none;
     background: none;
@@ -2474,9 +2493,9 @@ a.project-tag {
 
 /* Speech bubble */
 .qbot-bubble {
-    position: relative;
+    position: absolute;
+    width: max-content;
     max-width: 280px;
-    margin: 0 8px 12px 0;
     padding: 14px 34px 14px 16px;
     background: #0f1526;
     border: 1px solid var(--border-glow-hover);
@@ -2491,6 +2510,40 @@ a.project-tag {
 .qbot-bubble.show {
     opacity: 1;
     transform: none;
+}
+
+/* Bubble placement around Qbot, chosen by JS from the free space */
+.qbot[data-side="above"] .qbot-bubble {
+    bottom: calc(100% + 10px);
+    right: 0;
+}
+
+.qbot[data-side="right"] .qbot-bubble {
+    left: calc(100% + 14px);
+    top: 0;
+    border-radius: 4px var(--border-radius-md) var(--border-radius-md) var(--border-radius-md);
+    transform-origin: top left;
+}
+
+.qbot[data-side="left"] .qbot-bubble {
+    right: calc(100% + 14px);
+    top: 0;
+    border-radius: var(--border-radius-md) 4px var(--border-radius-md) var(--border-radius-md);
+    transform-origin: top right;
+}
+
+.qbot[data-side="below-start"] .qbot-bubble {
+    top: calc(100% + 10px);
+    left: 0;
+    border-radius: 4px var(--border-radius-md) var(--border-radius-md) var(--border-radius-md);
+    transform-origin: top left;
+}
+
+.qbot[data-side="below"] .qbot-bubble {
+    top: calc(100% + 10px);
+    right: 0;
+    border-radius: var(--border-radius-md) 4px var(--border-radius-md) var(--border-radius-md);
+    transform-origin: top right;
 }
 
 .qbot-bubble[data-tone="worried"] {
@@ -2546,8 +2599,8 @@ a.project-tag {
 /* Hide / restore controls */
 .qbot-hide {
     position: absolute;
-    right: -4px;
-    bottom: 84px;
+    right: -6px;
+    top: -6px;
     width: 22px;
     height: 22px;
     border-radius: 50%;
@@ -2654,8 +2707,8 @@ a.project-tag {
 
 .qbot-confetti {
     position: absolute;
-    right: 46px;
-    bottom: 70px;
+    left: 50%;
+    top: 30%;
     width: 8px;
     height: 12px;
     border-radius: 2px;
@@ -2663,7 +2716,21 @@ a.project-tag {
     animation: qbot-confetti 1.2s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
 }
 
+/* Pointing at a section title or popup (the arm on that side swings up) */
+.qbot[data-point="left"] .qbot-arm-left { transform: rotate(105deg); }
+.qbot[data-point="right"] .qbot-arm-right { transform: rotate(-105deg); }
+
+/* Leaning into the scroll direction while the page moves */
+.qbot-avatar .qbot-svg { transition: transform 0.3s ease; }
+.qbot.qbot-scrolling[data-dir="down"] .qbot-svg { transform: rotate(-6deg) translateY(2px); }
+.qbot.qbot-scrolling[data-dir="up"] .qbot-svg { transform: rotate(6deg) translateY(-2px); }
+
+@media (prefers-reduced-motion: reduce) {
+    .qbot { transition: none; }
+}
+
 @media (prefers-reduced-motion: no-preference) {
+    .qbot-arm { transition: transform 0.35s ease; }
     .qbot-figure { animation: qbot-float 3.2s ease-in-out infinite; transform-box: fill-box; }
     .qbot-shadow { animation: qbot-shadow 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
     .qbot-eyes-open rect { animation: qbot-blink 4.5s infinite; transform-box: fill-box; transform-origin: center; }
@@ -2682,24 +2749,16 @@ a.project-tag {
 
 @media (max-width: 768px) {
     .qbot {
-        right: 12px;
-        bottom: 12px;
-    }
-
-    .qbot-avatar {
-        width: 64px;
-        height: 70px;
+        --qbot-w: 64px;
+        --qbot-h: 70px;
     }
 
     .qbot-bubble {
         max-width: min(260px, calc(100vw - 40px));
-        margin-bottom: 8px;
         font-size: 0.88rem;
     }
 
     .qbot-hide {
         opacity: 1;
-        bottom: 56px;
-        right: -2px;
     }
 }
