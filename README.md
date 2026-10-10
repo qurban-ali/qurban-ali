@@ -5,7 +5,7 @@ Engineering Team Lead and Senior Full-Stack Developer (MERN, MEVN & LEMP) with o
 ---
 
 ## 📞 Contact Details
-*   **Email**: [qurbanali.pro@gmail.com](mailto:qurbanali.pro@gmail.com)
+*   **Email**: [info@qurbanali.me](mailto:info@qurbanali.me)
 *   **Phone**: [+92.322.1436408](tel:+923221436408)
 *   **Location**: Lahore, Pakistan
 *   **LinkedIn**: [qurbanali-pro](https://www.linkedin.com/in/qurbanali-pro/)
