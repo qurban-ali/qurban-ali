@@ -1,0 +1,120 @@
+[
+  {
+    "slug": "geo-playbook-get-cited-by-ai",
+    "title": "The GEO Playbook: How to Get Your Content Cited by ChatGPT, Gemini and Perplexity",
+    "date": "2026-10-10",
+    "excerpt": "A practical, step-by-step guide to making your website easy for AI assistants to find, trust and cite — plus a 30-day starter plan.",
+    "tags": [
+      "LLM Search",
+      "GEO"
+    ],
+    "readingTime": 4,
+    "cover": "/assets/blog/cover-geo-playbook-get-cited-by-ai.jpg",
+    "coverAlt": "Cover image for the article: The GEO Playbook: How to Get Your Content Cited by ChatGPT, Gemini and Perplexity"
+  },
+  {
+    "slug": "seo-vs-geo-llm-search",
+    "title": "SEO vs GEO: How LLM Search Is Changing the Way People Find You",
+    "date": "2026-10-03",
+    "excerpt": "ChatGPT, Gemini and Google's AI Overviews answer questions directly. What Generative Engine Optimization (GEO) is, how it differs from SEO, and why you need both.",
+    "tags": [
+      "LLM Search",
+      "GEO"
+    ],
+    "readingTime": 4,
+    "cover": "/assets/blog/cover-seo-vs-geo-llm-search.jpg",
+    "coverAlt": "Cover image for the article: SEO vs GEO: How LLM Search Is Changing the Way People Find You"
+  },
+  {
+    "slug": "small-language-models-model-routing",
+    "title": "Small Language Models and Model Routing: Cut AI Costs Without Losing Quality",
+    "date": "2026-09-26",
+    "excerpt": "Why production teams are moving to the smallest model that does the job, how model routing works, and how to switch safely using evals.",
+    "tags": [
+      "AI & LLM",
+      "Architecture"
+    ],
+    "readingTime": 3,
+    "cover": "/assets/blog/cover-small-language-models-model-routing.jpg",
+    "coverAlt": "Cover image for the article: Small Language Models and Model Routing: Cut AI Costs Without Losing Quality"
+  },
+  {
+    "slug": "llm-evals-testing-ai-features",
+    "title": "LLM Evals: How to Test AI Features Before Your Users Do",
+    "date": "2026-09-19",
+    "excerpt": "A practical guide to building eval sets, choosing graders and making evals a release gate for prompts, models and RAG pipelines.",
+    "tags": [
+      "AI & LLM",
+      "Quality"
+    ],
+    "readingTime": 3,
+    "cover": "/assets/blog/cover-llm-evals-testing-ai-features.jpg",
+    "coverAlt": "Cover image for the article: LLM Evals: How to Test AI Features Before Your Users Do"
+  },
+  {
+    "slug": "ai-coding-agents-engineering-teams",
+    "title": "AI Coding Agents and the Engineering Team: What Changes for Leads",
+    "date": "2026-09-12",
+    "excerpt": "Coding agents can now draft whole pull requests. What genuinely changes for engineering teams, what doesn't, and a practical playbook for leads.",
+    "tags": [
+      "Leadership",
+      "AI & LLM"
+    ],
+    "readingTime": 3,
+    "cover": "/assets/blog/cover-ai-coding-agents-engineering-teams.jpg",
+    "coverAlt": "Cover image for the article: AI Coding Agents and the Engineering Team: What Changes for Leads"
+  },
+  {
+    "slug": "model-context-protocol-explained",
+    "title": "Model Context Protocol (MCP) Explained: The Standard Way to Connect AI to Your Tools",
+    "date": "2026-09-05",
+    "excerpt": "MCP is becoming the USB-C of AI applications. Here's how it works, what servers expose, why it matters for businesses, and how to use it securely.",
+    "tags": [
+      "AI & LLM",
+      "Architecture"
+    ],
+    "readingTime": 3,
+    "cover": "/assets/blog/cover-model-context-protocol-explained.jpg",
+    "coverAlt": "Cover image for the article: Model Context Protocol (MCP) Explained: The Standard Way to Connect AI to Your Tools"
+  },
+  {
+    "slug": "agentic-ai-in-production",
+    "title": "Agentic AI in Production: From Chatbots to Agents That Get Work Done",
+    "date": "2026-08-29",
+    "excerpt": "What makes an AI system an agent, where agents work well today, and five lessons for putting one into production safely.",
+    "tags": [
+      "AI & LLM",
+      "AI Agents"
+    ],
+    "readingTime": 4,
+    "cover": "/assets/blog/cover-agentic-ai-in-production.jpg",
+    "coverAlt": "Cover image for the article: Agentic AI in Production: From Chatbots to Agents That Get Work Done"
+  },
+  {
+    "slug": "semantic-candidate-matching-solr-embeddings",
+    "title": "Semantic Candidate Matching with Apache Solr and Vector Embeddings",
+    "date": "2026-08-22",
+    "excerpt": "How we moved recruitment search beyond keyword matching by combining LLM-based CV parsing, vector embeddings and Apache Solr — and what to watch out for.",
+    "tags": [
+      "AI & LLM",
+      "Search",
+      "Architecture"
+    ],
+    "readingTime": 2,
+    "cover": "/assets/blog/cover-semantic-candidate-matching-solr-embeddings.jpg",
+    "coverAlt": "Cover image for the article: Semantic Candidate Matching with Apache Solr and Vector Embeddings"
+  },
+  {
+    "slug": "from-senior-developer-to-team-lead",
+    "title": "From Senior Developer to Engineering Team Lead: What Actually Changes",
+    "date": "2026-08-15",
+    "excerpt": "Lessons from leading engineering teams while staying hands-on: code reviews, unblocking people, saying no, and measuring success by the team's output.",
+    "tags": [
+      "Leadership",
+      "Career"
+    ],
+    "readingTime": 2,
+    "cover": "/assets/blog/cover-from-senior-developer-to-team-lead.jpg",
+    "coverAlt": "Cover image for the article: From Senior Developer to Engineering Team Lead: What Actually Changes"
+  }
+]

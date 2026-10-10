@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects | Qurban Ali</title>
+    <meta name="description" content="Projects by Qurban Ali: AI recruitment platforms, RAG and semantic search, SaaS, HR tech, FinTech and e-commerce systems.">
+    <meta name="author" content="Qurban Ali">
+    <link rel="canonical" href="https://qurbanali.me/projects">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://qurbanali.me/projects">
+    <meta property="og:title" content="All Projects | Qurban Ali">
+    <meta property="og:description" content="Projects by Qurban Ali: AI recruitment platforms, RAG and semantic search, SaaS, HR tech, FinTech and e-commerce systems.">
+    <meta property="og:image" content="https://qurbanali.me/assets/avatar-sm.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div id="scroll-progress"></div>
+
+    <header class="navbar" id="navbar" data-solid="true">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-accent">&lt;</span>Qurban.Ali<span class="logo-accent"> /&gt;</span>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="/#about" class="nav-link">About</a>
+                <a href="/#skills" class="nav-link">Skills</a>
+                <a href="/projects" class="nav-link" aria-current="page">Projects</a>
+                <a href="/#experience" class="nav-link">Experience</a>
+                <a href="/blog" class="nav-link">Blog</a>
+                <a href="/#contact" class="nav-link nav-cta">Contact</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="mobile-nav" id="mobile-nav">
+        <a href="/#about" class="mobile-link">About</a>
+        <a href="/#skills" class="mobile-link">Skills</a>
+        <a href="/projects" class="mobile-link" aria-current="page">Projects</a>
+        <a href="/#experience" class="mobile-link">Experience</a>
+        <a href="/blog" class="mobile-link">Blog</a>
+        <a href="/#contact" class="mobile-link mobile-cta">Contact</a>
+    </div>
+
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <a href="/#projects" class="btn-link page-back">&larr; Back to home</a>
+                <h1 class="section-title"><span class="title-number">//</span> All Projects</h1>
+                <p class="section-subtitle">Production systems I've led and built, from AI search platforms to SaaS
+                    portals and e-commerce. Click any project for the full story.</p>
+            </div>
+        </section>
+
+        <section class="page-body">
+            <div class="container">
+                <div class="listing-toolbar">
+                    <input type="search" class="listing-search" id="projects-search"
+                        placeholder="Search by name or technology..." aria-label="Search projects">
+                    <div class="filter-chips" id="projects-filters" role="group" aria-label="Filter by category"></div>
+                </div>
+                <p class="listing-count" id="projects-count" aria-live="polite"></p>
+                <div class="projects-grid" id="projects-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal-overlay" id="site-modal" role="dialog" aria-modal="true">
+        <div class="modal-card">
+            <button class="modal-close" id="modal-close" aria-label="Close Modal">&times;</button>
+            <div class="modal-body" id="modal-body-content"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <p class="footer-copy">&copy; <span id="footer-year">2026</span> Qurban Ali. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/projects">Projects</a>
+                <a href="/blog">Blog</a>
+                <a href="/#contact">Contact</a>
+                <a href="https://www.linkedin.com/in/qurbanali-pro/" target="_blank"
+                    rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/qurban-ali/qurban-ali" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/site.js" defer></script>
+    <script src="/js/projects.js" defer></script>
+</body>
+
+</html>

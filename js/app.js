@@ -1,220 +1,12 @@
 /**
  * Qurban Ali - Professional Portfolio Interactive Script
- * Implements: Typewriter, Skills Tabs, Interactive Project Modals,
- * Scroll Reveal, Form Submission Simulation, and Scroll Tracking.
+ * Home page only: typewriter, About "read more", featured projects,
+ * latest blog posts, contact form and recommendations carousel.
+ * Shared behaviour (navbar, modal, cards) lives in js/site.js.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // ==========================================================================
-    // DATA DEFINITIONS (Projects details for dynamic modal rendering)
-    // ==========================================================================
-    const projectDetails = {
-        smartmatch: {
-            title: "SmartMatch",
-            tags: ["AI Recruiting", "Aviation Industry", "Solr Search", "RAG Engine"],
-            stack: ["React.js", "Node.js", "Express.js", "MySQL", "Apache Solr", "OpenAI API", "Google Gemini API", "Vector Embeddings", "Semantic Search"],
-            overview: "SmartMatch is an AI-powered recruitment and talent intelligence platform developed specifically for the aviation industry. The platform enables recruiters to manage a centralized talent pool, process candidate CVs, and identify the most relevant candidates based on job descriptions, skills, experience, qualifications, and recruiter-provided keywords.",
-            features: [
-                "Automated CV parsing transforming unstructured documents into structured candidate database records containing professional experience, technical skills, certifications, and aviation roles.",
-                "AI-generated vector embeddings indexed in Apache Solr to support low-latency semantic search matching rather than only exact keywords.",
-                "Dynamic relevance scoring matching candidates against job descriptions, highlighting matching strengths and potential gaps.",
-                "Centralized talent-pool management, advanced filtering dashboards, and candidate shortlist pipelines."
-            ],
-            contribution: [
-                "Contributed to the full-stack development of the application using React.js for the frontend and Node.js for the backend.",
-                "Designed and implemented MySQL schemas for structured candidate, recruiter, and application data.",
-                "Configured Apache Solr vector-indexing patterns for high-performance candidate retrieval.",
-                "Integrated Google Gemini for structured CV parsing/extraction and OpenAI embeddings/language models for scoring and ranking explanations."
-            ]
-        },
-        talentvista: {
-            title: "TalentVista",
-            tags: ["Talent Acquisition", "SaaS Platform", "LLM Ranking", "RAG Workflows"],
-            stack: ["React.js", "Node.js", "Express.js", "MySQL", "Apache Solr", "REST APIs", "Vector Embeddings", "Semantic Search", "LLM Integrations"],
-            overview: "TalentVista is an AI-powered talent acquisition platform designed to help recruiters process large volumes of applications, build reusable talent pools, and identify the most relevant candidates for each job opportunity.",
-            features: [
-                "Dual CV-JD parsing extracting experience levels, education, technical stacks, certifications, and industry specialties.",
-                "Vector embeddings generation and Apache Solr indexing for semantic candidate retrieval and advanced filtering.",
-                "RAG-based scoring framework providing candidates evaluation, relevance scores, and written matching explanations.",
-                "Reusable categorized talent pools and multi-stage interview tracking with automated screening question generation."
-            ],
-            contribution: [
-                "Contributed to the full-stack development and AI architecture design using React.js, Node.js, and MySQL.",
-                "Implemented semantic search matching and relevance scoring explanations using vector embeddings and Apache Solr.",
-                "Designed API prompts and integrated multiple LLM APIs for structured extraction, CV/JD parsing, and interview question generation.",
-                "Built dashboard analytics, screening scorecards, and candidate comparative reporting tools."
-            ]
-        },
-        hellofriday: {
-            title: "helloFriday",
-            tags: ["HR Tech", "Employee Experience", "Enterprise SaaS", "Full-Stack Workflows"],
-            stack: ["React.js", "Vue.js", "Node.js", "Express.js", "PHP", "Laravel", "MySQL", "REST APIs", "Analytics Dashboards"],
-            overview: "helloFriday is an AI-first, all-in-one HR and employee experience platform designed to simplify people operations, automate administrative workflows, and help organisations build engaged, productive, and aligned teams.",
-            features: [
-                "Complete employee lifecycle management including applicant tracking, recruitment, onboarding, leave requests, attendance, and payroll.",
-                "Advanced performance module supporting 360-degree feedback, OKR objectives, leave approvals, and review cycles.",
-                "Employee engagement panel featuring social feeds, announcements, communities, pulse surveys, and recognition.",
-                "Responsive web and mobile applications enabling self-service tasks, approvals, and workforce notifications."
-            ],
-            contribution: [
-                "Contributed to the full-stack delivery of scalable HR workflows, dashboards, and APIs.",
-                "Developed role-based user experiences and responsive interfaces for employees and administrators.",
-                "Built backend integrations, reporting modules, and data visualization analytics.",
-                "Created and optimized database tables in MySQL handling permissions, records, and system logs."
-            ]
-        },
-        humanjot: {
-            title: "HumanJot",
-            tags: ["AI Content Assistant", "Writing Workflows", "Brand Voice Engine", "FastAPI"],
-            stack: ["Node.js", "Python", "FastAPI", "OpenAI APIs", "Prompt Workflows", "Personalized Logic", "Web Editing"],
-            overview: "HumanJot is an AI-powered content creation and writing-assistance platform designed for marketers, creators, agencies, entrepreneurs, and professionals who need high-quality content for multiple digital channels.",
-            features: [
-                "Multi-platform generation tailoring length, tone, formatting, and hashtags for LinkedIn, X/Twitter, and blogs.",
-                "Personalized content engine learning writing preferences, brand voice, and tone patterns from previous articles.",
-                "Interactive inline writing assistant to brainstorm ideas, edit drafts, and rewrite sections.",
-                "Unified multi-platform workflows to draft one core message and generate optimized platform variations concurrently."
-            ],
-            contribution: [
-                "Contributed to the full-stack development, user management, and prompt workflows.",
-                "Implemented personalized content generation logic and brand voice learning systems using style analysis vectors.",
-                "Built responsive web editing interfaces allowing rapid drafting, side-by-side previews, and exports.",
-                "Optimized concurrent API generation queues in FastAPI to prevent timeouts during document creation."
-            ]
-        },
-        zenbench: {
-            title: "ZenBench",
-            tags: ["Zendesk Automation", "Customer Support", "Data Modeling"],
-            stack: ["Vue.js", "Laravel", "MySQL", "Zendesk API", "REST APIs", "Background Workers"],
-            overview: "ZenBench is a Zendesk reporting, automation, and data-management platform designed to extend Zendesk's native capabilities and help organisations manage support data more efficiently.",
-            features: [
-                "Zendesk account connection syncing ticket, performance, and support data to a local database.",
-                "Reporting tools transforming data into dashboards for monitoring support operations and service trends.",
-                "Advanced data management including custom object modeling, data normalization, and bulk operations.",
-                "Reusable data-model marketplace for applying preconfigured support structures and workflows."
-            ],
-            contribution: [
-                "Contributed to the full-stack development of ZenBench using Vue.js for the frontend and Laravel for the backend.",
-                "Integrated Zendesk APIs and created MySQL database schemas to handle support data.",
-                "Developed responsive user interfaces, API reporting workflows, data-management modules, and custom objects.",
-                "Built high-performance PHP/Laravel background workers resolving API rate limit conflicts."
-            ]
-        },
-        ishopeco: {
-            title: "iShopEco",
-            tags: ["E-Commerce", "Eco-Friendly Portal", "Vue.js", "Laravel"],
-            stack: ["Vue.js", "Quasar Framework", "Laravel", "MySQL", "Stripe API", "E-commerce Workflows"],
-            overview: "iShopEco is a sustainable-living search, review, and e-commerce platform designed to help people discover vetted businesses, products, and services that meet published environmental sustainability criteria.",
-            features: [
-                "Eco-friendly business directory spanning over 300 categories for comparing green living options.",
-                "Complete e-commerce features: product catalogue management, customer accounts, cart, and checkout workflows.",
-                "Secure payment integrations using Stripe and administrative order tracking dashboards."
-            ],
-            contribution: [
-                "Contributed to the full-stack development of iShopEco using Vue.js and Quasar Framework for the frontend and Laravel for the backend.",
-                "Developed responsive e-commerce interfaces, customer workflows, and shopping checkout steps.",
-                "Designed MySQL database models for product catalogues and customer profiles and integrated payment webhooks."
-            ]
-        },
-        gerdentusa: {
-            title: "GerDentUSA & GerVetUSA",
-            tags: ["B2B E-Commerce", "Medical Tools", "Laravel", "Product Catalogs"],
-            stack: ["PHP", "Laravel", "MySQL", "B2B Catalogs", "E-commerce Workflows", "Query Optimization"],
-            overview: "GerDentUSA and GerVetUSA are e-commerce platforms designed to help customers and professionals across the United States purchase dental, veterinary, and surgical instruments through a convenient online shopping experience.",
-            features: [
-                "Specialized B2B and B2C product catalogues serving thousands of medical and surgical instruments.",
-                "Dynamic product catalog variations, customer accounts, and order-processing workflows.",
-                "Custom B2B accounts supporting purchase orders, credit hierarchies, and tier pricing."
-            ],
-            contribution: [
-                "Contributed to the development and maintenance of these platforms using PHP, Laravel, and MySQL.",
-                "Programmed product-catalogue modules, user accounts, cart, order workflows, and admin controls.",
-                "Optimized MySQL search database queries, reducing catalog load times by over 40%."
-            ]
-        },
-        toolszip: {
-            title: "ToolsZip",
-            tags: ["Productivity Suite", "Online Utilities", "Toolbox Engine"],
-            stack: ["Laravel", "JavaScript", "MySQL", "File Processing", "Stripe API", "SEO Tools"],
-            overview: "ToolsZip is an all-in-one online productivity platform designed for SEO professionals, developers, content creators, website owners, and general users who need fast and accessible browser-based utilities.",
-            features: [
-                "PDF tools including Word-to-PDF, text-to-PDF, merging, compression, and image conversion.",
-                "Image tools supporting conversions (PNG-to-JPG, JPG-to-PNG), resizing, and compression.",
-                "Developer utilities including UUID generators, JSON formatters, and XML converters.",
-                "SEO tools including SEO checks, screenshots, redirects, domain lookups, and SSL tests."
-            ],
-            contribution: [
-                "Contributed to the full-stack development of ToolsZip using Laravel, JavaScript, and MySQL.",
-                "Developed and integrated multiple browser-based tools, file-processing tasks, and API workflows.",
-                "Supported user subscription systems, payment configurations, and Stripe integrations.",
-                "Optimized platform performance for simultaneous tool usage and large file uploads."
-            ]
-        },
-        pharmacyauditpro: {
-            title: "Pharmacy Audit Pro",
-            tags: ["Pharmacy Tech", "Reconciliation", "Ledger System", "AI Assistant"],
-            stack: ["React.js", "TypeScript", "Node.js", "Express.js", "Python", "MySQL", "AI Integration", "Ledger Architecture"],
-            overview: "Pharmacy Audit Pro is a pharmacy audit, reconciliation, and revenue-integrity platform designed for pharmacy owners, compliance teams, and operations professionals in the United States. It helps pharmacies reduce manual audit work, identify billing issues, and maintain clear, traceable financial records.",
-            features: [
-                "Invoice and billing file-processing reconciliation engine that detects discrepancy and unmatched transaction exceptions.",
-                "Comprehensive financial ledger system recording adjusting entries, transaction histories, and audit logs.",
-                "Interactive analytics dashboards, billing pattern reports, email alerts, and revenue integrity views.",
-                "AI-assisted summaries highlighting billing trends and high-priority reconciliation issues."
-            ],
-            contribution: [
-                "Contributed to the platform's development, including file-processing workflows and vendor/billing reconciliation.",
-                "Implemented discrepancy management, ledger functionality, and financial tracking logic.",
-                "Built responsive dashboards, audit reports, and analytical views.",
-                "Integrated AI assistant modules to summarize findings and highlight key trends."
-            ]
-        }
-    };
-
-    // ==========================================================================
-    // STICKY NAVBAR & SCROLL PROGRESS
-    // ==========================================================================
-    const navbar = document.getElementById('navbar');
-    const scrollProgress = document.getElementById('scroll-progress');
-    
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        
-        // Sticky class
-        if (scrollTop > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-        
-        // Scroll Progress Bar
-        const scrollPercent = (scrollTop / docHeight) * 100;
-        scrollProgress.style.width = scrollPercent + '%';
-    });
-
-    // ==========================================================================
-    // MOBILE NAVIGATION MENU
-    // ==========================================================================
-    const menuToggle = document.getElementById('menu-toggle');
-    const mobileNav = document.getElementById('mobile-nav');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-    
-    function toggleMobileMenu() {
-        menuToggle.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-        document.body.classList.toggle('overflow-hidden'); // Disable background scrolling when open
-    }
-    
-    menuToggle.addEventListener('click', toggleMobileMenu);
-    
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            mobileNav.classList.remove('active');
-            document.body.classList.remove('overflow-hidden');
-        });
-    });
-
     // ==========================================================================
     // TYPEWRITER EFFECT (HERO HEADLINE)
     // ==========================================================================
@@ -262,142 +54,42 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // SKILLS TAB FILTERING
+    // HOME CONTENT: About "read more", featured projects, latest blog posts
     // ==========================================================================
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const skillCards = document.querySelectorAll('.skill-card');
-    
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Toggle active class on buttons
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            
-            const category = button.getAttribute('data-category');
-            
-            // Filter skill cards
-            skillCards.forEach(card => {
-                const cardCat = card.getAttribute('data-category');
-                if (category === 'all' || cardCat === category) {
-                    card.style.opacity = '0';
-                    card.classList.remove('hidden');
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 50);
-                } else {
-                    card.classList.add('hidden');
-                }
+    const aboutMoreBtn = document.getElementById('btn-about-more');
+    const aboutFull = document.getElementById('about-full-template');
+    if (aboutMoreBtn && aboutFull) {
+        aboutMoreBtn.addEventListener('click', () => Site.openModal(aboutFull.innerHTML));
+    }
+
+    const featuredGrid = document.getElementById('featured-projects-grid');
+    if (featuredGrid) {
+        Site.loadJSON('/data/projects.json')
+            .then(projects => {
+                Site.renderProjects(featuredGrid, projects.filter(p => p.featured).slice(0, 6));
+                const count = document.getElementById('projects-total');
+                if (count) count.textContent = projects.length;
+            })
+            .catch(err => {
+                console.error(err);
+                featuredGrid.innerHTML = '<p class="content-empty">Projects could not be loaded. Please refresh the page.</p>';
             });
-        });
-    });
-
-    // ==========================================================================
-    // DYNAMIC PROJECT DETAILS MODAL
-    // ==========================================================================
-    const modal = document.getElementById('project-modal');
-    const modalClose = document.getElementById('modal-close');
-    const modalContent = document.getElementById('modal-body-content');
-    const projectTriggerButtons = document.querySelectorAll('.project-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-
-    function openModal(projectId) {
-        const details = projectDetails[projectId];
-        if (!details) return;
-
-        // Render HTML content inside modal dynamically
-        modalContent.innerHTML = `
-            <h3 class="modal-project-title">${details.title}</h3>
-            <div class="modal-project-meta">
-                ${details.tags.map(tag => `<span class="project-tag">${tag}</span>`).join('')}
-            </div>
-            
-            <h4 class="modal-section-title">Overview</h4>
-            <p>${details.overview}</p>
-            
-            <h4 class="modal-section-title">Key Core Features</h4>
-            <ul class="modal-list">
-                ${details.features.map(feat => `<li>${feat}</li>`).join('')}
-            </ul>
-            
-            <h4 class="modal-section-title">Team Leadership & Engineering Contribution</h4>
-            <ul class="modal-list">
-                ${details.contribution.map(contrib => `<li>${contrib}</li>`).join('')}
-            </ul>
-            
-            <h4 class="modal-section-title">Technology & AI Stack</h4>
-            <div class="modal-project-tech">
-                ${details.stack.map(tech => `<span>${tech}</span>`).join('')}
-            </div>
-        `;
-
-        modal.classList.add('active');
-        document.body.classList.add('overflow-hidden');
     }
 
-    function closeModal() {
-        modal.classList.remove('active');
-        document.body.classList.remove('overflow-hidden');
-        // Clear modal content shortly after animations
-        setTimeout(() => {
-            modalContent.innerHTML = '';
-        }, 300);
+    const latestPostsGrid = document.getElementById('latest-posts-grid');
+    if (latestPostsGrid) {
+        Site.loadJSON('/data/blog.json')
+            .then(posts => {
+                const latest = Site.publishedPosts(posts).slice(0, 3);
+                latestPostsGrid.innerHTML = latest.length
+                    ? latest.map(Site.renderBlogCard).join('')
+                    : '<p class="content-empty">New articles are on the way.</p>';
+            })
+            .catch(err => {
+                console.error(err);
+                latestPostsGrid.innerHTML = '<p class="content-empty">Articles could not be loaded. Please refresh the page.</p>';
+            });
     }
-
-    // Trigger on details link click
-    projectTriggerButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Avoid triggering card click handler
-            const card = btn.closest('.project-card');
-            const projectId = card.getAttribute('data-project');
-            openModal(projectId);
-        });
-    });
-
-    // Trigger on whole card click for better user experience
-    projectCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const projectId = card.getAttribute('data-project');
-            openModal(projectId);
-        });
-    });
-
-    modalClose.addEventListener('click', closeModal);
-    
-    // Close modal when clicking overlay bg
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-
-    // Close modal on Escape key press
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('active')) {
-            closeModal();
-        }
-    });
-
-    // ==========================================================================
-    // SCROLL REVEAL ANIMATIONS (INTERSECTION OBSERVER)
-    // ==========================================================================
-    const revealElements = document.querySelectorAll('.scroll-reveal');
-    
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                observer.unobserve(entry.target); // Reveal only once
-            }
-        });
-    }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-    });
-    
-    revealElements.forEach(el => {
-        revealObserver.observe(el);
-    });
 
     // ==========================================================================
     // CONTACT FORM INTERACTION & EMAIL SUBMISSION (Vercel /api/contact + Resend)
@@ -429,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'REST API Design & Integration',
                 'SaaS Product Development',
                 'FinTech Solutions',
+                'NetSuite Integration & Finance Automation',
                 'E-commerce Development'
             ]
         },

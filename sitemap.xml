@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://qurbanali-pro.vercel.app/</loc>
-    <lastmod>2026-07-21</lastmod>
+    <loc>https://qurbanali.me/</loc>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://qurbanali.me/projects</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://qurbanali.me/blog</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://qurbanali.me/blog/geo-playbook-get-cited-by-ai</loc>
+    <lastmod>2026-10-10</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qurbanali.me/blog/seo-vs-geo-llm-search</loc>
+    <lastmod>2026-10-03</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qurbanali.me/blog/small-language-models-model-routing</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qurbanali.me/blog/llm-evals-testing-ai-features</loc>
+    <lastmod>2026-09-19</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qurbanali.me/blog/ai-coding-agents-engineering-teams</loc>
+    <lastmod>2026-09-12</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qurbanali.me/blog/model-context-protocol-explained</loc>
+    <lastmod>2026-09-05</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qurbanali.me/blog/agentic-ai-in-production</loc>
+    <lastmod>2026-08-29</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qurbanali.me/blog/semantic-candidate-matching-solr-embeddings</loc>
+    <lastmod>2026-08-22</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qurbanali.me/blog/from-senior-developer-to-team-lead</loc>
+    <lastmod>2026-08-15</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>

@@ -118,3 +118,40 @@ Expert in PHP (Laravel), MERN, MEVN, and Python (FastAPI/Flask), with hands-on e
 *   **Bachelor of Arts** (2019) | University of the Punjab
 *   **Intermediate / A-Level** — CS, Mathematical Statistics, Mathematics (2016) | Government College of Sciences, Lahore
 *   **Matriculation / O-Level** — Biology, Chemistry, Physics (2014) | Government High School
+
+---
+
+## ✍️ Managing Content (no database needed)
+
+All projects and blog posts live in plain files in this repository. Edit them on GitHub, commit, and Vercel redeploys the site automatically.
+
+### Add or edit a project
+Edit `data/projects.json`. Each project is one object:
+
+| Field | Purpose |
+|---|---|
+| `slug` | Unique id, lowercase, no spaces (e.g. `my-new-app`) |
+| `title` | Project name |
+| `featured` | `true` to show it on the home page (the first 6 featured projects are shown) |
+| `categories` | Filter chips on `/projects` (e.g. `"AI & LLM"`, `"SaaS"`) |
+| `cardTags`, `excerpt`, `cardTech` | What the card shows |
+| `tags`, `overview`, `features`, `contribution`, `stack` | What the details popup shows |
+
+The order in the file is the order on the site.
+
+### Publish a blog post
+1. Write the article in Markdown: `content/blog/<slug>.md`.
+2. Add an entry to the top of `data/blog.json`:
+   ```json
+   {
+     "slug": "my-post",
+     "title": "My Post Title",
+     "date": "2026-11-01",
+     "excerpt": "One or two sentences shown on the card.",
+     "tags": ["AI & LLM"],
+     "readingTime": 5
+   }
+   ```
+3. Add `https://qurbanali.me/blog/my-post` to `sitemap.xml`.
+
+The post appears at `/blog/my-post`. Posts with a future `date`, or with `"draft": true`, stay hidden until published.
