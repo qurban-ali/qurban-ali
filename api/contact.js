@@ -1,7 +1,7 @@
 // Vercel serverless function: sends contact form submissions to your inbox via Resend.
 // Required env var:  RESEND_API_KEY
 // Optional env vars: CONTACT_TO_EMAIL   (default: qurbanali.pro@gmail.com)
-//                    CONTACT_FROM_EMAIL (default: Portfolio Contact <onboarding@resend.dev>)
+//                    CONTACT_FROM_EMAIL (default: Qurban Ali Portfolio <noreply@qurbanali.me>)
 
 const escapeHtml = (str) =>
     String(str).replace(/[&<>"']/g, (c) => ({
@@ -42,7 +42,7 @@ module.exports = async (req, res) => {
     }
 
     const to = process.env.CONTACT_TO_EMAIL || 'qurbanali.pro@gmail.com';
-    const from = process.env.CONTACT_FROM_EMAIL || 'Portfolio Contact <onboarding@resend.dev>';
+    const from = process.env.CONTACT_FROM_EMAIL || 'Qurban Ali Portfolio <noreply@qurbanali.me>';
 
     try {
         const response = await fetch('https://api.resend.com/emails', {
