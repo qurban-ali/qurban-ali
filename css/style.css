@@ -2367,3 +2367,339 @@ a.project-tag {
 .title-slashes::before {
     content: '//';
 }
+
+/* ==========================================================================
+   QBOT: ANIMATED ASSISTANT (js/mascot.js)
+   ========================================================================== */
+.qbot {
+    position: fixed;
+    right: 24px;
+    bottom: 20px;
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+.qbot[hidden] {
+    display: none;
+}
+
+.qbot > * {
+    pointer-events: auto;
+}
+
+.qbot-avatar {
+    position: relative;
+    width: 92px;
+    height: 101px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    filter: drop-shadow(0 10px 24px rgba(99, 102, 241, 0.35));
+    -webkit-tap-highlight-color: transparent;
+}
+
+.qbot-avatar:focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 4px;
+    border-radius: var(--border-radius-md);
+}
+
+.qbot-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Body parts */
+.qbot-stop-a { stop-color: var(--accent-indigo); }
+.qbot-stop-b { stop-color: var(--accent-teal); }
+.qbot-head,
+.qbot-torso { fill: url(#qbot-body); stroke: rgba(255, 255, 255, 0.18); stroke-width: 1.5; }
+.qbot-arm rect { fill: var(--accent-indigo); stroke: rgba(255, 255, 255, 0.15); }
+.qbot-screen { fill: var(--bg-deep); stroke: rgba(20, 184, 166, 0.35); stroke-width: 1.5; }
+.qbot-antenna line { stroke: var(--accent-teal); stroke-width: 3; stroke-linecap: round; }
+.qbot-antenna-light { fill: var(--accent-teal); }
+.qbot-core { fill: var(--bg-deep); stroke: var(--accent-teal); stroke-width: 2.5; }
+.qbot-shadow { fill: rgba(99, 102, 241, 0.25); }
+.qbot-eyes-open rect { fill: var(--accent-teal); }
+.qbot-eyes-happy path,
+.qbot-eyes-closed path,
+.qbot-brows path,
+.qbot-mouth-smile,
+.qbot-mouth-flat { fill: none; stroke: var(--accent-teal); stroke-width: 3.5; stroke-linecap: round; }
+.qbot-mouth-o { fill: var(--accent-teal); }
+.qbot-cheek { fill: var(--accent-pink); opacity: 0.45; }
+.qbot-zzz text { font-family: var(--font-mono); font-weight: 700; font-size: 14px; fill: var(--accent-teal); }
+
+.qbot-eyes-open { transition: transform 0.12s ease-out; }
+.qbot-eyes-happy,
+.qbot-eyes-closed,
+.qbot-brows,
+.qbot-mouth-o,
+.qbot-mouth-flat,
+.qbot-zzz { display: none; }
+
+/* Moods */
+.qbot[data-mood="happy"] .qbot-eyes-open,
+.qbot[data-mood="celebrate"] .qbot-eyes-open { display: none; }
+.qbot[data-mood="happy"] .qbot-eyes-happy,
+.qbot[data-mood="celebrate"] .qbot-eyes-happy { display: inline; }
+.qbot[data-mood="celebrate"] .qbot-mouth-smile { display: none; }
+.qbot[data-mood="celebrate"] .qbot-mouth-o { display: inline; }
+
+.qbot[data-mood="worried"] .qbot-brows,
+.qbot[data-mood="worried"] .qbot-mouth-o { display: inline; }
+.qbot[data-mood="worried"] .qbot-mouth-smile,
+.qbot[data-mood="worried"] .qbot-cheek { display: none; }
+.qbot[data-mood="worried"] .qbot-eyes-open rect,
+.qbot[data-mood="worried"] .qbot-mouth-o,
+.qbot[data-mood="worried"] .qbot-antenna-light { fill: var(--accent-pink); }
+.qbot[data-mood="worried"] .qbot-brows path,
+.qbot[data-mood="worried"] .qbot-antenna line { stroke: var(--accent-pink); }
+.qbot[data-mood="worried"] .qbot-screen { stroke: rgba(217, 70, 239, 0.5); }
+
+.qbot[data-mood="thinking"] .qbot-mouth-smile { display: none; }
+.qbot[data-mood="thinking"] .qbot-mouth-flat { display: inline; }
+
+.qbot[data-mood="sleep"] .qbot-eyes-open,
+.qbot[data-mood="sleep"] .qbot-mouth-smile { display: none; }
+.qbot[data-mood="sleep"] .qbot-eyes-closed,
+.qbot[data-mood="sleep"] .qbot-mouth-flat,
+.qbot[data-mood="sleep"] .qbot-zzz { display: inline; }
+.qbot[data-mood="sleep"] .qbot-avatar { filter: drop-shadow(0 6px 14px rgba(99, 102, 241, 0.2)) saturate(0.7); }
+
+/* Speech bubble */
+.qbot-bubble {
+    position: relative;
+    max-width: 280px;
+    margin: 0 8px 12px 0;
+    padding: 14px 34px 14px 16px;
+    background: #0f1526;
+    border: 1px solid var(--border-glow-hover);
+    border-radius: var(--border-radius-md) var(--border-radius-md) 4px var(--border-radius-md);
+    box-shadow: var(--shadow-card), var(--shadow-glow-teal);
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+    transform-origin: bottom right;
+    transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.qbot-bubble.show {
+    opacity: 1;
+    transform: none;
+}
+
+.qbot-bubble[data-tone="worried"] {
+    border-color: rgba(217, 70, 239, 0.55);
+    box-shadow: var(--shadow-card), 0 0 20px rgba(217, 70, 239, 0.2);
+}
+
+.qbot-bubble[data-tone="celebrate"] {
+    border-color: var(--accent-teal);
+}
+
+.qbot-name {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+    margin-bottom: 4px;
+}
+
+.qbot-bubble[data-tone="worried"] .qbot-name {
+    color: var(--accent-pink);
+}
+
+.qbot-text {
+    margin: 0;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+.qbot-bubble-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.qbot-bubble-close:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Hide / restore controls */
+.qbot-hide {
+    position: absolute;
+    right: -4px;
+    bottom: 84px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 1px solid var(--border-glow-hover);
+    background: var(--bg-deep);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.qbot:hover .qbot-hide,
+.qbot-hide:focus-visible {
+    opacity: 1;
+}
+
+.qbot-restore {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 900;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border-glow-hover);
+    background: var(--bg-nav);
+    backdrop-filter: blur(10px);
+    color: var(--accent-teal);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    cursor: pointer;
+}
+
+.qbot-restore[hidden] {
+    display: none;
+}
+
+/* Contact form fields Qbot flagged */
+.form-group input.is-invalid,
+.form-group textarea.is-invalid {
+    border-color: var(--accent-pink);
+    box-shadow: 0 0 0 3px rgba(217, 70, 239, 0.15);
+}
+
+/* Animations */
+@keyframes qbot-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes qbot-shadow {
+    0%, 100% { transform: scaleX(1); opacity: 1; }
+    50% { transform: scaleX(0.85); opacity: 0.6; }
+}
+
+@keyframes qbot-blink {
+    0%, 92%, 100% { transform: scaleY(1); }
+    96% { transform: scaleY(0.1); }
+}
+
+@keyframes qbot-glow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+}
+
+@keyframes qbot-wave {
+    0%, 100% { transform: rotate(0); }
+    20%, 60% { transform: rotate(-150deg); }
+    40%, 80% { transform: rotate(-120deg); }
+}
+
+@keyframes qbot-shake {
+    0%, 100% { transform: translateX(0) rotate(0); }
+    20% { transform: translateX(-4px) rotate(-4deg); }
+    40% { transform: translateX(4px) rotate(4deg); }
+    60% { transform: translateX(-3px) rotate(-2deg); }
+    80% { transform: translateX(3px) rotate(2deg); }
+}
+
+@keyframes qbot-jump {
+    0%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-18px) rotate(-6deg); }
+    55% { transform: translateY(0); }
+    75% { transform: translateY(-8px) rotate(4deg); }
+}
+
+@keyframes qbot-bounce {
+    0%, 100% { transform: scale(1); }
+    40% { transform: scale(0.92, 1.06); }
+    70% { transform: scale(1.04, 0.96); }
+}
+
+@keyframes qbot-zzz {
+    0% { opacity: 0; transform: translateY(4px); }
+    50% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-8px); }
+}
+
+@keyframes qbot-confetti {
+    0% { transform: translate(0, 0) rotate(0); opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) rotate(var(--r)); opacity: 0; }
+}
+
+.qbot-confetti {
+    position: absolute;
+    right: 46px;
+    bottom: 70px;
+    width: 8px;
+    height: 12px;
+    border-radius: 2px;
+    pointer-events: none;
+    animation: qbot-confetti 1.2s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .qbot-figure { animation: qbot-float 3.2s ease-in-out infinite; transform-box: fill-box; }
+    .qbot-shadow { animation: qbot-shadow 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+    .qbot-eyes-open rect { animation: qbot-blink 4.5s infinite; transform-box: fill-box; transform-origin: center; }
+    .qbot-antenna-light { animation: qbot-glow 2s ease-in-out infinite; }
+    .qbot-arm { transform-box: fill-box; transform-origin: 50% 8%; }
+    .qbot.qbot-wave .qbot-arm-right { animation: qbot-wave 1.6s ease-in-out 0.3s 1; }
+    .qbot[data-mood="worried"] .qbot-avatar { animation: qbot-shake 0.5s ease-in-out 1; }
+    .qbot[data-mood="celebrate"] .qbot-avatar { animation: qbot-jump 0.9s ease-in-out 2; }
+    .qbot[data-mood="celebrate"] .qbot-arm-left { transform: rotate(150deg); }
+    .qbot[data-mood="celebrate"] .qbot-arm-right { transform: rotate(-150deg); }
+    .qbot.qbot-bounce .qbot-avatar { animation: qbot-bounce 0.45s ease-out 1; }
+    .qbot[data-mood="sleep"] .qbot-figure { animation-duration: 5s; }
+    .qbot-zzz text { animation: qbot-zzz 2.4s ease-in-out infinite; }
+    .qbot-zzz text:last-child { animation-delay: 0.8s; }
+}
+
+@media (max-width: 768px) {
+    .qbot {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .qbot-avatar {
+        width: 64px;
+        height: 70px;
+    }
+
+    .qbot-bubble {
+        max-width: min(260px, calc(100vw - 40px));
+        margin-bottom: 8px;
+        font-size: 0.88rem;
+    }
+
+    .qbot-hide {
+        opacity: 1;
+        bottom: 56px;
+        right: -2px;
+    }
+}

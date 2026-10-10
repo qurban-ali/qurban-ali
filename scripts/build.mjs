@@ -174,7 +174,7 @@ const replaceMain = (shell, main) => shell.replace(/<main>[\s\S]*<\/main>/, `<ma
 // Page scripts: shared ones only (page-specific scripts are re-added where needed).
 const withScripts = (shell, extra = '') => shell.replace(
     /(\s*<script src="\/js\/render\.js" defer><\/script>[\s\S]*?)(\s*<\/body>)/,
-    `\n    <script src="/js/render.js" defer></script>\n    <script src="/js/site.js" defer></script>${extra}$2`);
+    `\n    <script src="/js/render.js" defer></script>\n    <script src="/js/site.js" defer></script>\n    <script src="/js/mascot.js" defer></script>${extra}$2`);
 
 const sitemap = [];
 const addToSitemap = (url, lastmod, priority, image) => sitemap.push({ url, lastmod, priority, image });
