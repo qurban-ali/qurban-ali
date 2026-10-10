@@ -400,7 +400,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // ==========================================================================
-    // CONTACT FORM INTERACTION & FORMSPREE EMAIL SUBMISSION
+    // CONTACT FORM INTERACTION & EMAIL SUBMISSION (Vercel /api/contact + Resend)
     // ==========================================================================
     const contactForm = document.getElementById('contact-form');
     const formSuccess = document.getElementById('form-success');
@@ -435,10 +435,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             try {
                 const formData = new FormData(contactForm);
-                const response = await fetch(contactForm.action || 'https://formspree.io/f/mzdnvdro', {
+                const response = await fetch('/api/contact', {
                     method: 'POST',
-                    body: formData,
+                    body: JSON.stringify(Object.fromEntries(formData)),
                     headers: {
+                        'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     }
                 });

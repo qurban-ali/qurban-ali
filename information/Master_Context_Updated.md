@@ -11,7 +11,8 @@ Use this file as the primary source of truth for my LinkedIn profile, project de
 - Location: Lahore, Punjab, Pakistan
 - Full-time, on-site
 - Positioning: technical leadership + hands-on full-stack engineering + AI/LLM/RAG solutions
-- Email: qurbanali.pro@gmail.com
+- Professional Email: info@qurbanali.me
+- Personal Email: qurbanali.pro@gmail.com
 - LinkedIn: https://www.linkedin.com/in/qurbanali-pro/
 - Website/Portfolio: https://qurbanali-pro.vercel.app/
 - Google Calendar Booking: https://calendar.app.google/znTqcTXv8akh1YGy7
