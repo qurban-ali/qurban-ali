@@ -1004,9 +1004,22 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="form-subject">Subject</label>
-                                <input type="text" id="form-subject" name="subject" required
-                                    placeholder="AI Consulting, Full-Stack Project, etc.">
+                                <label for="form-service">Service</label>
+                                <div class="service-select" id="service-select">
+                                    <input type="text" id="form-service" role="combobox" required
+                                        autocomplete="off" aria-autocomplete="list" aria-expanded="false"
+                                        aria-controls="service-list" placeholder="Search or select a service...">
+                                    <svg class="service-select-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M7 10l5 5 5-5z" />
+                                    </svg>
+                                    <ul class="service-list" id="service-list" role="listbox"></ul>
+                                </div>
+                                <input type="hidden" id="form-service-value" name="service">
+                            </div>
+                            <div class="form-group" id="other-service-group" hidden>
+                                <label for="form-other-service">Which service do you need?</label>
+                                <input type="text" id="form-other-service" name="other_service"
+                                    placeholder="Describe the service you're looking for">
                             </div>
                             <div class="form-group">
                                 <label for="form-message">Message</label>

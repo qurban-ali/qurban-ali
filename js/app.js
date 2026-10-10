@@ -408,6 +408,193 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnSubmit = document.getElementById('btn-submit-form');
     const btnReset = document.getElementById('btn-reset-form');
 
+    // Searchable service dropdown (with "Other" free-text option)
+    const SERVICE_GROUPS = [
+        {
+            label: 'AI & LLM Solutions',
+            items: [
+                'Generative AI / LLM Integration',
+                'RAG & Semantic Search Solutions',
+                'AI Chatbot / Assistant Development',
+                'Prompt Engineering & AI Consulting'
+            ]
+        },
+        {
+            label: 'Development',
+            items: [
+                'Full-Stack Web Development',
+                'MERN / MEVN Stack Development',
+                'Laravel / PHP Development',
+                'Python Backend (FastAPI / Flask)',
+                'REST API Design & Integration',
+                'SaaS Product Development',
+                'FinTech Solutions',
+                'E-commerce Development'
+            ]
+        },
+        {
+            label: 'Leadership & Consulting',
+            items: [
+                'Technical Leadership / Team Lead Role',
+                'Software Architecture Consulting',
+                'DevOps & CI/CD Setup',
+                'Code Review & Performance Optimization',
+                'Job Opportunity / Hiring'
+            ]
+        },
+        {
+            label: 'Something else',
+            items: ['Other']
+        }
+    ];
+
+    const serviceSelect = document.getElementById('service-select');
+    const serviceInput = document.getElementById('form-service');
+    const serviceValue = document.getElementById('form-service-value');
+    const serviceList = document.getElementById('service-list');
+    const otherServiceGroup = document.getElementById('other-service-group');
+    const otherServiceInput = document.getElementById('form-other-service');
+    let activeOptionIndex = -1;
+
+    const escapeHtml = (str) => str.replace(/[&<>"']/g, (c) => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+
+    const highlightMatch = (text, query) => {
+        if (!query) return escapeHtml(text);
+        const i = text.toLowerCase().indexOf(query.toLowerCase());
+        if (i === -1) return escapeHtml(text);
+        return escapeHtml(text.slice(0, i)) +
+            '<mark>' + escapeHtml(text.slice(i, i + query.length)) + '</mark>' +
+            escapeHtml(text.slice(i + query.length));
+    };
+
+    const getOptions = () => Array.from(serviceList.querySelectorAll('.service-option'));
+
+    const setActiveOption = (index) => {
+        const options = getOptions();
+        options.forEach(opt => opt.classList.remove('active'));
+        activeOptionIndex = index;
+        if (index >= 0 && options[index]) {
+            options[index].classList.add('active');
+            options[index].scrollIntoView({ block: 'nearest' });
+            serviceInput.setAttribute('aria-activedescendant', options[index].id);
+        } else {
+            serviceInput.removeAttribute('aria-activedescendant');
+        }
+    };
+
+    const renderServiceList = (query = '') => {
+        const q = query.trim().toLowerCase();
+        let html = '';
+        let count = 0;
+        SERVICE_GROUPS.forEach(group => {
+            // "Other" is always offered so visitors can describe something not listed
+            const items = group.items.filter(item => item === 'Other' || item.toLowerCase().includes(q));
+            if (!items.length) return;
+            html += `<li class="service-list-group" role="presentation">${escapeHtml(group.label)}</li>`;
+            items.forEach(item => {
+                const selected = serviceValue.value === item;
+                html += `<li class="service-option" role="option" id="service-option-${count}" ` +
+                    `data-value="${escapeHtml(item)}" aria-selected="${selected}">${highlightMatch(item, q)}</li>`;
+                count++;
+            });
+        });
+        serviceList.innerHTML = html || '<li class="service-empty">No matching services</li>';
+        setActiveOption(q && count ? 0 : -1);
+    };
+
+    const openServiceList = () => {
+        serviceSelect.classList.add('open');
+        serviceInput.setAttribute('aria-expanded', 'true');
+    };
+
+    const closeServiceList = () => {
+        serviceSelect.classList.remove('open');
+        serviceInput.setAttribute('aria-expanded', 'false');
+        setActiveOption(-1);
+    };
+
+    const selectService = (value) => {
+        serviceValue.value = value;
+        serviceInput.value = value;
+        serviceInput.setCustomValidity('');
+        const isOther = value === 'Other';
+        otherServiceGroup.hidden = !isOther;
+        otherServiceInput.required = isOther;
+        if (!isOther) otherServiceInput.value = '';
+        closeServiceList();
+        if (isOther) otherServiceInput.focus();
+    };
+
+    const resetServiceSelect = () => {
+        serviceValue.value = '';
+        serviceInput.value = '';
+        serviceInput.setCustomValidity('');
+        otherServiceGroup.hidden = true;
+        otherServiceInput.required = false;
+        otherServiceInput.value = '';
+        closeServiceList();
+    };
+
+    if (serviceSelect) {
+        renderServiceList();
+
+        serviceInput.addEventListener('focus', () => {
+            renderServiceList(serviceInput.value === serviceValue.value ? '' : serviceInput.value);
+            openServiceList();
+        });
+
+        serviceInput.addEventListener('click', openServiceList);
+
+        serviceInput.addEventListener('input', () => {
+            // Typing clears the previous choice until a new option is picked
+            serviceValue.value = '';
+            otherServiceGroup.hidden = true;
+            otherServiceInput.required = false;
+            serviceInput.setCustomValidity('');
+            renderServiceList(serviceInput.value);
+            openServiceList();
+        });
+
+        serviceInput.addEventListener('keydown', (e) => {
+            const options = getOptions();
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                openServiceList();
+                setActiveOption(Math.min(activeOptionIndex + 1, options.length - 1));
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                setActiveOption(Math.max(activeOptionIndex - 1, 0));
+            } else if (e.key === 'Enter' && serviceSelect.classList.contains('open')) {
+                e.preventDefault();
+                if (options[activeOptionIndex]) selectService(options[activeOptionIndex].dataset.value);
+            } else if (e.key === 'Escape') {
+                closeServiceList();
+            }
+        });
+
+        // mousedown (not click) so the choice lands before the input blurs
+        serviceList.addEventListener('mousedown', (e) => {
+            const option = e.target.closest('.service-option');
+            if (!option) return;
+            e.preventDefault();
+            selectService(option.dataset.value);
+        });
+
+        serviceInput.addEventListener('blur', () => {
+            closeServiceList();
+            if (serviceValue.value) {
+                serviceInput.value = serviceValue.value;
+                return;
+            }
+            // Accept an exact (case-insensitive) typed match without clicking
+            const typed = serviceInput.value.trim().toLowerCase();
+            const match = SERVICE_GROUPS.flatMap(g => g.items).find(item => item.toLowerCase() === typed);
+            if (match) selectService(match);
+        });
+    }
+
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -415,10 +602,16 @@ document.addEventListener('DOMContentLoaded', () => {
             // Basic Client validation check
             const nameInput = document.getElementById('form-name');
             const emailInput = document.getElementById('form-email');
-            const subjectInput = document.getElementById('form-subject');
             const messageInput = document.getElementById('form-message');
-            
-            if (!nameInput.value || !emailInput.value || !subjectInput.value || !messageInput.value) {
+
+            if (!serviceValue.value) {
+                serviceInput.setCustomValidity('Please select a service from the list.');
+                serviceInput.reportValidity();
+                return;
+            }
+
+            if (!nameInput.value || !emailInput.value || !messageInput.value ||
+                (serviceValue.value === 'Other' && !otherServiceInput.value.trim())) {
                 return;
             }
 
@@ -449,6 +642,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     contactForm.style.display = "none";
                     formSuccess.classList.add('active');
                     contactForm.reset();
+                    resetServiceSelect();
                 } else {
                     const data = await response.json().catch(() => null);
                     let errorMsg = "Oops! There was a problem submitting your message. Please try again.";
