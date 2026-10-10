@@ -1198,6 +1198,10 @@ section {
     gap: 8px;
 }
 
+.form-group[hidden] {
+    display: none;
+}
+
 .form-group label {
     font-size: 0.85rem;
     font-weight: 600;
@@ -1311,6 +1315,26 @@ section {
     padding: 10px 12px;
     font-size: 0.9rem;
     color: var(--text-muted);
+}
+
+/* Broadcast opt-in checkbox */
+.form-consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.form-consent input {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--accent-teal);
+    cursor: pointer;
 }
 
 /* Error State Alert */

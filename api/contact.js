@@ -1,15 +1,51 @@
-// Vercel serverless function: sends contact form submissions to your inbox via Resend.
-// Required env var:  RESEND_API_KEY
+// Vercel serverless function: emails contact form leads to you via Resend and
+// saves each lead as a Resend contact so you can send Broadcasts later.
+// Required env var:  RESEND_API_KEY (must be a "Full access" key to save contacts)
 // Optional env vars: CONTACT_TO_EMAIL   (default: qurbanali.pro@gmail.com)
 //                    CONTACT_FROM_EMAIL (default: Qurban Ali Portfolio <noreply@qurbanali.me>)
+//                    RESEND_SEGMENT_ID  (adds every lead to this Resend segment)
 
-const escapeHtml = (str) =>
-    String(str).replace(/[&<>"']/g, (c) => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-    }[c]));
+const { buildLeadEmail } = require('./_email-template');
+
+const RESEND_API = 'https://api.resend.com';
 
 const fail = (res, status, message) =>
     res.status(status).json({ errors: [{ message }] });
+
+const resendRequest = (apiKey, path, payload) =>
+    fetch(`${RESEND_API}${path}`, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    });
+
+// Save the lead as a contact. Visitors who didn't tick the opt-in box are stored
+// as unsubscribed, so they are kept as leads but never receive Broadcasts.
+async function saveContact(apiKey, { name, email, subscribed }) {
+    const [firstName, ...rest] = name.split(/\s+/);
+    const payload = {
+        email,
+        first_name: firstName,
+        last_name: rest.join(' ') || undefined,
+        unsubscribed: !subscribed
+    };
+    if (process.env.RESEND_SEGMENT_ID) {
+        payload.segments = [{ id: process.env.RESEND_SEGMENT_ID }];
+    }
+
+    try {
+        const response = await resendRequest(apiKey, '/contacts', payload);
+        if (!response.ok) {
+            // e.g. the contact already exists, or the API key is "Sending access" only
+            console.warn('Resend contact not saved:', response.status, await response.text());
+        }
+    } catch (err) {
+        console.warn('Resend contact not saved:', err);
+    }
+}
 
 module.exports = async (req, res) => {
     if (req.method !== 'POST') {
@@ -28,9 +64,11 @@ module.exports = async (req, res) => {
     const email = String(body.email || '').trim().slice(0, 200);
     const service = String(body.service || '').trim().slice(0, 200);
     const otherService = String(body.other_service || '').trim().slice(0, 200);
+    const isOther = service === 'Other';
     // "Other" means the visitor typed their own service; older clients may still send `subject`
-    const subject = (service === 'Other' ? otherService : service) || String(body.subject || '').trim().slice(0, 200);
+    const subject = (isOther ? otherService : service) || String(body.subject || '').trim().slice(0, 200);
     const message = String(body.message || '').trim().slice(0, 5000);
+    const subscribed = body.subscribe === 'yes' || body.subscribe === true;
 
     // Honeypot: real visitors never fill this hidden field, bots usually do.
     if (body.website) {
@@ -48,28 +86,29 @@ module.exports = async (req, res) => {
     const from = process.env.CONTACT_FROM_EMAIL || 'Qurban Ali Portfolio <noreply@qurbanali.me>';
 
     try {
-        const response = await fetch('https://api.resend.com/emails', {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${apiKey}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
+        const [response] = await Promise.all([
+            resendRequest(apiKey, '/emails', {
                 from,
                 to: [to],
                 reply_to: email,
-                subject: `[Portfolio] ${subject}`,
-                text: `New message from your portfolio contact form\n\nName: ${name}\nEmail: ${email}\nService: ${subject}\n\n${message}`,
-                html: `
-                    <h2>New message from your portfolio contact form</h2>
-                    <p><strong>Name:</strong> ${escapeHtml(name)}</p>
-                    <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
-                    <p><strong>Service:</strong> ${escapeHtml(subject)}</p>
-                    <hr>
-                    <p style="white-space: pre-wrap;">${escapeHtml(message)}</p>
-                `
-            })
-        });
+                subject: `New lead: ${subject} — ${name}`,
+                text: [
+                    'New lead from your portfolio contact form',
+                    '',
+                    `Name: ${name}`,
+                    `Email: ${email}`,
+                    `Service: ${subject}${isOther ? ' (custom request)' : ''}`,
+                    `Broadcasts: ${subscribed ? 'opted in' : 'not subscribed'}`,
+                    '',
+                    message
+                ].join('\n'),
+                html: buildLeadEmail({
+                    name, email, service: subject, isOther, message, subscribed,
+                    submittedAt: Date.now()
+                })
+            }),
+            saveContact(apiKey, { name, email, subscribed })
+        ]);
 
         if (!response.ok) {
             const detail = await response.text();
