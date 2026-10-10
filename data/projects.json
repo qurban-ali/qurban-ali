@@ -1,5 +1,56 @@
 [
   {
+    "slug": "ai-fin-buddy",
+    "title": "Digital Workspace: AI Fin Buddy",
+    "featured": true,
+    "categories": [
+      "FinTech",
+      "AI & LLM",
+      "Automation & Tools"
+    ],
+    "cardTags": [
+      "FinTech",
+      "AP Automation"
+    ],
+    "excerpt": "AI finance assistant that reads invoice emails, applies finance-defined business rules from NetSuite data, and posts reviewed journal entries to NetSuite with the invoice attached.",
+    "cardTech": [
+      "NetSuite",
+      "AI Extraction",
+      "Rules Engine",
+      "Journal Entries"
+    ],
+    "tags": [
+      "FinTech",
+      "Accounts Payable Automation",
+      "NetSuite ERP",
+      "AI Invoice Processing"
+    ],
+    "stack": [
+      "NetSuite ERP Integration",
+      "Email Ingestion",
+      "AI / LLM Invoice Extraction",
+      "Business Rules Engine",
+      "Journal Entries",
+      "GL Account Mapping",
+      "Approval Workflows",
+      "REST APIs"
+    ],
+    "overview": "AI Fin Buddy is a module of the Digital Workspace platform that automates invoice-to-ledger processing for finance teams. It monitors incoming email, detects invoices, extracts the financial details with AI, applies business rules defined by the finance team, and, after human review, posts the journal entry directly to NetSuite with the original invoice attached.",
+    "features": [
+      "Automated email monitoring that identifies messages containing invoices and extracts vendor, amounts, dates and line details with AI.",
+      "Open business-rules engine: finance users build rules from live NetSuite data, mapping each vendor to the correct brand and GL account without developer involvement.",
+      "Preview queue where every processed invoice is shown with the journal entry the rules produced, so the finance team can verify the logic before anything is posted.",
+      "One-click submission that creates the journal entry in NetSuite and uploads the invoice as an attachment, keeping a complete audit trail.",
+      "Human-in-the-loop design: nothing reaches the general ledger without a finance user's approval."
+    ],
+    "contribution": [
+      "Designed and implemented the NetSuite integration for fetching master data (vendors, brands, accounts) and posting journal entries with file attachments.",
+      "Built the configurable business-rules engine that lets finance users map vendors to brands and GL accounts using data pulled from NetSuite.",
+      "Developed the email ingestion and AI-powered invoice detection and extraction pipeline.",
+      "Created the review-and-approve preview workflow that turns validated rules into ready-to-post journal entries."
+    ]
+  },
+  {
     "slug": "smartmatch",
     "title": "SmartMatch",
     "featured": true,
@@ -247,7 +298,7 @@
   {
     "slug": "ishopeco",
     "title": "iShopEco",
-    "featured": true,
+    "featured": false,
     "categories": [
       "E-Commerce"
     ],

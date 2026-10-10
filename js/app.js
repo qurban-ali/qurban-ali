@@ -121,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'REST API Design & Integration',
                 'SaaS Product Development',
                 'FinTech Solutions',
+                'NetSuite Integration & Finance Automation',
                 'E-commerce Development'
             ]
         },
