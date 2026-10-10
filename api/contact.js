@@ -26,7 +26,10 @@ module.exports = async (req, res) => {
     const body = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
     const name = String(body.name || '').trim().slice(0, 200);
     const email = String(body.email || '').trim().slice(0, 200);
-    const subject = String(body.subject || '').trim().slice(0, 200);
+    const service = String(body.service || '').trim().slice(0, 200);
+    const otherService = String(body.other_service || '').trim().slice(0, 200);
+    // "Other" means the visitor typed their own service; older clients may still send `subject`
+    const subject = (service === 'Other' ? otherService : service) || String(body.subject || '').trim().slice(0, 200);
     const message = String(body.message || '').trim().slice(0, 5000);
 
     // Honeypot: real visitors never fill this hidden field, bots usually do.
@@ -35,7 +38,7 @@ module.exports = async (req, res) => {
     }
 
     if (!name || !email || !subject || !message) {
-        return fail(res, 400, 'Please fill in all fields.');
+        return fail(res, 400, 'Please fill in all fields, including the service.');
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         return fail(res, 400, 'Please enter a valid email address.');
@@ -56,12 +59,12 @@ module.exports = async (req, res) => {
                 to: [to],
                 reply_to: email,
                 subject: `[Portfolio] ${subject}`,
-                text: `New message from your portfolio contact form\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\n\n${message}`,
+                text: `New message from your portfolio contact form\n\nName: ${name}\nEmail: ${email}\nService: ${subject}\n\n${message}`,
                 html: `
                     <h2>New message from your portfolio contact form</h2>
                     <p><strong>Name:</strong> ${escapeHtml(name)}</p>
                     <p><strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></p>
-                    <p><strong>Subject:</strong> ${escapeHtml(subject)}</p>
+                    <p><strong>Service:</strong> ${escapeHtml(subject)}</p>
                     <hr>
                     <p style="white-space: pre-wrap;">${escapeHtml(message)}</p>
                 `
