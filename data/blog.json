@@ -1,0 +1,18 @@
+[
+  {
+    "slug": "semantic-candidate-matching-solr-embeddings",
+    "title": "Semantic Candidate Matching with Apache Solr and Vector Embeddings",
+    "date": "2026-10-10",
+    "excerpt": "How we moved recruitment search beyond keyword matching by combining LLM-based CV parsing, vector embeddings and Apache Solr — and what to watch out for.",
+    "tags": ["AI & LLM", "Search", "Architecture"],
+    "readingTime": 6
+  },
+  {
+    "slug": "from-senior-developer-to-team-lead",
+    "title": "From Senior Developer to Engineering Team Lead: What Actually Changes",
+    "date": "2026-10-10",
+    "excerpt": "Lessons from leading engineering teams while staying hands-on: code reviews, unblocking people, saying no, and measuring success by the team's output.",
+    "tags": ["Leadership", "Career"],
+    "readingTime": 5
+  }
+]

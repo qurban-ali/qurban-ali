@@ -107,6 +107,7 @@
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#recommendations" class="nav-link">Recommendations</a>
+                <a href="/blog" class="nav-link">Blog</a>
                 <a href="#contact" class="nav-link nav-cta">Contact</a>
             </nav>
 
@@ -125,6 +126,7 @@
         <a href="#projects" class="mobile-link">Projects</a>
         <a href="#experience" class="mobile-link">Experience</a>
         <a href="#recommendations" class="mobile-link">Recommendations</a>
+        <a href="/blog" class="mobile-link">Blog</a>
         <a href="#contact" class="mobile-link mobile-cta">Contact</a>
     </div>
 
@@ -205,31 +207,51 @@
                             developers, and collaborate with product managers, designers, QA engineers, and
                             stakeholders. My leadership style is built on collaboration, clear communication,
                             accountability, and helping team members grow while delivering reliable projects on time.
-                        </p>
-                        <p>My technical experience covers modern frontend, backend, database, and cloud-ready
-                            development. I have delivered end-to-end solutions using React.js, Vue.js, Node.js,
-                            Express.js, PHP, Laravel, Python, MySQL, REST APIs, and MERN, MEVN, and LEMP architectures.
-                            I focus on secure, maintainable, high-performance applications with responsive interfaces,
-                            reusable components, efficient APIs, third-party integrations, and scalable system design.
-                        </p>
-                        <p>I also specialize in Generative AI, LLM, RAG, and intelligent search applications. My
-                            experience includes integrating OpenAI, Google Gemini, and other language models for CV and
-                            job-description parsing, structured data extraction, content generation, candidate matching,
-                            scoring, recommendations, interview-question generation, and workflow automation. I have
-                            worked with vector embeddings, semantic search, Apache Solr, prompt engineering, multi-model
-                            AI workflows, and retrieval-based systems that transform large datasets into actionable
-                            results.</p>
-                        <p>I have contributed to products across recruitment technology, HR technology, FinTech, SaaS,
-                            talent intelligence, employee experience, and AI-powered content creation. These include
-                            intelligent recruitment platforms, reusable candidate talent pools, AI-assisted screening
-                            systems, HR management solutions, and personalized multi-platform content tools.</p>
-                        <p>I enjoy turning complex business requirements into practical technical solutions, improving
-                            existing systems, solving performance and scalability challenges, and supporting teams
-                            throughout the software-development lifecycle.</p>
-                        <p>I am committed to continuous learning and actively explore developments in AI, software
-                            architecture, automation, and product engineering. My goal is to combine strong technical
-                            execution, product thinking, and people leadership to build solutions that create measurable
-                            value for users and organizations.</p>
+                            </p>
+                        <button type="button" class="btn btn-secondary about-more-btn" id="btn-about-more">
+                            Read my full story &rarr;
+                        </button>
+                        <template id="about-full-template">
+                            <h3 class="modal-project-title">About Me</h3>
+                            <div class="modal-project-meta">
+                                <span class="project-tag">Engineering Team Lead</span>
+                                <span class="project-tag">Senior Full-Stack Developer</span>
+                                <span class="project-tag">AI &amp; LLM Solutions</span>
+                            </div>
+                            <p>I am an Engineering Team Lead and Senior Full-Stack Developer with over 7+ years of
+                                experience building scalable web applications, SaaS products, AI-powered platforms, and
+                                business-critical digital solutions.</p>
+                            <p>My work combines hands-on development with technical leadership. I lead engineering teams,
+                                define application architecture, review code, improve development processes, mentor
+                                developers, and collaborate with product managers, designers, QA engineers, and
+                                stakeholders. My leadership style is built on collaboration, clear communication,
+                                accountability, and helping team members grow while delivering reliable projects on time.
+                                </p>
+                            <p>My technical experience covers modern frontend, backend, database, and cloud-ready
+                                development. I have delivered end-to-end solutions using React.js, Vue.js, Node.js,
+                                Express.js, PHP, Laravel, Python, MySQL, REST APIs, and MERN, MEVN, and LEMP architectures.
+                                I focus on secure, maintainable, high-performance applications with responsive interfaces,
+                                reusable components, efficient APIs, third-party integrations, and scalable system design.
+                                </p>
+                            <p>I also specialize in Generative AI, LLM, RAG, and intelligent search applications. My
+                                experience includes integrating OpenAI, Google Gemini, and other language models for CV and
+                                job-description parsing, structured data extraction, content generation, candidate matching,
+                                scoring, recommendations, interview-question generation, and workflow automation. I have
+                                worked with vector embeddings, semantic search, Apache Solr, prompt engineering, multi-model
+                                AI workflows, and retrieval-based systems that transform large datasets into actionable
+                                results.</p>
+                            <p>I have contributed to products across recruitment technology, HR technology, FinTech, SaaS,
+                                talent intelligence, employee experience, and AI-powered content creation. These include
+                                intelligent recruitment platforms, reusable candidate talent pools, AI-assisted screening
+                                systems, HR management solutions, and personalized multi-platform content tools.</p>
+                            <p>I enjoy turning complex business requirements into practical technical solutions, improving
+                                existing systems, solving performance and scalability challenges, and supporting teams
+                                throughout the software-development lifecycle.</p>
+                            <p>I am committed to continuous learning and actively explore developments in AI, software
+                                architecture, automation, and product engineering. My goal is to combine strong technical
+                                execution, product thinking, and people leadership to build solutions that create measurable
+                                value for users and organizations.</p>
+                        </template>
                     </div>
                     <div class="about-stats-panel">
                         <div class="stats-grid">
@@ -259,221 +281,66 @@
         <section id="skills" class="skills-section scroll-reveal">
             <div class="container">
                 <h2 class="section-title"><span class="title-number">02.</span> Technical Expertise</h2>
-                <p class="section-subtitle">Categorized skills highlighting core stack, frontend, backend, AI
-                    integration, and database technologies.</p>
+                <p class="section-subtitle">The core stack I use to design, build and lead delivery of production
+                    systems.</p>
 
-                <!-- Category Tabs -->
-                <div class="skills-tabs" id="skills-tabs-container">
-                    <button class="tab-btn active" data-category="all" id="tab-all">All Skills</button>
-                    <button class="tab-btn" data-category="ai" id="tab-ai">AI & LLM</button>
-                    <button class="tab-btn" data-category="frontend" id="tab-frontend">Frontend</button>
-                    <button class="tab-btn" data-category="backend" id="tab-backend">Backend</button>
-                    <button class="tab-btn" data-category="data" id="tab-data">Data & Search</button>
-                    <button class="tab-btn" data-category="architecture" id="tab-architecture">Architecture</button>
-                </div>
-
-                <!-- Skills Grid -->
-                <div class="skills-grid" id="skills-display-grid">
-                    <!-- AI Skills -->
-                    <div class="skill-card" data-category="ai">
-                        <div class="skill-header">
-                            <span class="skill-name">Generative AI</span>
-                            <span class="skill-badge bg-ai">AI</span>
-                        </div>
+                <div class="stack-grid">
+                    <div class="stack-group">
+                        <h3 class="stack-group-title"><span class="stack-dot bg-ai"></span>AI &amp; LLM</h3>
+                        <ul class="stack-chips">
+                            <li>Generative AI</li>
+                            <li>LLM Integration</li>
+                            <li>RAG (Retrieval-Augmented Generation)</li>
+                            <li>OpenAI Embeddings & APIs</li>
+                            <li>Google Gemini APIs</li>
+                            <li>Prompt Engineering</li>
+                            <li>Vector Embeddings</li>
+                            <li>DeepSeek API & Integration</li>
+                        </ul>
                     </div>
-                    <div class="skill-card" data-category="ai">
-                        <div class="skill-header">
-                            <span class="skill-name">LLM Integration</span>
-                            <span class="skill-badge bg-ai">AI</span>
-                        </div>
+                    <div class="stack-group">
+                        <h3 class="stack-group-title"><span class="stack-dot bg-frontend"></span>Frontend</h3>
+                        <ul class="stack-chips">
+                            <li>React.js</li>
+                            <li>Vue.js</li>
+                            <li>TypeScript</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>Quasar Framework (Vue.js)</li>
+                        </ul>
                     </div>
-                    <div class="skill-card" data-category="ai">
-                        <div class="skill-header">
-                            <span class="skill-name">RAG (Retrieval-Augmented Generation)</span>
-                            <span class="skill-badge bg-ai">AI</span>
-                        </div>
+                    <div class="stack-group">
+                        <h3 class="stack-group-title"><span class="stack-dot bg-backend"></span>Backend</h3>
+                        <ul class="stack-chips">
+                            <li>Node.js</li>
+                            <li>Express.js</li>
+                            <li>PHP</li>
+                            <li>Laravel</li>
+                            <li>Python</li>
+                            <li>FastAPI</li>
+                            <li>Flask</li>
+                        </ul>
                     </div>
-                    <div class="skill-card" data-category="ai">
-                        <div class="skill-header">
-                            <span class="skill-name">OpenAI Embeddings & APIs</span>
-                            <span class="skill-badge bg-ai">AI</span>
-                        </div>
+                    <div class="stack-group">
+                        <h3 class="stack-group-title"><span class="stack-dot bg-data"></span>Data &amp; Search</h3>
+                        <ul class="stack-chips">
+                            <li>MySQL</li>
+                            <li>Apache Solr</li>
+                            <li>Vector Search</li>
+                            <li>Semantic Search</li>
+                            <li>PostgreSQL</li>
+                            <li>Supabase</li>
+                        </ul>
                     </div>
-                    <div class="skill-card" data-category="ai">
-                        <div class="skill-header">
-                            <span class="skill-name">Google Gemini APIs</span>
-                            <span class="skill-badge bg-ai">AI</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="ai">
-                        <div class="skill-header">
-                            <span class="skill-name">Prompt Engineering</span>
-                            <span class="skill-badge bg-ai">AI</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="ai">
-                        <div class="skill-header">
-                            <span class="skill-name">Vector Embeddings</span>
-                            <span class="skill-badge bg-ai">AI</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="ai">
-                        <div class="skill-header">
-                            <span class="skill-name">DeepSeek API & Integration</span>
-                            <span class="skill-badge bg-ai">AI</span>
-                        </div>
-                    </div>
-
-                    <!-- Frontend -->
-                    <div class="skill-card" data-category="frontend">
-                        <div class="skill-header">
-                            <span class="skill-name">React.js</span>
-                            <span class="skill-badge bg-frontend">Frontend</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="frontend">
-                        <div class="skill-header">
-                            <span class="skill-name">Vue.js</span>
-                            <span class="skill-badge bg-frontend">Frontend</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="frontend">
-                        <div class="skill-header">
-                            <span class="skill-name">TypeScript</span>
-                            <span class="skill-badge bg-frontend">Frontend</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="frontend">
-                        <div class="skill-header">
-                            <span class="skill-name">JavaScript (ES6+)</span>
-                            <span class="skill-badge bg-frontend">Frontend</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="frontend">
-                        <div class="skill-header">
-                            <span class="skill-name">Quasar Framework (Vue.js)</span>
-                            <span class="skill-badge bg-frontend">Frontend</span>
-                        </div>
-                    </div>
-
-                    <!-- Backend -->
-                    <div class="skill-card" data-category="backend">
-                        <div class="skill-header">
-                            <span class="skill-name">Node.js</span>
-                            <span class="skill-badge bg-backend">Backend</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="backend">
-                        <div class="skill-header">
-                            <span class="skill-name">Express.js</span>
-                            <span class="skill-badge bg-backend">Backend</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="backend">
-                        <div class="skill-header">
-                            <span class="skill-name">PHP</span>
-                            <span class="skill-badge bg-backend">Backend</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="backend">
-                        <div class="skill-header">
-                            <span class="skill-name">Laravel</span>
-                            <span class="skill-badge bg-backend">Backend</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="backend">
-                        <div class="skill-header">
-                            <span class="skill-name">Python</span>
-                            <span class="skill-badge bg-backend">Backend</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="backend">
-                        <div class="skill-header">
-                            <span class="skill-name">FastAPI</span>
-                            <span class="skill-badge bg-backend">Backend</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="backend">
-                        <div class="skill-header">
-                            <span class="skill-name">Flask</span>
-                            <span class="skill-badge bg-backend">Backend</span>
-                        </div>
-                    </div>
-
-                    <!-- Data & Search -->
-                    <div class="skill-card" data-category="data">
-                        <div class="skill-header">
-                            <span class="skill-name">MySQL</span>
-                            <span class="skill-badge bg-data">Data</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="data">
-                        <div class="skill-header">
-                            <span class="skill-name">Apache Solr</span>
-                            <span class="skill-badge bg-data">Search</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="data">
-                        <div class="skill-header">
-                            <span class="skill-name">Vector Search</span>
-                            <span class="skill-badge bg-data">Search</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="data">
-                        <div class="skill-header">
-                            <span class="skill-name">Semantic Search</span>
-                            <span class="skill-badge bg-data">Search</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="data">
-                        <div class="skill-header">
-                            <span class="skill-name">PostgreSQL</span>
-                            <span class="skill-badge bg-data">Data</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="data">
-                        <div class="skill-header">
-                            <span class="skill-name">Supabase</span>
-                            <span class="skill-badge bg-data">Data</span>
-                        </div>
-                    </div>
-
-                    <!-- Architecture -->
-                    <div class="skill-card" data-category="architecture">
-                        <div class="skill-header">
-                            <span class="skill-name">MERN / MEVN Stack</span>
-                            <span class="skill-badge bg-arch">Architecture</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="architecture">
-                        <div class="skill-header">
-                            <span class="skill-name">LEMP (Linux, Nginx, MySQL, PHP)</span>
-                            <span class="skill-badge bg-arch">Architecture</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="architecture">
-                        <div class="skill-header">
-                            <span class="skill-name">SaaS Architecture</span>
-                            <span class="skill-badge bg-arch">Architecture</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="architecture">
-                        <div class="skill-header">
-                            <span class="skill-name">REST APIs Design</span>
-                            <span class="skill-badge bg-arch">Architecture</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="architecture">
-                        <div class="skill-header">
-                            <span class="skill-name">Technical Leadership</span>
-                            <span class="skill-badge bg-arch">Leadership</span>
-                        </div>
-                    </div>
-                    <div class="skill-card" data-category="architecture">
-                        <div class="skill-header">
-                            <span class="skill-name">DevOps (Linux, Nginx, Jenkins CI/CD)</span>
-                            <span class="skill-badge bg-arch">DevOps</span>
-                        </div>
+                    <div class="stack-group">
+                        <h3 class="stack-group-title"><span class="stack-dot bg-arch"></span>Architecture &amp; Leadership</h3>
+                        <ul class="stack-chips">
+                            <li>MERN / MEVN Stack</li>
+                            <li>LEMP (Linux, Nginx, MySQL, PHP)</li>
+                            <li>SaaS Architecture</li>
+                            <li>REST APIs Design</li>
+                            <li>Technical Leadership</li>
+                            <li>DevOps (Linux, Nginx, Jenkins CI/CD)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -486,197 +353,11 @@
                 <p class="section-subtitle">A showcase of core systems engineered, including deep AI search models, SaaS
                     portals, and custom workflows.</p>
 
-                <div class="projects-grid">
-                    <!-- Project 1: SmartMatch -->
-                    <div class="project-card" id="project-card-smartmatch" data-project="smartmatch">
-                        <div class="project-card-content">
-                            <div class="project-meta">
-                                <span class="project-tag">AI Recruiting</span>
-                                <span class="project-tag">Aviation</span>
-                            </div>
-                            <h3 class="project-card-title">SmartMatch</h3>
-                            <p class="project-card-excerpt">AI-powered recruitment and talent intelligence platform
-                                developed specifically for the aviation industry using Solr and AI embeddings.</p>
-                            <div class="project-card-tech">
-                                <span>React.js</span>
-                                <span>Node.js</span>
-                                <span>Apache Solr</span>
-                                <span>Gemini API</span>
-                            </div>
-                            <button class="project-btn btn-link" id="btn-project-smartmatch">Explore Details
-                                &rarr;</button>
-                        </div>
-                    </div>
+                <div class="projects-grid" id="featured-projects-grid" aria-live="polite"></div>
 
-                    <!-- Project 2: TalentVista -->
-                    <div class="project-card" id="project-card-talentvista" data-project="talentvista">
-                        <div class="project-card-content">
-                            <div class="project-meta">
-                                <span class="project-tag">SaaS Platform</span>
-                                <span class="project-tag">LLM Ranking</span>
-                            </div>
-                            <h3 class="project-card-title">TalentVista</h3>
-                            <p class="project-card-excerpt">AI-powered talent acquisition platform designed to process
-                                large candidate CV volumes, manage vector search indexes, and generate screening
-                                questions.</p>
-                            <div class="project-card-tech">
-                                <span>React.js</span>
-                                <span>Node.js</span>
-                                <span>Apache Solr</span>
-                                <span>OpenAI</span>
-                            </div>
-                            <button class="project-btn btn-link" id="btn-project-talentvista">Explore Details
-                                &rarr;</button>
-                        </div>
-                    </div>
-
-                    <!-- Project 3: helloFriday -->
-                    <div class="project-card" id="project-card-hellofriday" data-project="hellofriday">
-                        <div class="project-card-content">
-                            <div class="project-meta">
-                                <span class="project-tag">HR Tech</span>
-                                <span class="project-tag">Employee Experience</span>
-                            </div>
-                            <h3 class="project-card-title">helloFriday</h3>
-                            <p class="project-card-excerpt">AI-first, all-in-one HR and employee experience platform
-                                simplifying people operations, Leave requests, ATS, and 360 performance review
-                                workflows.</p>
-                            <div class="project-card-tech">
-                                <span>React.js</span>
-                                <span>Node.js</span>
-                                <span>Laravel</span>
-                                <span>REST APIs</span>
-                            </div>
-                            <button class="project-btn btn-link" id="btn-project-hellofriday">Explore Details
-                                &rarr;</button>
-                        </div>
-                    </div>
-
-                    <!-- Project 4: HumanJot -->
-                    <div class="project-card" id="project-card-humanjot" data-project="humanjot">
-                        <div class="project-card-content">
-                            <div class="project-meta">
-                                <span class="project-tag">AI Content</span>
-                                <span class="project-tag">SaaS</span>
-                            </div>
-                            <h3 class="project-card-title">HumanJot</h3>
-                            <p class="project-card-excerpt">AI content assistant generating optimized multi-channel
-                                articles (LinkedIn, X, Blogs) matching personalized brand voice styles.</p>
-                            <div class="project-card-tech">
-                                <span>Node.js</span>
-                                <span>Python</span>
-                                <span>FastAPI</span>
-                                <span>LLM Workflows</span>
-                            </div>
-                            <button class="project-btn btn-link" id="btn-project-humanjot">Explore Details
-                                &rarr;</button>
-                        </div>
-                    </div>
-
-                    <!-- Project 5: ZenBench -->
-                    <div class="project-card" id="project-card-zenbench" data-project="zenbench">
-                        <div class="project-card-content">
-                            <div class="project-meta">
-                                <span class="project-tag">Zendesk Automation</span>
-                                <span class="project-tag">Customer Support</span>
-                            </div>
-                            <h3 class="project-card-title">ZenBench</h3>
-                            <p class="project-card-excerpt">Zendesk reporting, automation, and support data-management
-                                platform extending tickets with custom objects and macro marketplaces.</p>
-                            <div class="project-card-tech">
-                                <span>Vue.js</span>
-                                <span>Laravel</span>
-                                <span>MySQL</span>
-                                <span>Zendesk API</span>
-                            </div>
-                            <button class="project-btn btn-link" id="btn-project-zenbench">Explore Details
-                                &rarr;</button>
-                        </div>
-                    </div>
-
-                    <!-- Project 6: iShopEco -->
-                    <div class="project-card" id="project-card-ishopeco" data-project="ishopeco">
-                        <div class="project-card-content">
-                            <div class="project-meta">
-                                <span class="project-tag">E-Commerce</span>
-                                <span class="project-tag">Eco-Friendly</span>
-                            </div>
-                            <h3 class="project-card-title">iShopEco</h3>
-                            <p class="project-card-excerpt">Sustainable-living search, review, and e-commerce platform
-                                offering 300+ green categories, client accounts, and Stripe checkout.</p>
-                            <div class="project-card-tech">
-                                <span>Vue.js</span>
-                                <span>Quasar</span>
-                                <span>Laravel</span>
-                                <span>Stripe API</span>
-                            </div>
-                            <button class="project-btn btn-link" id="btn-project-ishopeco">Explore Details
-                                &rarr;</button>
-                        </div>
-                    </div>
-
-                    <!-- Project 7: GerDentUSA & GerVetUSA -->
-                    <div class="project-card" id="project-card-gerdentusa" data-project="gerdentusa">
-                        <div class="project-card-content">
-                            <div class="project-meta">
-                                <span class="project-tag">B2B E-Commerce</span>
-                                <span class="project-tag">Medical Tools</span>
-                            </div>
-                            <h3 class="project-card-title">GerDentUSA & GerVetUSA</h3>
-                            <p class="project-card-excerpt">B2B e-commerce platforms serving dental and veterinary
-                                instruments with custom variations, purchase orders, and pricing.</p>
-                            <div class="project-card-tech">
-                                <span>PHP</span>
-                                <span>Laravel</span>
-                                <span>MySQL</span>
-                                <span>Order Pipelines</span>
-                            </div>
-                            <button class="project-btn btn-link" id="btn-project-gerdentusa">Explore Details
-                                &rarr;</button>
-                        </div>
-                    </div>
-
-                    <!-- Project 8: ToolsZip -->
-                    <div class="project-card" id="project-card-toolszip" data-project="toolszip">
-                        <div class="project-card-content">
-                            <div class="project-meta">
-                                <span class="project-tag">Productivity</span>
-                                <span class="project-tag">Utilities</span>
-                            </div>
-                            <h3 class="project-card-title">ToolsZip</h3>
-                            <p class="project-card-excerpt">Online productivity toolbox offering browser-based PDF
-                                tools, image format conversions, JSON/XML utilities, and SEO checking helpers.</p>
-                            <div class="project-card-tech">
-                                <span>Laravel</span>
-                                <span>JavaScript</span>
-                                <span>MySQL</span>
-                                <span>File Processing</span>
-                            </div>
-                            <button class="project-btn btn-link" id="btn-project-toolszip">Explore Details
-                                &rarr;</button>
-                        </div>
-                    </div>
-
-                    <!-- Project 9: Pharmacy Audit Pro -->
-                    <div class="project-card" id="project-card-pharmacyauditpro" data-project="pharmacyauditpro">
-                        <div class="project-card-content">
-                            <div class="project-meta">
-                                <span class="project-tag">Pharmacy Tech</span>
-                                <span class="project-tag">Reconciliation</span>
-                            </div>
-                            <h3 class="project-card-title">Pharmacy Audit Pro</h3>
-                            <p class="project-card-excerpt">Pharmacy audit, reconciliation, and revenue-integrity ledger
-                                system auditing billing discrepancies with AI analytical summaries.</p>
-                            <div class="project-card-tech">
-                                <span>React.js</span>
-                                <span>Node.js</span>
-                                <span>Express.js</span>
-                                <span>Ledger System</span>
-                            </div>
-                            <button class="project-btn btn-link" id="btn-project-pharmacyauditpro">Explore Details
-                                &rarr;</button>
-                        </div>
-                    </div>
+                <div class="section-more">
+                    <a href="/projects" class="btn btn-secondary" id="btn-all-projects">View all projects
+                        (<span id="projects-total">9</span>) &rarr;</a>
                 </div>
             </div>
         </section>
@@ -923,10 +604,24 @@
             </div>
         </section>
 
+        <!-- Blog Section -->
+        <section id="blog" class="blog-section scroll-reveal">
+            <div class="container">
+                <h2 class="section-title"><span class="title-number">06.</span> Latest Articles</h2>
+                <p class="section-subtitle">Notes on AI, software architecture and engineering leadership.</p>
+
+                <div class="blog-grid" id="latest-posts-grid" aria-live="polite"></div>
+
+                <div class="section-more">
+                    <a href="/blog" class="btn btn-secondary">Read all articles &rarr;</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="contact-section scroll-reveal">
             <div class="container contact-container">
-                <h2 class="section-title"><span class="title-number">06.</span> Get In Touch</h2>
+                <h2 class="section-title"><span class="title-number">07.</span> Get In Touch</h2>
                 <p class="section-subtitle">Let's discuss leadership roles, SaaS development, or Generative AI/LLM
                     integrations.</p>
 
@@ -1055,8 +750,8 @@
 
     </main>
 
-    <!-- Project Details Modal -->
-    <div class="modal-overlay" id="project-modal">
+    <!-- Modal (project details, About Me full story) -->
+    <div class="modal-overlay" id="site-modal" role="dialog" aria-modal="true">
         <div class="modal-card">
             <button class="modal-close" id="modal-close" aria-label="Close Modal">&times;</button>
             <div class="modal-body" id="modal-body-content">
@@ -1068,12 +763,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-container">
-            <p class="footer-copy">&copy; 2026 Qurban Ali. Designed & Built with Vanilla HTML/CSS/JS.</p>
+            <p class="footer-copy">&copy; <span id="footer-year">2026</span> Qurban Ali. All rights reserved.</p>
             <div class="footer-links">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
+                <a href="/blog">Blog</a>
                 <a href="https://www.linkedin.com/in/qurbanali-pro/" target="_blank"
                     rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://github.com/qurban-ali/qurban-ali" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -1082,7 +778,8 @@
     </footer>
 
     <!-- App JavaScript -->
-    <script src="js/app.js" defer></script>
+    <script src="/js/site.js" defer></script>
+    <script src="/js/app.js" defer></script>
 </body>
 
 </html>

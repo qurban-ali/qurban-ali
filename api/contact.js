@@ -4,8 +4,9 @@
 // Optional env vars: CONTACT_TO_EMAIL   (default: qurbanali.pro@gmail.com)
 //                    CONTACT_FROM_EMAIL (default: Qurban Ali Portfolio <noreply@qurbanali.me>)
 //                    RESEND_SEGMENT_ID  (adds every lead to this Resend segment)
+//                    AUTOREPLY_FROM_EMAIL (default: Qurban Ali <noreply@qurbanali.me>)
 
-const { buildLeadEmail } = require('./_email-template');
+const { buildLeadEmail, buildAutoReplyEmail } = require('./_email-template');
 
 const RESEND_API = 'https://api.resend.com';
 
@@ -44,6 +45,41 @@ async function saveContact(apiKey, { name, email, subscribed }) {
         }
     } catch (err) {
         console.warn('Resend contact not saved:', err);
+    }
+}
+
+async function sendAutoReply(apiKey, { name, email, subject, message, replyTo }) {
+    const firstName = name.split(/\s+/)[0];
+    try {
+        const response = await resendRequest(apiKey, '/emails', {
+            from: process.env.AUTOREPLY_FROM_EMAIL || 'Qurban Ali <noreply@qurbanali.me>',
+            to: [email],
+            reply_to: replyTo,
+            subject: `Thanks for reaching out, ${firstName} — I've received your message`,
+            text: [
+                `Hi ${firstName},`,
+                '',
+                `Thank you for contacting me. I've received your enquiry about "${subject}" and will review it`,
+                'personally. You can expect a reply within 1-2 business days.',
+                '',
+                'If your request is time-sensitive, you can book a short call here:',
+                'https://calendar.app.google/znTqcTXv8akh1YGy7',
+                '',
+                'Your message:',
+                message,
+                '',
+                'Best regards,',
+                'Qurban Ali',
+                'Engineering Team Lead & Senior Full-Stack Developer',
+                'https://qurbanali.me'
+            ].join('\n'),
+            html: buildAutoReplyEmail({ name, service: subject, message })
+        });
+        if (!response.ok) {
+            console.warn('Auto-reply not sent:', response.status, await response.text());
+        }
+    } catch (err) {
+        console.warn('Auto-reply not sent:', err);
     }
 }
 
@@ -115,6 +151,10 @@ module.exports = async (req, res) => {
             console.error('Resend error:', response.status, detail);
             return fail(res, 502, 'Could not send your message. Please try again later.');
         }
+
+        // Confirmation to the visitor. Sent only after your notification succeeded, and a
+        // failure here never shows the visitor an error because their message did arrive.
+        await sendAutoReply(apiKey, { name, email, subject, message, replyTo: to });
 
         return res.status(200).json({ ok: true });
     } catch (err) {

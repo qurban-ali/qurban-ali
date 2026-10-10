@@ -1,0 +1,430 @@
+[
+  {
+    "slug": "smartmatch",
+    "title": "SmartMatch",
+    "featured": true,
+    "categories": [
+      "AI & LLM",
+      "HR & Recruitment"
+    ],
+    "cardTags": [
+      "AI Recruiting",
+      "Aviation"
+    ],
+    "excerpt": "AI-powered recruitment and talent intelligence platform developed specifically for the aviation industry using Solr and AI embeddings.",
+    "cardTech": [
+      "React.js",
+      "Node.js",
+      "Apache Solr",
+      "Gemini API"
+    ],
+    "tags": [
+      "AI Recruiting",
+      "Aviation Industry",
+      "Solr Search",
+      "RAG Engine"
+    ],
+    "stack": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MySQL",
+      "Apache Solr",
+      "OpenAI API",
+      "Google Gemini API",
+      "Vector Embeddings",
+      "Semantic Search"
+    ],
+    "overview": "SmartMatch is an AI-powered recruitment and talent intelligence platform developed specifically for the aviation industry. The platform enables recruiters to manage a centralized talent pool, process candidate CVs, and identify the most relevant candidates based on job descriptions, skills, experience, qualifications, and recruiter-provided keywords.",
+    "features": [
+      "Automated CV parsing transforming unstructured documents into structured candidate database records containing professional experience, technical skills, certifications, and aviation roles.",
+      "AI-generated vector embeddings indexed in Apache Solr to support low-latency semantic search matching rather than only exact keywords.",
+      "Dynamic relevance scoring matching candidates against job descriptions, highlighting matching strengths and potential gaps.",
+      "Centralized talent-pool management, advanced filtering dashboards, and candidate shortlist pipelines."
+    ],
+    "contribution": [
+      "Contributed to the full-stack development of the application using React.js for the frontend and Node.js for the backend.",
+      "Designed and implemented MySQL schemas for structured candidate, recruiter, and application data.",
+      "Configured Apache Solr vector-indexing patterns for high-performance candidate retrieval.",
+      "Integrated Google Gemini for structured CV parsing/extraction and OpenAI embeddings/language models for scoring and ranking explanations."
+    ]
+  },
+  {
+    "slug": "talentvista",
+    "title": "TalentVista",
+    "featured": true,
+    "categories": [
+      "AI & LLM",
+      "HR & Recruitment",
+      "SaaS"
+    ],
+    "cardTags": [
+      "SaaS Platform",
+      "LLM Ranking"
+    ],
+    "excerpt": "AI-powered talent acquisition platform designed to process large candidate CV volumes, manage vector search indexes, and generate screening questions.",
+    "cardTech": [
+      "React.js",
+      "Node.js",
+      "Apache Solr",
+      "OpenAI"
+    ],
+    "tags": [
+      "Talent Acquisition",
+      "SaaS Platform",
+      "LLM Ranking",
+      "RAG Workflows"
+    ],
+    "stack": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MySQL",
+      "Apache Solr",
+      "REST APIs",
+      "Vector Embeddings",
+      "Semantic Search",
+      "LLM Integrations"
+    ],
+    "overview": "TalentVista is an AI-powered talent acquisition platform designed to help recruiters process large volumes of applications, build reusable talent pools, and identify the most relevant candidates for each job opportunity.",
+    "features": [
+      "Dual CV-JD parsing extracting experience levels, education, technical stacks, certifications, and industry specialties.",
+      "Vector embeddings generation and Apache Solr indexing for semantic candidate retrieval and advanced filtering.",
+      "RAG-based scoring framework providing candidates evaluation, relevance scores, and written matching explanations.",
+      "Reusable categorized talent pools and multi-stage interview tracking with automated screening question generation."
+    ],
+    "contribution": [
+      "Contributed to the full-stack development and AI architecture design using React.js, Node.js, and MySQL.",
+      "Implemented semantic search matching and relevance scoring explanations using vector embeddings and Apache Solr.",
+      "Designed API prompts and integrated multiple LLM APIs for structured extraction, CV/JD parsing, and interview question generation.",
+      "Built dashboard analytics, screening scorecards, and candidate comparative reporting tools."
+    ]
+  },
+  {
+    "slug": "hellofriday",
+    "title": "helloFriday",
+    "featured": true,
+    "categories": [
+      "HR & Recruitment",
+      "SaaS"
+    ],
+    "cardTags": [
+      "HR Tech",
+      "Employee Experience"
+    ],
+    "excerpt": "AI-first, all-in-one HR and employee experience platform simplifying people operations, Leave requests, ATS, and 360 performance review workflows.",
+    "cardTech": [
+      "React.js",
+      "Node.js",
+      "Laravel",
+      "REST APIs"
+    ],
+    "tags": [
+      "HR Tech",
+      "Employee Experience",
+      "Enterprise SaaS",
+      "Full-Stack Workflows"
+    ],
+    "stack": [
+      "React.js",
+      "Vue.js",
+      "Node.js",
+      "Express.js",
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "REST APIs",
+      "Analytics Dashboards"
+    ],
+    "overview": "helloFriday is an AI-first, all-in-one HR and employee experience platform designed to simplify people operations, automate administrative workflows, and help organisations build engaged, productive, and aligned teams.",
+    "features": [
+      "Complete employee lifecycle management including applicant tracking, recruitment, onboarding, leave requests, attendance, and payroll.",
+      "Advanced performance module supporting 360-degree feedback, OKR objectives, leave approvals, and review cycles.",
+      "Employee engagement panel featuring social feeds, announcements, communities, pulse surveys, and recognition.",
+      "Responsive web and mobile applications enabling self-service tasks, approvals, and workforce notifications."
+    ],
+    "contribution": [
+      "Contributed to the full-stack delivery of scalable HR workflows, dashboards, and APIs.",
+      "Developed role-based user experiences and responsive interfaces for employees and administrators.",
+      "Built backend integrations, reporting modules, and data visualization analytics.",
+      "Created and optimized database tables in MySQL handling permissions, records, and system logs."
+    ]
+  },
+  {
+    "slug": "humanjot",
+    "title": "HumanJot",
+    "featured": true,
+    "categories": [
+      "AI & LLM",
+      "SaaS"
+    ],
+    "cardTags": [
+      "AI Content",
+      "SaaS"
+    ],
+    "excerpt": "AI content assistant generating optimized multi-channel articles (LinkedIn, X, Blogs) matching personalized brand voice styles.",
+    "cardTech": [
+      "Node.js",
+      "Python",
+      "FastAPI",
+      "LLM Workflows"
+    ],
+    "tags": [
+      "AI Content Assistant",
+      "Writing Workflows",
+      "Brand Voice Engine",
+      "FastAPI"
+    ],
+    "stack": [
+      "Node.js",
+      "Python",
+      "FastAPI",
+      "OpenAI APIs",
+      "Prompt Workflows",
+      "Personalized Logic",
+      "Web Editing"
+    ],
+    "overview": "HumanJot is an AI-powered content creation and writing-assistance platform designed for marketers, creators, agencies, entrepreneurs, and professionals who need high-quality content for multiple digital channels.",
+    "features": [
+      "Multi-platform generation tailoring length, tone, formatting, and hashtags for LinkedIn, X/Twitter, and blogs.",
+      "Personalized content engine learning writing preferences, brand voice, and tone patterns from previous articles.",
+      "Interactive inline writing assistant to brainstorm ideas, edit drafts, and rewrite sections.",
+      "Unified multi-platform workflows to draft one core message and generate optimized platform variations concurrently."
+    ],
+    "contribution": [
+      "Contributed to the full-stack development, user management, and prompt workflows.",
+      "Implemented personalized content generation logic and brand voice learning systems using style analysis vectors.",
+      "Built responsive web editing interfaces allowing rapid drafting, side-by-side previews, and exports.",
+      "Optimized concurrent API generation queues in FastAPI to prevent timeouts during document creation."
+    ]
+  },
+  {
+    "slug": "zenbench",
+    "title": "ZenBench",
+    "featured": true,
+    "categories": [
+      "Automation & Tools",
+      "SaaS"
+    ],
+    "cardTags": [
+      "Zendesk Automation",
+      "Customer Support"
+    ],
+    "excerpt": "Zendesk reporting, automation, and support data-management platform extending tickets with custom objects and macro marketplaces.",
+    "cardTech": [
+      "Vue.js",
+      "Laravel",
+      "MySQL",
+      "Zendesk API"
+    ],
+    "tags": [
+      "Zendesk Automation",
+      "Customer Support",
+      "Data Modeling"
+    ],
+    "stack": [
+      "Vue.js",
+      "Laravel",
+      "MySQL",
+      "Zendesk API",
+      "REST APIs",
+      "Background Workers"
+    ],
+    "overview": "ZenBench is a Zendesk reporting, automation, and data-management platform designed to extend Zendesk's native capabilities and help organisations manage support data more efficiently.",
+    "features": [
+      "Zendesk account connection syncing ticket, performance, and support data to a local database.",
+      "Reporting tools transforming data into dashboards for monitoring support operations and service trends.",
+      "Advanced data management including custom object modeling, data normalization, and bulk operations.",
+      "Reusable data-model marketplace for applying preconfigured support structures and workflows."
+    ],
+    "contribution": [
+      "Contributed to the full-stack development of ZenBench using Vue.js for the frontend and Laravel for the backend.",
+      "Integrated Zendesk APIs and created MySQL database schemas to handle support data.",
+      "Developed responsive user interfaces, API reporting workflows, data-management modules, and custom objects.",
+      "Built high-performance PHP/Laravel background workers resolving API rate limit conflicts."
+    ]
+  },
+  {
+    "slug": "ishopeco",
+    "title": "iShopEco",
+    "featured": true,
+    "categories": [
+      "E-Commerce"
+    ],
+    "cardTags": [
+      "E-Commerce",
+      "Eco-Friendly"
+    ],
+    "excerpt": "Sustainable-living search, review, and e-commerce platform offering 300+ green categories, client accounts, and Stripe checkout.",
+    "cardTech": [
+      "Vue.js",
+      "Quasar",
+      "Laravel",
+      "Stripe API"
+    ],
+    "tags": [
+      "E-Commerce",
+      "Eco-Friendly Portal",
+      "Vue.js",
+      "Laravel"
+    ],
+    "stack": [
+      "Vue.js",
+      "Quasar Framework",
+      "Laravel",
+      "MySQL",
+      "Stripe API",
+      "E-commerce Workflows"
+    ],
+    "overview": "iShopEco is a sustainable-living search, review, and e-commerce platform designed to help people discover vetted businesses, products, and services that meet published environmental sustainability criteria.",
+    "features": [
+      "Eco-friendly business directory spanning over 300 categories for comparing green living options.",
+      "Complete e-commerce features: product catalogue management, customer accounts, cart, and checkout workflows.",
+      "Secure payment integrations using Stripe and administrative order tracking dashboards."
+    ],
+    "contribution": [
+      "Contributed to the full-stack development of iShopEco using Vue.js and Quasar Framework for the frontend and Laravel for the backend.",
+      "Developed responsive e-commerce interfaces, customer workflows, and shopping checkout steps.",
+      "Designed MySQL database models for product catalogues and customer profiles and integrated payment webhooks."
+    ]
+  },
+  {
+    "slug": "gerdentusa",
+    "title": "GerDentUSA & GerVetUSA",
+    "featured": false,
+    "categories": [
+      "E-Commerce"
+    ],
+    "cardTags": [
+      "B2B E-Commerce",
+      "Medical Tools"
+    ],
+    "excerpt": "B2B e-commerce platforms serving dental and veterinary instruments with custom variations, purchase orders, and pricing.",
+    "cardTech": [
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "Order Pipelines"
+    ],
+    "tags": [
+      "B2B E-Commerce",
+      "Medical Tools",
+      "Laravel",
+      "Product Catalogs"
+    ],
+    "stack": [
+      "PHP",
+      "Laravel",
+      "MySQL",
+      "B2B Catalogs",
+      "E-commerce Workflows",
+      "Query Optimization"
+    ],
+    "overview": "GerDentUSA and GerVetUSA are e-commerce platforms designed to help customers and professionals across the United States purchase dental, veterinary, and surgical instruments through a convenient online shopping experience.",
+    "features": [
+      "Specialized B2B and B2C product catalogues serving thousands of medical and surgical instruments.",
+      "Dynamic product catalog variations, customer accounts, and order-processing workflows.",
+      "Custom B2B accounts supporting purchase orders, credit hierarchies, and tier pricing."
+    ],
+    "contribution": [
+      "Contributed to the development and maintenance of these platforms using PHP, Laravel, and MySQL.",
+      "Programmed product-catalogue modules, user accounts, cart, order workflows, and admin controls.",
+      "Optimized MySQL search database queries, reducing catalog load times by over 40%."
+    ]
+  },
+  {
+    "slug": "toolszip",
+    "title": "ToolsZip",
+    "featured": false,
+    "categories": [
+      "Automation & Tools",
+      "SaaS"
+    ],
+    "cardTags": [
+      "Productivity",
+      "Utilities"
+    ],
+    "excerpt": "Online productivity toolbox offering browser-based PDF tools, image format conversions, JSON/XML utilities, and SEO checking helpers.",
+    "cardTech": [
+      "Laravel",
+      "JavaScript",
+      "MySQL",
+      "File Processing"
+    ],
+    "tags": [
+      "Productivity Suite",
+      "Online Utilities",
+      "Toolbox Engine"
+    ],
+    "stack": [
+      "Laravel",
+      "JavaScript",
+      "MySQL",
+      "File Processing",
+      "Stripe API",
+      "SEO Tools"
+    ],
+    "overview": "ToolsZip is an all-in-one online productivity platform designed for SEO professionals, developers, content creators, website owners, and general users who need fast and accessible browser-based utilities.",
+    "features": [
+      "PDF tools including Word-to-PDF, text-to-PDF, merging, compression, and image conversion.",
+      "Image tools supporting conversions (PNG-to-JPG, JPG-to-PNG), resizing, and compression.",
+      "Developer utilities including UUID generators, JSON formatters, and XML converters.",
+      "SEO tools including SEO checks, screenshots, redirects, domain lookups, and SSL tests."
+    ],
+    "contribution": [
+      "Contributed to the full-stack development of ToolsZip using Laravel, JavaScript, and MySQL.",
+      "Developed and integrated multiple browser-based tools, file-processing tasks, and API workflows.",
+      "Supported user subscription systems, payment configurations, and Stripe integrations.",
+      "Optimized platform performance for simultaneous tool usage and large file uploads."
+    ]
+  },
+  {
+    "slug": "pharmacyauditpro",
+    "title": "Pharmacy Audit Pro",
+    "featured": false,
+    "categories": [
+      "FinTech",
+      "AI & LLM"
+    ],
+    "cardTags": [
+      "Pharmacy Tech",
+      "Reconciliation"
+    ],
+    "excerpt": "Pharmacy audit, reconciliation, and revenue-integrity ledger system auditing billing discrepancies with AI analytical summaries.",
+    "cardTech": [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "Ledger System"
+    ],
+    "tags": [
+      "Pharmacy Tech",
+      "Reconciliation",
+      "Ledger System",
+      "AI Assistant"
+    ],
+    "stack": [
+      "React.js",
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "Python",
+      "MySQL",
+      "AI Integration",
+      "Ledger Architecture"
+    ],
+    "overview": "Pharmacy Audit Pro is a pharmacy audit, reconciliation, and revenue-integrity platform designed for pharmacy owners, compliance teams, and operations professionals in the United States. It helps pharmacies reduce manual audit work, identify billing issues, and maintain clear, traceable financial records.",
+    "features": [
+      "Invoice and billing file-processing reconciliation engine that detects discrepancy and unmatched transaction exceptions.",
+      "Comprehensive financial ledger system recording adjusting entries, transaction histories, and audit logs.",
+      "Interactive analytics dashboards, billing pattern reports, email alerts, and revenue integrity views.",
+      "AI-assisted summaries highlighting billing trends and high-priority reconciliation issues."
+    ],
+    "contribution": [
+      "Contributed to the platform's development, including file-processing workflows and vendor/billing reconciliation.",
+      "Implemented discrepancy management, ledger functionality, and financial tracking logic.",
+      "Built responsive dashboards, audit reports, and analytical views.",
+      "Integrated AI assistant modules to summarize findings and highlight key trends."
+    ]
+  }
+]
