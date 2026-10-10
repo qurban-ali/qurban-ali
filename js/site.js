@@ -1,23 +1,15 @@
 /**
- * Shared behaviour for every page (home, projects, blog, blog post):
- * sticky navbar, scroll progress, mobile menu, scroll reveal, modal,
- * and the project / blog card renderers. Exposed as window.Site.
+ * Shared behaviour for every page: sticky navbar, scroll progress, mobile menu,
+ * scroll reveal, modal and listing filters. Card templates come from js/render.js
+ * (load it first). Exposed as window.Site.
  */
 (function () {
-    const escapeHtml = (value) => String(value ?? '').replace(/[&<>"']/g, (c) => ({
-        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-    }[c]));
-
     // Content lives in /data and /content so it can be edited without touching code.
     async function loadJSON(path) {
         const response = await fetch(path, { cache: 'no-cache' });
         if (!response.ok) throw new Error(`Could not load ${path} (${response.status})`);
         return response.json();
     }
-
-    const formatDate = (iso) => new Date(`${iso}T00:00:00`).toLocaleDateString('en-GB', {
-        day: 'numeric', month: 'short', year: 'numeric'
-    });
 
     // ==========================================================================
     // STICKY NAVBAR & SCROLL PROGRESS
@@ -109,88 +101,24 @@
     }
 
     // ==========================================================================
-    // PROJECT CARDS & DETAILS
+    // PROJECT CARDS & DETAILS (templates live in js/render.js)
     // ==========================================================================
-    const renderProjectCard = (p) => `
-        <article class="project-card" data-project="${escapeHtml(p.slug)}" tabindex="0" role="button"
-                 aria-label="View details for ${escapeHtml(p.title)}">
-            <div class="project-card-content">
-                <div class="project-meta">
-                    ${p.cardTags.map(tag => `<span class="project-tag">${escapeHtml(tag)}</span>`).join('')}
-                </div>
-                <h3 class="project-card-title">${escapeHtml(p.title)}</h3>
-                <p class="project-card-excerpt">${escapeHtml(p.excerpt)}</p>
-                <div class="project-card-tech">
-                    ${p.cardTech.map(tech => `<span>${escapeHtml(tech)}</span>`).join('')}
-                </div>
-                <span class="project-btn btn-link">Explore Details &rarr;</span>
-            </div>
-        </article>`;
+    const { escapeHtml, formatDate, renderProjectCard, projectDetailsHtml, renderBlogCard, publishedPosts } = window.Render;
 
-    const projectModalHtml = (p) => `
-        <h3 class="modal-project-title">${escapeHtml(p.title)}</h3>
-        <div class="modal-project-meta">
-            ${p.tags.map(tag => `<span class="project-tag">${escapeHtml(tag)}</span>`).join('')}
-        </div>
-
-        <h4 class="modal-section-title">Overview</h4>
-        <p>${escapeHtml(p.overview)}</p>
-
-        <h4 class="modal-section-title">Key Core Features</h4>
-        <ul class="modal-list">
-            ${p.features.map(f => `<li>${escapeHtml(f)}</li>`).join('')}
-        </ul>
-
-        <h4 class="modal-section-title">Team Leadership & Engineering Contribution</h4>
-        <ul class="modal-list">
-            ${p.contribution.map(c => `<li>${escapeHtml(c)}</li>`).join('')}
-        </ul>
-
-        <h4 class="modal-section-title">Technology & AI Stack</h4>
-        <div class="modal-project-tech">
-            ${p.stack.map(t => `<span>${escapeHtml(t)}</span>`).join('')}
-        </div>`;
-
-    // Render cards into a container and open the details modal on click / Enter.
+    // Render cards into a container. Each card links to its own project page;
+    // a plain click opens the quick-view popup instead (Ctrl/Cmd-click still opens the page).
     function renderProjects(container, projects) {
         container.innerHTML = projects.map(renderProjectCard).join('');
         const bySlug = Object.fromEntries(projects.map(p => [p.slug, p]));
-        const open = (card) => openModal(projectModalHtml(bySlug[card.dataset.project]));
         container.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('click', () => open(card));
-            card.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(card); }
+            card.addEventListener('click', (e) => {
+                if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+                e.preventDefault();
+                openModal(projectDetailsHtml(bySlug[card.dataset.project]) +
+                    `<p class="modal-permalink"><a class="btn-link" href="${window.Render.projectUrl(bySlug[card.dataset.project])}">Open full project page &rarr;</a></p>`);
             });
         });
     }
-
-    // ==========================================================================
-    // BLOG CARDS
-    // ==========================================================================
-    const renderBlogCard = (post) => `
-        <a class="blog-card" href="/blog/${encodeURIComponent(post.slug)}">
-            ${post.cover ? `<img class="blog-card-cover" src="${escapeHtml(post.cover)}" alt="${escapeHtml(post.coverAlt || post.title)}"
-                 width="1200" height="630" loading="lazy" decoding="async">` : ''}
-            <div class="blog-card-meta">
-                <time datetime="${escapeHtml(post.date)}">${formatDate(post.date)}</time>
-                <span aria-hidden="true">&middot;</span>
-                <span>${Number(post.readingTime) || 1} min read</span>
-            </div>
-            <h3 class="blog-card-title">${escapeHtml(post.title)}</h3>
-            <p class="blog-card-excerpt">${escapeHtml(post.excerpt)}</p>
-            <div class="blog-card-footer">
-                <div class="blog-card-tags">
-                    ${post.tags.map(tag => `<span class="project-tag">${escapeHtml(tag)}</span>`).join('')}
-                </div>
-                <span class="btn-link">Read &rarr;</span>
-            </div>
-        </a>`;
-
-    // Newest first; posts dated in the future stay hidden until that day.
-    const publishedPosts = (posts) => {
-        const today = new Date().toISOString().slice(0, 10);
-        return posts.filter(p => !p.draft && p.date <= today).sort((a, b) => b.date.localeCompare(a.date));
-    };
 
     // ==========================================================================
     // LISTING PAGES: search box + filter chips (used by /projects and /blog)

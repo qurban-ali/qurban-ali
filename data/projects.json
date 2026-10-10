@@ -2,6 +2,7 @@
   {
     "slug": "ai-fin-buddy",
     "title": "Digital Workspace: AI Fin Buddy",
+    "seoTitle": "AI Fin Buddy: NetSuite Invoice Automation",
     "featured": true,
     "categories": [
       "FinTech",
@@ -154,6 +155,7 @@
   {
     "slug": "hellofriday",
     "title": "helloFriday",
+    "seoTitle": "helloFriday: HR & Employee Experience SaaS",
     "featured": true,
     "categories": [
       "HR & Recruitment",
@@ -252,6 +254,7 @@
   {
     "slug": "zenbench",
     "title": "ZenBench",
+    "seoTitle": "ZenBench: Zendesk Automation Platform",
     "featured": true,
     "categories": [
       "Automation & Tools",
@@ -340,8 +343,9 @@
     ]
   },
   {
-    "slug": "gerdentusa",
+    "slug": "gerdentusa-gervetusa",
     "title": "GerDentUSA & GerVetUSA",
+    "seoTitle": "GerDentUSA & GerVetUSA: B2B E-Commerce",
     "featured": false,
     "categories": [
       "E-Commerce"
@@ -430,8 +434,9 @@
     ]
   },
   {
-    "slug": "pharmacyauditpro",
+    "slug": "pharmacy-audit-pro",
     "title": "Pharmacy Audit Pro",
+    "seoTitle": "Pharmacy Audit Pro: Reconciliation Platform",
     "featured": false,
     "categories": [
       "FinTech",

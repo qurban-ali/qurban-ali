@@ -123,15 +123,18 @@ Expert in PHP (Laravel), MERN, MEVN, and Python (FastAPI/Flask), with hands-on e
 
 ## ✍️ Managing Content (no database needed)
 
-All projects and blog posts live in plain files in this repository. Edit them on GitHub, commit, and Vercel redeploys the site automatically.
+All projects and blog posts live in plain files in this repository. Edit them on GitHub, commit, and Vercel rebuilds the site automatically.
+
+On every deploy, `npm run build` (`scripts/build.mjs`) turns these files into complete HTML pages in `dist/`, so search engines and AI assistants can read everything without running JavaScript. It also generates the page titles, descriptions, social-share tags, structured data (JSON-LD), `sitemap.xml`, `robots.txt`, `rss.xml`, `llms.txt` and `llms-full.txt`. Run `npm install && npm run build` to preview the output locally.
 
 ### Add or edit a project
 Edit `data/projects.json`. Each project is one object:
 
 | Field | Purpose |
 |---|---|
-| `slug` | Unique id, lowercase, no spaces (e.g. `my-new-app`) |
+| `slug` | Unique id and URL (`/projects/<slug>`), lowercase words joined by hyphens (e.g. `my-new-app`) |
 | `title` | Project name |
+| `seoTitle` | Optional shorter title for Google (keep it under ~50 characters) |
 | `featured` | `true` to show it on the home page (the first 6 featured projects are shown) |
 | `categories` | Filter chips on `/projects` (e.g. `"AI & LLM"`, `"SaaS"`) |
 | `cardTags`, `excerpt`, `cardTech` | What the card shows |
@@ -146,12 +149,20 @@ The order in the file is the order on the site.
    {
      "slug": "my-post",
      "title": "My Post Title",
+     "seoTitle": "Optional shorter title for Google (under ~50 characters)",
      "date": "2026-11-01",
+     "updated": "2026-11-15",
      "excerpt": "One or two sentences shown on the card.",
      "tags": ["AI & LLM"],
      "readingTime": 5
    }
    ```
-3. Add `https://qurbanali.me/blog/my-post` to `sitemap.xml`.
+3. Optionally add `"cover": "/assets/blog/cover-my-post.jpg"` (1200×630) and `"coverAlt"`.
 
-The post appears at `/blog/my-post`. Posts with a future `date`, or with `"draft": true`, stay hidden until published.
+The post appears at `/blog/my-post` and is added to the sitemap, RSS feed and `llms.txt` automatically. `updated` is optional; set it when you revise an article. Posts with a future `date`, or with `"draft": true`, stay hidden until published (they go live on the next deploy after that date).
+
+### SEO checklist for new content
+- Keep `excerpt` between 70 and 160 characters; it becomes the meta description.
+- Start each section with a direct one- or two-sentence answer, and use clear `##` headings (they become the table of contents).
+- Use descriptive alt text for every image: `![What the image shows](/assets/blog/file.jpg)`.
+- Link to related articles and projects on this site.
