@@ -37,7 +37,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         document.getElementById('article-tags').innerHTML = (post.tags || [])
             .map(tag => `<a class="project-tag" href="/blog?tag=${encodeURIComponent(tag)}">${Site.escapeHtml(tag)}</a>`)
             .join('');
+        if (post.cover) {
+            const cover = document.getElementById('article-cover');
+            cover.src = post.cover;
+            cover.alt = post.coverAlt || post.title;
+            cover.hidden = false;
+            document.querySelector('meta[property="og:image"]')
+                .setAttribute('content', `https://qurbanali.me${post.cover}`);
+        }
         bodyEl.innerHTML = marked.parse(markdown);
+        bodyEl.querySelectorAll('img').forEach(img => { img.loading = 'lazy'; img.decoding = 'async'; });
     } catch (err) {
         console.error(err);
         titleEl.textContent = 'Something went wrong';

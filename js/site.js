@@ -169,6 +169,8 @@
     // ==========================================================================
     const renderBlogCard = (post) => `
         <a class="blog-card" href="/blog/${encodeURIComponent(post.slug)}">
+            ${post.cover ? `<img class="blog-card-cover" src="${escapeHtml(post.cover)}" alt="${escapeHtml(post.coverAlt || post.title)}"
+                 width="1200" height="630" loading="lazy" decoding="async">` : ''}
             <div class="blog-card-meta">
                 <time datetime="${escapeHtml(post.date)}">${formatDate(post.date)}</time>
                 <span aria-hidden="true">&middot;</span>

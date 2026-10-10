@@ -1622,6 +1622,20 @@ section {
     outline: none;
 }
 
+.blog-card-cover {
+    display: block;
+    width: calc(100% + 56px);
+    height: auto;
+    aspect-ratio: 1200 / 630;
+    object-fit: cover;
+    margin: -28px -28px 22px;
+    border-bottom: 1px solid var(--border-glow);
+}
+
+.blog-card {
+    overflow: hidden;
+}
+
 .blog-card-meta {
     display: flex;
     gap: 8px;
@@ -1844,9 +1858,43 @@ a.project-tag {
     color: var(--text-primary);
 }
 
+.article-cover {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 28px;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-glow);
+}
+
 .article-body img {
+    display: block;
     max-width: 100%;
-    border-radius: var(--border-radius-sm);
+    height: auto;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-glow);
+    margin: 2em auto;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    display: block;
+    overflow-x: auto;
+}
+
+.article-body th,
+.article-body td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border-glow);
+    vertical-align: top;
+}
+
+.article-body th {
+    color: var(--text-primary);
+    background: rgba(99, 102, 241, 0.1);
 }
 
 .article-body hr {
