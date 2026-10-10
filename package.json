@@ -1,0 +1,14 @@
+{
+  "name": "qurban-ali-portfolio",
+  "private": true,
+  "description": "Portfolio of Qurban Ali. Static pages pre-rendered for SEO by scripts/build.mjs.",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "dependencies": {
+    "marked": "12.0.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

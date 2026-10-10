@@ -23,7 +23,7 @@ const COLORS = {
 
 const FONT = "'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif";
 
-const SITE_URL = 'https://qurbanali.me';
+const SITE_URL = 'https://www.qurbanali.me';
 const LINKEDIN_URL = 'https://www.linkedin.com/in/qurbanali-pro/';
 const CALENDAR_URL = 'https://calendar.app.google/znTqcTXv8akh1YGy7';
 

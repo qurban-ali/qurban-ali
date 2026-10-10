@@ -2,6 +2,7 @@
   {
     "slug": "geo-playbook-get-cited-by-ai",
     "title": "The GEO Playbook: How to Get Your Content Cited by ChatGPT, Gemini and Perplexity",
+    "seoTitle": "GEO Playbook: How to Get Cited by ChatGPT & Gemini",
     "date": "2026-10-10",
     "excerpt": "A practical, step-by-step guide to making your website easy for AI assistants to find, trust and cite — plus a 30-day starter plan.",
     "tags": [
@@ -15,8 +16,9 @@
   {
     "slug": "seo-vs-geo-llm-search",
     "title": "SEO vs GEO: How LLM Search Is Changing the Way People Find You",
+    "seoTitle": "SEO vs GEO: How LLM Search Changes Discovery",
     "date": "2026-10-03",
-    "excerpt": "ChatGPT, Gemini and Google's AI Overviews answer questions directly. What Generative Engine Optimization (GEO) is, how it differs from SEO, and why you need both.",
+    "excerpt": "AI assistants now answer questions directly. What GEO (Generative Engine Optimization) is, how it differs from SEO, and why your site needs both.",
     "tags": [
       "LLM Search",
       "GEO"
@@ -28,6 +30,7 @@
   {
     "slug": "small-language-models-model-routing",
     "title": "Small Language Models and Model Routing: Cut AI Costs Without Losing Quality",
+    "seoTitle": "Small Language Models & Model Routing to Cut AI Cost",
     "date": "2026-09-26",
     "excerpt": "Why production teams are moving to the smallest model that does the job, how model routing works, and how to switch safely using evals.",
     "tags": [
@@ -41,6 +44,7 @@
   {
     "slug": "llm-evals-testing-ai-features",
     "title": "LLM Evals: How to Test AI Features Before Your Users Do",
+    "seoTitle": "LLM Evals: How to Test AI Features",
     "date": "2026-09-19",
     "excerpt": "A practical guide to building eval sets, choosing graders and making evals a release gate for prompts, models and RAG pipelines.",
     "tags": [
@@ -54,6 +58,7 @@
   {
     "slug": "ai-coding-agents-engineering-teams",
     "title": "AI Coding Agents and the Engineering Team: What Changes for Leads",
+    "seoTitle": "AI Coding Agents: What Changes for Engineering Leads",
     "date": "2026-09-12",
     "excerpt": "Coding agents can now draft whole pull requests. What genuinely changes for engineering teams, what doesn't, and a practical playbook for leads.",
     "tags": [
@@ -67,6 +72,7 @@
   {
     "slug": "model-context-protocol-explained",
     "title": "Model Context Protocol (MCP) Explained: The Standard Way to Connect AI to Your Tools",
+    "seoTitle": "Model Context Protocol (MCP) Explained",
     "date": "2026-09-05",
     "excerpt": "MCP is becoming the USB-C of AI applications. Here's how it works, what servers expose, why it matters for businesses, and how to use it securely.",
     "tags": [
@@ -80,6 +86,7 @@
   {
     "slug": "agentic-ai-in-production",
     "title": "Agentic AI in Production: From Chatbots to Agents That Get Work Done",
+    "seoTitle": "Agentic AI in Production: From Chatbots to Agents",
     "date": "2026-08-29",
     "excerpt": "What makes an AI system an agent, where agents work well today, and five lessons for putting one into production safely.",
     "tags": [
@@ -93,6 +100,7 @@
   {
     "slug": "semantic-candidate-matching-solr-embeddings",
     "title": "Semantic Candidate Matching with Apache Solr and Vector Embeddings",
+    "seoTitle": "Semantic Matching with Apache Solr & Embeddings",
     "date": "2026-08-22",
     "excerpt": "How we moved recruitment search beyond keyword matching by combining LLM-based CV parsing, vector embeddings and Apache Solr — and what to watch out for.",
     "tags": [
@@ -107,6 +115,7 @@
   {
     "slug": "from-senior-developer-to-team-lead",
     "title": "From Senior Developer to Engineering Team Lead: What Actually Changes",
+    "seoTitle": "Senior Developer to Team Lead: What Changes",
     "date": "2026-08-15",
     "excerpt": "Lessons from leading engineering teams while staying hands-on: code reviews, unblocking people, saying no, and measuring success by the team's output.",
     "tags": [

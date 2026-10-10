@@ -2134,3 +2134,236 @@ a.project-tag {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   FAQ, BREADCRUMBS, ARTICLE EXTRAS, PROJECT PAGES
+   ========================================================================== */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 880px;
+}
+
+.faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--border-radius-sm);
+    padding: 0 22px;
+}
+
+.faq-item[open] {
+    border-color: var(--border-glow-hover);
+}
+
+.faq-item summary {
+    cursor: pointer;
+    padding: 18px 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::after {
+    content: '+';
+    color: var(--accent-teal);
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.faq-item[open] summary::after {
+    content: '\2212';
+}
+
+.faq-item p {
+    color: var(--text-secondary);
+    line-height: 1.75;
+    padding-bottom: 20px;
+}
+
+.breadcrumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.breadcrumbs li + li::before {
+    content: '/';
+    margin-right: 8px;
+    color: var(--text-muted);
+}
+
+.breadcrumbs a {
+    color: var(--accent-teal);
+    text-decoration: none;
+}
+
+.breadcrumbs [aria-current] {
+    color: var(--text-secondary);
+}
+
+.article-toc {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--border-radius-sm);
+    padding: 20px 24px;
+    margin-bottom: 36px;
+}
+
+.article-toc h2 {
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-teal);
+    margin: 0 0 10px;
+}
+
+.article-toc ol {
+    margin: 0;
+    padding-left: 1.2em;
+    color: var(--text-secondary);
+    line-height: 1.9;
+}
+
+.article-toc a {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.article-toc a:hover {
+    color: var(--accent-teal);
+}
+
+.article-body h2[id],
+.article-body h3[id] {
+    scroll-margin-top: 100px;
+}
+
+.author-box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 56px;
+    padding: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--border-radius-md);
+}
+
+.author-box img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    flex: none;
+}
+
+.author-box .author-name {
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 1.05rem;
+}
+
+.author-box p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 4px;
+}
+
+.author-box a {
+    color: var(--accent-teal);
+}
+
+.related-section {
+    margin-top: 56px;
+}
+
+.related-section > h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.related-section .blog-grid,
+.related-section .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+.project-page .modal-project-title {
+    font-size: 2.6rem;
+}
+
+.project-page-body {
+    max-width: 860px;
+}
+
+.project-page-body p,
+.project-page-body li {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.modal-permalink {
+    margin-top: 28px;
+}
+
+@media (max-width: 768px) {
+    .project-page .modal-project-title {
+        font-size: 1.9rem;
+    }
+
+    .author-box {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.article-lead {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.article-meta a {
+    color: var(--accent-teal);
+    text-decoration: none;
+}
+
+.project-btn {
+    text-decoration: none;
+}
+
+/* Sections nested inside a page shouldn't get the full-page section padding */
+.related-section {
+    padding: 0;
+}
+
+/* Decorative "//" before page titles, kept out of the heading text */
+.title-slashes::before {
+    content: '//';
+}

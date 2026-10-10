@@ -71,7 +71,7 @@ async function sendAutoReply(apiKey, { name, email, subject, message, replyTo })
                 'Best regards,',
                 'Qurban Ali',
                 'Engineering Team Lead & Senior Full-Stack Developer',
-                'https://qurbanali.me'
+                'https://www.qurbanali.me'
             ].join('\n'),
             html: buildAutoReplyEmail({ name, service: subject, message })
         });

@@ -18,27 +18,27 @@
     <meta name="robots" content="index, follow">
 
     <!-- Canonical Link -->
-    <link rel="canonical" href="https://qurbanali-pro.vercel.app/">
+    <link rel="canonical" href="https://www.qurbanali.me/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://qurbanali-pro.vercel.app/">
+    <meta property="og:url" content="https://www.qurbanali.me/">
     <meta property="og:title" content="Qurban Ali | Engineering Team Lead & Senior Full-Stack Developer">
     <meta property="og:description"
         content="Portfolio of Qurban Ali, Engineering Team Lead & Senior Full-Stack Developer specializing in MERN, MEVN, LEMP, Generative AI, RAG, and LLM solutions.">
-    <meta property="og:image" content="https://qurbanali-pro.vercel.app/assets/avatar-sm.png">
+    <meta property="og:image" content="https://www.qurbanali.me/assets/avatar-sm.png">
     <meta property="og:site_name" content="Qurban Ali Portfolio">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://qurbanali-pro.vercel.app/">
+    <meta name="twitter:url" content="https://www.qurbanali.me/">
     <meta name="twitter:title" content="Qurban Ali | Engineering Team Lead & Senior Full-Stack Developer">
     <meta name="twitter:description"
         content="Portfolio of Qurban Ali, Engineering Team Lead & Senior Full-Stack Developer specializing in MERN, MEVN, LEMP, Generative AI, RAG, and LLM solutions.">
-    <meta name="twitter:image" content="https://qurbanali-pro.vercel.app/assets/avatar-sm.png">
+    <meta name="twitter:image" content="https://www.qurbanali.me/assets/avatar-sm.png">
 
     <!-- Preload Critical LCP Hero Image -->
-    <link rel="preload" as="image" href="assets/avatar-sm.png" fetchpriority="high">
+    <link rel="preload" as="image" type="image/webp" imagesrcset="/assets/avatar-360.webp 360w, /assets/avatar-720.webp 720w" imagesizes="300px" fetchpriority="high">
 
     <!-- JSON-LD Structured Data for Search Engine Rich Snippets -->
     <script type="application/ld+json">
@@ -47,8 +47,8 @@
       "@type": "Person",
       "name": "Qurban Ali",
       "jobTitle": "Engineering Team Lead & Senior Full-Stack Developer",
-      "url": "https://qurbanali-pro.vercel.app/",
-      "image": "https://qurbanali-pro.vercel.app/assets/avatar-sm.png",
+      "url": "https://www.qurbanali.me/",
+      "image": "https://www.qurbanali.me/assets/avatar-sm.png",
       "sameAs": [
         "https://www.linkedin.com/in/qurbanali-pro/",
         "https://github.com/qurban-ali/qurban-ali",
@@ -91,6 +91,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
+    <noscript><style>.scroll-reveal { opacity: 1; transform: none; }</style></noscript>
 </head>
 
 <body>
@@ -143,7 +144,7 @@
                     <span class="hero-greeting">Hi, my name is</span>
                     <h1 class="hero-title">Qurban Ali</h1>
                     <h2 class="hero-headline">
-                        <span class="typewriter-text" id="typewriter"></span><span class="cursor">|</span>
+                        <span class="typewriter-text" id="typewriter">Engineering Team Lead</span><span class="cursor">|</span>
                     </h2>
                     <p class="hero-desc">
                         Engineering Team Lead and Senior Full-Stack Developer with over 7+ years of experience building
@@ -151,7 +152,7 @@
                     </p>
                     <div class="hero-ctas">
                         <a href="#projects" class="btn btn-primary" id="btn-hero-projects">View Projects</a>
-                        <a href="assets/Qurban_Ali_CV_TeamLead.pdf" download="Qurban_Ali_CV_TeamLead.pdf"
+                        <a href="/assets/Qurban_Ali_CV_TeamLead.pdf" download="Qurban_Ali_CV_TeamLead.pdf"
                             class="btn btn-secondary" id="btn-hero-cv">Download CV</a>
                         <a href="https://calendar.app.google/znTqcTXv8akh1YGy7" target="_blank"
                             rel="noopener noreferrer" class="btn btn-secondary" id="btn-hero-meeting"
@@ -179,7 +180,13 @@
                 <div class="hero-image-wrapper">
                     <div class="avatar-glow"></div>
                     <div class="avatar-card">
-                        <img src="assets/avatar-sm.png" alt="Qurban Ali Avatar" class="avatar-img" id="hero-avatar">
+                        <picture>
+                            <source type="image/webp" srcset="/assets/avatar-360.webp 360w, /assets/avatar-720.webp 720w"
+                                sizes="300px">
+                            <img src="/assets/avatar-sm.png" alt="Qurban Ali, Engineering Team Lead and Senior Full-Stack Developer"
+                                class="avatar-img" id="hero-avatar" width="300" height="300" fetchpriority="high"
+                                decoding="async">
+                        </picture>
                         <div class="avatar-badge">
                             <span class="badge-dot"></span>
                             <span class="badge-text">Available for Leadership & AI Roles</span>
@@ -634,10 +641,39 @@
             </div>
         </section>
 
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section scroll-reveal">
+            <div class="container">
+                <h2 class="section-title"><span class="title-number">07.</span> Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <details class="faq-item" open>
+                        <summary>Who is Qurban Ali?</summary>
+                        <p>Qurban Ali is an Engineering Team Lead and Senior Full-Stack Developer based in Lahore, Pakistan, with over 7 years of experience building scalable web applications, SaaS products, FinTech systems and AI-powered platforms. He currently works as Engineering Team Lead at Friday Media Group Pakistan.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What services does Qurban Ali offer?</summary>
+                        <p>Generative AI and LLM integration (including RAG and semantic search), full-stack web and SaaS development, FinTech and NetSuite finance automation, REST API design, software architecture consulting, and technical leadership for engineering teams.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Which technologies does Qurban Ali work with?</summary>
+                        <p>React.js, Vue.js, TypeScript, Node.js, Express.js, PHP, Laravel, Python (FastAPI and Flask), MySQL, PostgreSQL, Supabase, Apache Solr, vector embeddings, OpenAI, Google Gemini and NetSuite integrations, on MERN, MEVN and LEMP architectures.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Which industries has Qurban Ali built products for?</summary>
+                        <p>Recruitment and HR technology, FinTech and accounts payable automation, pharmacy audit and reconciliation, SaaS productivity tools, customer support automation, AI content creation and e-commerce.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How can I hire or contact Qurban Ali?</summary>
+                        <p>Use the contact form on this page, email info@qurbanali.me, or book a 1-on-1 meeting through his Google Calendar booking page. He typically replies within 1–2 business days.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section id="contact" class="contact-section scroll-reveal">
             <div class="container contact-container">
-                <h2 class="section-title"><span class="title-number">07.</span> Get In Touch</h2>
+                <h2 class="section-title"><span class="title-number">08.</span> Get In Touch</h2>
                 <p class="section-subtitle">Let's discuss leadership roles, SaaS development, or Generative AI/LLM
                     integrations.</p>
 
@@ -794,6 +830,7 @@
     </footer>
 
     <!-- App JavaScript -->
+    <script src="/js/render.js" defer></script>
     <script src="/js/site.js" defer></script>
     <script src="/js/app.js" defer></script>
 </body>

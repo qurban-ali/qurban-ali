@@ -1,6 +1,25 @@
 {
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/blog/:slug", "destination": "/post.html" }
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "qurbanali-pro.vercel.app" }],
+      "destination": "https://www.qurbanali.me/:path",
+      "permanent": true
+    },
+    { "source": "/index", "destination": "/", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/data/(.*)",
+      "headers": [{ "key": "X-Robots-Tag", "value": "noindex" }]
+    },
+    {
+      "source": "/(llms.txt|llms-full.txt)",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    }
   ]
 }
