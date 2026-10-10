@@ -986,8 +986,10 @@
                     </div>
 
                     <div class="contact-form-wrapper">
-                        <form id="contact-form" class="contact-form" action="https://formspree.io/f/mzdnvdro"
+                        <form id="contact-form" class="contact-form" action="/api/contact"
                             method="POST">
+                            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"
+                                style="position: absolute; left: -9999px;">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="form-name">Name</label>
