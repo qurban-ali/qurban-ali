@@ -510,24 +510,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================================================
-    // HERO AVATAR SCROLL TILT
-    // Card stands straight at the top and tilts back as the hero scrolls away.
+    // HERO AVATAR CARD: cursor tilt with glare, gentle scroll drift
     // ==========================================================================
     const avatarWrapper = document.querySelector('.hero-image-wrapper');
     const heroSection = document.getElementById('hero');
     if (avatarWrapper && heroSection && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        let tiltTicking = false;
-        const updateTilt = () => {
-            const progress = Math.min(Math.max(window.scrollY / (heroSection.offsetHeight * 0.6), 0), 1);
-            avatarWrapper.style.setProperty('--tilt', progress.toFixed(3));
-            tiltTicking = false;
+        const MAX_TILT = 12; // degrees
+
+        // 3D tilt toward the cursor (mouse/trackpad only)
+        if (window.matchMedia('(pointer: fine)').matches) {
+            const card = avatarWrapper.querySelector('.avatar-card');
+            card.addEventListener('pointermove', (e) => {
+                const box = card.getBoundingClientRect();
+                const px = (e.clientX - box.left) / box.width;  // 0..1
+                const py = (e.clientY - box.top) / box.height;  // 0..1
+                avatarWrapper.classList.add('is-tilting');
+                avatarWrapper.style.setProperty('--ry', `${((px - 0.5) * 2 * MAX_TILT).toFixed(2)}deg`);
+                avatarWrapper.style.setProperty('--rx', `${((0.5 - py) * 2 * MAX_TILT).toFixed(2)}deg`);
+                avatarWrapper.style.setProperty('--gx', `${(px * 100).toFixed(1)}%`);
+                avatarWrapper.style.setProperty('--gy', `${(py * 100).toFixed(1)}%`);
+            });
+            card.addEventListener('pointerleave', () => {
+                avatarWrapper.classList.remove('is-tilting');
+                avatarWrapper.style.setProperty('--rx', '0deg');
+                avatarWrapper.style.setProperty('--ry', '0deg');
+            });
+        }
+
+        // Card drifts up and eases back slightly as the hero scrolls away
+        let scrollTicking = false;
+        const updateScroll = () => {
+            const progress = Math.min(Math.max(window.scrollY / heroSection.offsetHeight, 0), 1);
+            avatarWrapper.style.setProperty('--scroll', progress.toFixed(3));
+            scrollTicking = false;
         };
         window.addEventListener('scroll', () => {
-            if (!tiltTicking) {
-                tiltTicking = true;
-                requestAnimationFrame(updateTilt);
+            if (!scrollTicking) {
+                scrollTicking = true;
+                requestAnimationFrame(updateScroll);
             }
         }, { passive: true });
-        updateTilt();
+        updateScroll();
     }
 });

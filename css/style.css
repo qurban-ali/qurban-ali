@@ -480,22 +480,38 @@ section {
 }
 
 /* Hero Avatar Card */
+@property --ring-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
 .hero-image-wrapper {
-    --tilt: 0; /* 0 = straight, 1 = fully tilted; set from js/app.js on scroll */
+    /* Set from js/app.js: cursor tilt (--rx/--ry), glare position (--gx/--gy), scroll progress (--scroll) */
+    --rx: 0deg;
+    --ry: 0deg;
+    --gx: 50%;
+    --gy: 30%;
+    --scroll: 0;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    perspective: 1000px;
+    perspective: 900px;
 }
 
+/* Soft colour halo behind the card that follows the rotating border */
 .avatar-glow {
     position: absolute;
-    width: 320px;
-    height: 320px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
-    filter: blur(10px);
+    width: 340px;
+    height: 340px;
+    border-radius: 40px;
+    background: conic-gradient(from var(--ring-angle), var(--accent-indigo), var(--accent-teal), var(--accent-pink), var(--accent-indigo));
+    filter: blur(48px);
+    opacity: 0.35;
     z-index: 1;
+    animation: ring-spin 8s linear infinite;
+    transform: translateY(calc(var(--scroll) * -20px));
 }
 
 .avatar-card {
@@ -507,21 +523,85 @@ section {
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-card);
     backdrop-filter: blur(8px);
-    --lift: 0px;
     transform:
-        translateY(calc(var(--tilt) * 24px + var(--lift)))
-        rotateX(calc(var(--tilt) * 14deg))
-        rotateY(calc(var(--tilt) * -10deg))
-        rotateZ(calc(var(--tilt) * -5deg));
-    transform-origin: center bottom;
+        translateY(calc(var(--scroll) * -40px))
+        rotateX(var(--rx))
+        rotateY(var(--ry))
+        scale(calc(1 - var(--scroll) * 0.06));
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow var(--transition-smooth);
     will-change: transform;
-    transition: transform 0.2s ease-out, border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.hero-image-wrapper.is-tilting .avatar-card {
+    transition: transform 0.12s ease-out, box-shadow var(--transition-smooth);
+}
+
+/* Animated gradient border */
+.avatar-card::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    padding: 2px;
+    border-radius: inherit;
+    background: conic-gradient(from var(--ring-angle), var(--accent-indigo), var(--accent-teal), var(--accent-pink), var(--accent-indigo));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: ring-spin 8s linear infinite;
+    pointer-events: none;
 }
 
 .avatar-card:hover {
-    --lift: -5px;
-    border-color: var(--border-glow-hover);
-    box-shadow: 0 20px 40px -15px rgba(20, 184, 166, 0.2);
+    box-shadow: 0 30px 60px -20px rgba(99, 102, 241, 0.45);
+}
+
+.avatar-card picture {
+    display: block;
+    overflow: hidden;
+    border-radius: var(--border-radius-md);
+}
+
+/* Light reflection that follows the cursor */
+.avatar-glare {
+    position: absolute;
+    inset: 16px;
+    border-radius: var(--border-radius-md);
+    background: radial-gradient(circle at var(--gx) var(--gy), rgba(255, 255, 255, 0.28), transparent 55%);
+    mix-blend-mode: overlay;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.hero-image-wrapper.is-tilting .avatar-glare {
+    opacity: 1;
+}
+
+@keyframes ring-spin {
+    to { --ring-angle: 360deg; }
+}
+
+@keyframes avatar-float {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -12px; }
+}
+
+@keyframes avatar-enter {
+    from { opacity: 0; scale: 0.9; }
+    to { opacity: 1; scale: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .avatar-card {
+        animation: avatar-enter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both, avatar-float 3.5s ease-in-out 0.9s infinite;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .avatar-glow,
+    .avatar-card::before {
+        animation: none;
+    }
 }
 
 .avatar-img {
@@ -530,6 +610,11 @@ section {
     object-fit: cover;
     border-radius: var(--border-radius-md);
     background: #0f172a;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.avatar-card:hover .avatar-img {
+    transform: scale(1.05);
 }
 
 .avatar-badge {
