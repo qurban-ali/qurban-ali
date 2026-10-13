@@ -81,7 +81,13 @@ const PERSON = {
     email: 'mailto:info@qurbanali.me',
     worksFor: { '@type': 'Organization', name: 'Friday Media Group Pakistan' },
     address: { '@type': 'PostalAddress', addressLocality: 'Lahore', addressRegion: 'Punjab', addressCountry: 'PK' },
-    sameAs: ['https://www.linkedin.com/in/qurbanali-pro/', 'https://github.com/qurban-ali'],
+    telephone: '+92-322-1436408',
+    sameAs: [
+        'https://www.linkedin.com/in/qurbanali-pro/',
+        'https://github.com/qurban-ali',
+        'https://www.instagram.com/qurbanali.pro/',
+        'https://www.facebook.com/profile.php?id=100004956075390'
+    ],
     knowsAbout: [
         'Technical Leadership', 'Software Architecture', 'Full-Stack Development', 'Generative AI',
         'Large Language Models', 'Retrieval-Augmented Generation', 'Semantic Search', 'Apache Solr',
@@ -437,7 +443,8 @@ ${body}
                             <p>Engineering Team Lead and Senior Full-Stack Developer in Lahore, Pakistan, with 7+ years
                                 building AI-powered, FinTech and SaaS products.
                                 <a href="/">Portfolio</a> &middot;
-                                <a href="https://www.linkedin.com/in/qurbanali-pro/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
+                                <a href="https://www.linkedin.com/in/qurbanali-pro/" target="_blank" rel="noopener noreferrer">LinkedIn</a> &middot;
+                                <a href="https://www.instagram.com/qurbanali.pro/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
                         </div>
                     </aside>
 
@@ -593,6 +600,9 @@ Key facts:
 - Expertise: technical leadership, software architecture, Generative AI and LLM integration, RAG and semantic search (Apache Solr, vector embeddings), FinTech and NetSuite ERP integration, accounts payable automation, full-stack development (React, Vue, Node.js, Laravel, PHP, Python)
 - Contact: info@qurbanali.me · ${SITE}/#contact
 - LinkedIn: https://www.linkedin.com/in/qurbanali-pro/
+- Instagram: https://www.instagram.com/qurbanali.pro/
+- Facebook: https://www.facebook.com/profile.php?id=100004956075390
+- WhatsApp: +92 322 1436408 (https://wa.me/923221436408)
 
 ## Main pages
 
