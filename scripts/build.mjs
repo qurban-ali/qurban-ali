@@ -86,7 +86,7 @@ const PERSON = {
         'https://www.linkedin.com/in/qurbanali-pro/',
         'https://github.com/qurban-ali',
         'https://www.instagram.com/qurbanali.pro/',
-        'https://www.facebook.com/profile.php?id=100004956075390'
+        'https://www.facebook.com/qurbanali.pro'
     ],
     knowsAbout: [
         'Technical Leadership', 'Software Architecture', 'Full-Stack Development', 'Generative AI',
@@ -601,7 +601,7 @@ Key facts:
 - Contact: info@qurbanali.me · ${SITE}/#contact
 - LinkedIn: https://www.linkedin.com/in/qurbanali-pro/
 - Instagram: https://www.instagram.com/qurbanali.pro/
-- Facebook: https://www.facebook.com/profile.php?id=100004956075390
+- Facebook: https://www.facebook.com/qurbanali.pro
 - WhatsApp: +92 322 1436408 (https://wa.me/923221436408)
 
 ## Main pages

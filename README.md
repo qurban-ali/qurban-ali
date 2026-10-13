@@ -11,7 +11,7 @@ Engineering Team Lead and Senior Full-Stack Developer (MERN, MEVN & LEMP) with o
 *   **Location**: Lahore, Pakistan
 *   **LinkedIn**: [qurbanali-pro](https://www.linkedin.com/in/qurbanali-pro/)
 *   **Instagram**: [qurbanali.pro](https://www.instagram.com/qurbanali.pro/)
-*   **Facebook**: [Qurban Ali](https://www.facebook.com/profile.php?id=100004956075390)
+*   **Facebook**: [Qurban Ali](https://www.facebook.com/qurbanali.pro)
 *   **WhatsApp**: [+92 322 1436408](https://wa.me/923221436408)
 *   **GitHub**: [qurban-ali](https://github.com/qurban-ali/qurban-ali)
 *   **Website**: [qurban-ali](https://qurbanali-pro.vercel.app/)
