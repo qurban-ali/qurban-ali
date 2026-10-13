@@ -481,10 +481,12 @@ section {
 
 /* Hero Avatar Card */
 .hero-image-wrapper {
+    --tilt: 0; /* 0 = straight, 1 = fully tilted; set from js/app.js on scroll */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    perspective: 1000px;
 }
 
 .avatar-glow {
@@ -505,12 +507,20 @@ section {
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-card);
     backdrop-filter: blur(8px);
-    transition: all var(--transition-smooth);
+    --lift: 0px;
+    transform:
+        translateY(calc(var(--tilt) * 24px + var(--lift)))
+        rotateX(calc(var(--tilt) * 14deg))
+        rotateY(calc(var(--tilt) * -10deg))
+        rotateZ(calc(var(--tilt) * -5deg));
+    transform-origin: center bottom;
+    will-change: transform;
+    transition: transform 0.2s ease-out, border-color var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
 .avatar-card:hover {
+    --lift: -5px;
     border-color: var(--border-glow-hover);
-    transform: translateY(-5px);
     box-shadow: 0 20px 40px -15px rgba(20, 184, 166, 0.2);
 }
 

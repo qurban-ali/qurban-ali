@@ -508,4 +508,26 @@ document.addEventListener('DOMContentLoaded', () => {
         updateCarousel(0);
         startAutoPlay();
     }
+
+    // ==========================================================================
+    // HERO AVATAR SCROLL TILT
+    // Card stands straight at the top and tilts back as the hero scrolls away.
+    // ==========================================================================
+    const avatarWrapper = document.querySelector('.hero-image-wrapper');
+    const heroSection = document.getElementById('hero');
+    if (avatarWrapper && heroSection && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        let tiltTicking = false;
+        const updateTilt = () => {
+            const progress = Math.min(Math.max(window.scrollY / (heroSection.offsetHeight * 0.6), 0), 1);
+            avatarWrapper.style.setProperty('--tilt', progress.toFixed(3));
+            tiltTicking = false;
+        };
+        window.addEventListener('scroll', () => {
+            if (!tiltTicking) {
+                tiltTicking = true;
+                requestAnimationFrame(updateTilt);
+            }
+        }, { passive: true });
+        updateTilt();
+    }
 });
