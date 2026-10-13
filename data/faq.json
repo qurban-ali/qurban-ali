@@ -9,7 +9,7 @@
   ],
   [
     "Which technologies does Qurban Ali work with?",
-    "React.js, Vue.js, TypeScript, Node.js, Express.js, PHP, Laravel, Python (FastAPI and Flask), MySQL, PostgreSQL, Supabase, Apache Solr, vector embeddings, OpenAI, Google Gemini and NetSuite integrations, on MERN, MEVN and LEMP architectures."
+    "React.js, Vue.js, TypeScript, Node.js, Express.js, PHP, Laravel, Python (FastAPI and Flask), MySQL, PostgreSQL, Supabase, Apache Solr, vector databases (pgvector, Pinecone, ChromaDB, Qdrant), OpenAI, Google Gemini and NetSuite integrations, on MERN, MEVN and LEMP architectures. On the DevOps side he works with Linux, Nginx, Docker, Jenkins and GitHub Actions CI/CD pipelines, and AWS (EC2, S3, RDS, CloudFront, Lambda)."
   ],
   [
     "Which industries has Qurban Ali built products for?",
