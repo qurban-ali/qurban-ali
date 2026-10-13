@@ -95,7 +95,8 @@ const PERSON = {
         'Technical Leadership', 'Software Architecture', 'Full-Stack Development', 'Generative AI',
         'Large Language Models', 'Retrieval-Augmented Generation', 'Semantic Search', 'Apache Solr',
         'FinTech', 'NetSuite ERP Integration', 'Accounts Payable Automation', 'SaaS Development',
-        'React.js', 'Vue.js', 'Node.js', 'Laravel', 'PHP', 'Python', 'MySQL', 'PostgreSQL'
+        'React.js', 'Vue.js', 'Node.js', 'Laravel', 'PHP', 'Python', 'MySQL', 'PostgreSQL',
+        'DevOps', 'CI/CD', 'Linux', 'Nginx', 'Docker', 'Jenkins', 'GitHub Actions', 'Amazon Web Services', 'Vector Databases'
     ]
 };
 
