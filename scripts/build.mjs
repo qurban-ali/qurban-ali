@@ -46,6 +46,9 @@ fs.rmSync(DIST, { recursive: true, force: true });
 for (const dir of ['assets', 'css', 'js', 'data']) {
     fs.cpSync(path.join(ROOT, dir), path.join(DIST, dir), { recursive: true });
 }
+for (const file of ['favicon.ico', 'apple-touch-icon.png']) {
+    fs.copyFileSync(path.join(ROOT, file), path.join(DIST, file));
+}
 
 // --------------------------------------------------------------------------
 // Image size lookup (JPEG/PNG/WebP headers) for width/height attributes

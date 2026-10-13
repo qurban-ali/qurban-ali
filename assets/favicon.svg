@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
     <rect width="100" height="100" rx="25" fill="#080c14"/>
-    <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-family="'Outfit', sans-serif" font-size="50" font-weight="800" fill="#14b8a6">&lt;/&gt;</text>
+    <g fill="none" stroke="#14b8a6" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M32 38 L17 50 L32 62"/>
+        <path d="M57 33 L43 67"/>
+        <path d="M68 38 L83 50 L68 62"/>
+    </g>
 </svg>
