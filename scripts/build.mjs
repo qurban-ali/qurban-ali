@@ -127,6 +127,11 @@ const breadcrumbNav = (items) => `
 function seoHead({ title, description, url, image = DEFAULT_IMAGE, imageAlt, type = 'website', article, jsonld, noindex }) {
     const img = imageSize(image) || { w: 1200, h: 630 };
     const tags = [
+        `<!-- Google Analytics and Vercel Web Analytics -->`,
+        `<script async src="https://www.googletagmanager.com/gtag/js?id=G-9H8938P5YT"></script>`,
+        `<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-9H8938P5YT');</script>`,
+        `<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>`,
+        `<script defer src="/_vercel/insights/script.js"></script>`,
         `<title>${esc(title)}</title>`,
         `<meta name="description" content="${esc(description)}">`,
         `<meta name="author" content="Qurban Ali">`,
