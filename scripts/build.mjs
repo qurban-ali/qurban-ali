@@ -506,6 +506,101 @@ ${related.length ? `
 }
 
 // --------------------------------------------------------------------------
+// /sitemap: human-readable list of every page (the XML version is for crawlers)
+// --------------------------------------------------------------------------
+{
+    const ext = 'target="_blank" rel="noopener noreferrer"';
+    const link = (href, label, extra = '') => `<li><a href="${href}"${extra ? ' ' + extra : ''}>${label}</a></li>`;
+    const card = (title, count, dot, body, more = '') => `
+                    <section class="sitemap-card">
+                        <div class="sitemap-card-head">
+                            <h2 class="sitemap-card-title"><span class="sitemap-dot ${dot}"></span>${title}${count != null ? ` <span class="sitemap-count">(${count})</span>` : ''}</h2>
+                            ${more}
+                        </div>
+                        ${body}
+                    </section>`;
+    const tagCounts = (list, getTags) => {
+        const counts = {};
+        list.forEach(item => getTags(item).forEach(t => { counts[t] = (counts[t] || 0) + 1; }));
+        return Object.entries(counts).sort((a, b) => a[0].localeCompare(b[0]));
+    };
+
+    const homeSections = [
+        ['About', '/#about'], ['Technical Expertise', '/#skills'], ['Featured Projects', '/#projects'],
+        ['Professional Journey', '/#experience'], ['Recommendations', '/#recommendations'],
+        ['Latest Articles', '/#blog'], ['FAQ', '/#faq'], ['Contact', '/#contact']
+    ];
+    const connect = [
+        ['LinkedIn', 'https://www.linkedin.com/in/qurbanali-pro/'],
+        ['GitHub', 'https://github.com/qurban-ali/qurban-ali'],
+        ['Instagram', 'https://www.instagram.com/qurbanali.pro/'],
+        ['Facebook', 'https://www.facebook.com/qurbanali.pro'],
+        ['WhatsApp', 'https://wa.me/923221436408'],
+        ['Book a meeting', 'https://calendar.app.google/znTqcTXv8akh1YGy7']
+    ];
+    const projectTags = tagCounts(projects, p => p.categories || []);
+    const postTags = tagCounts(posts, p => p.tags || []);
+
+    const main = `
+        <section class="page-hero sitemap-hero">
+            <div class="container">${breadcrumbNav([['Home', '/'], ['Site Map', '/sitemap']])}
+                <h1 class="section-title"><span class="title-number">//</span> Site Map</h1>
+                <p class="section-subtitle">Every page on qurbanali.me in one place: projects, articles, sections of the home page and ways to get in touch.</p>
+                <ul class="sitemap-stats">
+                    <li><span class="sitemap-dot dot-indigo"></span><strong>${projects.length}</strong> Projects</li>
+                    <li><span class="sitemap-dot dot-teal"></span><strong>${posts.length}</strong> Articles</li>
+                    <li><span class="sitemap-dot dot-pink"></span><strong>${projectTags.length}</strong> Project categories</li>
+                    <li><span class="sitemap-dot dot-amber"></span><strong>${homeSections.length}</strong> Home sections</li>
+                    <li><span class="sitemap-dot dot-blue"></span><strong>${connect.length}</strong> Ways to connect</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="sitemap-body">
+            <div class="container sitemap-layout">
+                <div class="sitemap-main">${card('Projects', projects.length, 'dot-indigo',
+        `<ul class="sitemap-links sitemap-links-2col">${projects.map(p => link(R.projectUrl(p), esc(p.title))).join('')}</ul>
+                        <a href="/projects" class="sitemap-all">All ${projects.length} projects &rarr;</a>`,
+        '<a href="/projects" class="sitemap-see-all">See all &rarr;</a>')}${card('Articles', posts.length, 'dot-teal',
+        `<ul class="sitemap-links">${posts.map(p => `<li><a href="${R.postUrl(p)}">${esc(p.title)}</a><span class="sitemap-meta">${R.formatDate(p.date)}</span></li>`).join('')}</ul>
+                        <a href="/blog" class="sitemap-all">All ${posts.length} articles &rarr;</a>`,
+        '<a href="/blog" class="sitemap-see-all">See all &rarr;</a>')}
+                    <div class="sitemap-pair">${card('Project categories', projectTags.length, 'dot-pink',
+        `<ul class="sitemap-links">${projectTags.map(([t, n]) => `<li><a href="/projects?tag=${encodeURIComponent(t)}">${esc(t)}</a><span class="sitemap-meta">${n}</span></li>`).join('')}</ul>`)}${card('Article topics', postTags.length, 'dot-teal',
+        `<ul class="sitemap-links">${postTags.map(([t, n]) => `<li><a href="/blog?tag=${encodeURIComponent(t)}">${esc(t)}</a><span class="sitemap-meta">${n}</span></li>`).join('')}</ul>`)}
+                    </div>
+                </div>
+                <aside class="sitemap-side">${card('Main pages', null, 'dot-muted',
+        `<ul class="sitemap-links">${link('/', 'Home')}${link('/projects', 'All projects')}${link('/blog', 'Blog')}${link('/#contact', 'Contact')}</ul>`)}${card('On the home page', homeSections.length, 'dot-amber',
+        `<ul class="sitemap-links">${homeSections.map(([l, h]) => link(h, l)).join('')}</ul>`)}${card('Connect', connect.length, 'dot-blue',
+        `<ul class="sitemap-links">${connect.map(([l, h]) => link(h, l, ext)).join('')}${link('mailto:info@qurbanali.me', 'info@qurbanali.me')}</ul>`)}${card('Resources', null, 'dot-muted',
+        `<ul class="sitemap-links">${link('/assets/Qurban_Ali_CV_TeamLead.pdf', 'Download CV (PDF)', 'download')}${link('/rss.xml', 'RSS feed')}${link('/sitemap.xml', 'XML sitemap')}${link('/llms.txt', 'llms.txt (for AI assistants)')}</ul>`)}
+                </aside>
+            </div>
+        </section>`;
+
+    let html = withScripts(replaceMain(shell, main));
+    html = applyHead(html, seoHead({
+        title: 'Site Map | Qurban Ali',
+        description: `Every page on qurbanali.me: ${projects.length} projects, ${posts.length} articles, home page sections, project categories and ways to get in touch.`,
+        url: '/sitemap',
+        jsonld: [
+            PERSON, WEBSITE,
+            {
+                '@type': 'WebPage',
+                '@id': `${SITE}/sitemap#page`,
+                url: `${SITE}/sitemap`,
+                name: 'Site Map',
+                isPartOf: { '@id': WEBSITE_ID }
+            },
+            breadcrumb([['Home', '/'], ['Site Map', '/sitemap']])
+        ]
+    }));
+    write('sitemap.html', html);
+    addToSitemap('/sitemap', TODAY, '0.3');
+}
+
+// --------------------------------------------------------------------------
 // 404 page
 // --------------------------------------------------------------------------
 {
