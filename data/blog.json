@@ -1,5 +1,75 @@
 [
   {
+    "slug": "ai-company-bankruptcy-chatbot-data-privacy",
+    "title": "When an AI Company Goes Bust, Who Gets Your Chats? Lessons from Character.ai's Bankruptcy",
+    "seoTitle": "AI Company Bankruptcy: Who Gets Your Chatbot Data?",
+    "date": "2026-10-31",
+    "excerpt": "Character.ai's bankruptcy shows that private chatbot conversations can become a sellable asset. What users and AI builders should do about it.",
+    "tags": [
+      "AI & LLM",
+      "Privacy"
+    ],
+    "readingTime": 4,
+    "cover": "/assets/blog/cover-ai-company-bankruptcy-chatbot-data-privacy.jpg",
+    "coverAlt": "Cover image for the article: When an AI Company Goes Bust, Who Gets Your Chats? Lessons from Character.ai's Bankruptcy"
+  },
+  {
+    "slug": "china-ai-bubble-burst-lessons-for-builders",
+    "title": "China's AI Stock Bubble Has Burst: What It Means for People Building with AI",
+    "seoTitle": "China's AI Bubble Burst: Lessons for AI Builders",
+    "date": "2026-10-28",
+    "excerpt": "China's AI-heavy STAR 50 index fell about 40% and wiped out $480 billion. What happened, and five lessons for teams building AI products.",
+    "tags": [
+      "AI & LLM",
+      "AI Industry"
+    ],
+    "readingTime": 4,
+    "cover": "/assets/blog/cover-china-ai-bubble-burst-lessons-for-builders.jpg",
+    "coverAlt": "Cover image for the article: China's AI Stock Bubble Has Burst: What It Means for People Building with AI"
+  },
+  {
+    "slug": "coding-agents-in-ci-cd-pipelines",
+    "title": "Coding Agents in Your CI/CD Pipeline: How to Let AI Open Pull Requests Safely",
+    "seoTitle": "Coding Agents in CI/CD: Let AI Open PRs Safely",
+    "date": "2026-10-23",
+    "excerpt": "How to run AI coding agents inside CI/CD with least-privilege tokens, sandboxed runners, no production secrets and required human review.",
+    "tags": [
+      "DevOps",
+      "AI Agents"
+    ],
+    "readingTime": 4,
+    "cover": "/assets/blog/cover-coding-agents-in-ci-cd-pipelines.jpg",
+    "coverAlt": "Cover image for the article: Coding Agents in Your CI/CD Pipeline: How to Let AI Open Pull Requests Safely"
+  },
+  {
+    "slug": "building-ai-support-bots-that-help",
+    "title": "Building AI Support Bots That Actually Help: Retrieval, Guardrails and Human Handoff",
+    "seoTitle": "Building AI Support Bots That Actually Help",
+    "date": "2026-10-18",
+    "excerpt": "A practical architecture for customer support bots: answers from approved content, safe tools, guardrails, fast human handoff and the right metrics.",
+    "tags": [
+      "AI Agents",
+      "AI & LLM"
+    ],
+    "readingTime": 4,
+    "cover": "/assets/blog/cover-building-ai-support-bots-that-help.jpg",
+    "coverAlt": "Cover image for the article: Building AI Support Bots That Actually Help: Retrieval, Guardrails and Human Handoff"
+  },
+  {
+    "slug": "deno-joins-cloudflare-supabase-edge-functions",
+    "title": "Deno Is Joining Cloudflare: What It Means for Supabase Edge Functions",
+    "seoTitle": "Deno Joins Cloudflare: What It Means for Supabase",
+    "date": "2026-10-14",
+    "excerpt": "Deno Deploy is shutting down and the Deno runtime enters maintenance. What that means for Supabase Edge Functions and how to keep your code portable.",
+    "tags": [
+      "DevOps",
+      "Architecture"
+    ],
+    "readingTime": 4,
+    "cover": "/assets/blog/cover-deno-joins-cloudflare-supabase-edge-functions.jpg",
+    "coverAlt": "Cover image for the article: Deno Is Joining Cloudflare: What It Means for Supabase Edge Functions"
+  },
+  {
     "slug": "geo-playbook-get-cited-by-ai",
     "title": "The GEO Playbook: How to Get Your Content Cited by ChatGPT, Gemini and Perplexity",
     "seoTitle": "GEO Playbook: How to Get Cited by ChatGPT & Gemini",
